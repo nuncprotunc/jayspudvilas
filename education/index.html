@@ -315,9 +315,12 @@
 
       .global-nav__link[aria-current="page"],
       .global-nav__link--active {
+        background: rgba(59, 130, 246, 0.18) !important;
         border-radius: 9999px !important;
+        border: none !important;
         border-bottom: none !important;
-        box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.4) !important;
+        box-shadow: none !important;
+        color: var(--text-primary);
       }
     }
 
@@ -1134,8 +1137,8 @@
     .year-tab {
       background: transparent;
       color: var(--text-secondary);
-      border: 1px solid #2a2d42;
-      border-radius: var(--radius-full);
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      border-radius: 9999px;
       padding: var(--space-xs) var(--space-md);
       font-size: 0.9rem;
       font-weight: 700;
@@ -1166,10 +1169,11 @@
     }
 
     .year-tab.is-active {
-      background: rgba(59, 130, 246, 0.18);
-      border-color: #2a2d42;
-      color: white;
-      box-shadow: none;
+      background: rgba(59, 130, 246, 0.18) !important;
+      border-color: rgba(59, 130, 246, 0.4) !important;
+      color: white !important;
+      border-radius: 9999px !important;
+      box-shadow: none !important;
     }
 
     .year-tab.is-active::before {
