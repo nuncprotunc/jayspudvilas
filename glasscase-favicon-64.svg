@@ -1,0 +1,55 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" fill="#1A1F2E"/>
+
+  <g transform="translate(-7, 0) scale(0.8)">
+    <defs>
+      <linearGradient id="prismGrad80" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#E8F4F8" stop-opacity="0.9" />
+        <stop offset="50%" stop-color="#4A9FD8" stop-opacity="0.7" />
+        <stop offset="100%" stop-color="#3ABEF9" stop-opacity="0.9" />
+      </linearGradient>
+      <linearGradient id="lightBeam80" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8" />
+        <stop offset="100%" stop-color="#4A9FD8" stop-opacity="0.4" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Depth layer -->
+    <path d="M 28 22 L 42 40 L 28 58 Z" 
+          fill="rgba(74, 159, 216, 0.08)" 
+          stroke="rgba(74, 159, 216, 0.15)" 
+          stroke-width="0.5"
+          opacity="0.4"/>
+    
+    <!-- Light beam entering -->
+    <line x1="8" y1="40" x2="30" y2="40" 
+          stroke="url(#lightBeam80)" 
+          stroke-width="2" 
+          opacity="0.6"/>
+    
+    <!-- Main prism -->
+    <path d="M 30 20 L 45 40 L 30 60 Z" 
+          fill="url(#prismGrad80)" 
+          stroke="#4A9FD8" 
+          stroke-width="1"/>
+    
+    <!-- Refraction highlight -->
+    <path d="M 32 28 L 42 40 L 32 52" 
+          fill="rgba(255, 255, 255, 0.3)"/>
+    
+    <!-- Spectrum rays -->
+    <line x1="45" y1="40" x2="72" y2="28" 
+          stroke="#4A9FD8" 
+          stroke-width="2" 
+          opacity="0.85"/>
+    <line x1="45" y1="40" x2="72" y2="40" 
+          stroke="#3ABEF9" 
+          stroke-width="2.5" 
+          opacity="0.9"/>
+    <line x1="45" y1="40" x2="72" y2="52" 
+          stroke="#F4C430" 
+          stroke-width="2" 
+          opacity="0.85"/>
+  </g>
+
+</svg>

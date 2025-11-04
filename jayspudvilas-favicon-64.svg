@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Favicon 64x64 -->
+  
+  <!-- Arc -->
+  <path d="M 20 42 Q 32 26, 44 42" 
+        stroke="#1e40af" 
+        stroke-width="4" 
+        fill="none" 
+        opacity="0.7"/>
+  
+  <!-- Purple circle (NO OUTLINE) -->
+  <circle cx="32" cy="33" r="6" 
+          fill="#6b21a8"/>
+  
+  <!-- Blue circle (NO OUTLINE) -->
+  <circle cx="44" cy="42" r="4.5" 
+          fill="#3E5BE8"/>
+</svg>

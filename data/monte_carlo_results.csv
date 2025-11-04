@@ -1,0 +1,6 @@
+"Scenario","Mean_Percentile","Top_Percent"
+"Normal",69.16656,30.83344
+"Beta",59.41054,40.58946
+"Mixture",66.84582,33.15418
+"Anchored",100,0
+"Gamma",69.3789,30.6211

@@ -1,0 +1,14 @@
+[
+  {
+    "domain": "Mathematics",
+    "d_value": 1.0734,
+    "sd_pooled": 10.5613,
+    "n": 22
+  },
+  {
+    "domain": "Reading",
+    "d_value": 0.83,
+    "sd_pooled": 11.5488,
+    "n": 21
+  }
+]

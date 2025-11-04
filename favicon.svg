@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <!-- Favicon 16x16 - Simplified for small size -->
+  <rect width="16" height="16" fill="#1e293b"/>
+  <!-- Simplified to just two circles at this size -->
+  <circle cx="8" cy="7" r="3.5" fill="#6b21a8"/>
+  <circle cx="11.5" cy="9.5" r="2.5" fill="#1e40af"/>
+</svg>
