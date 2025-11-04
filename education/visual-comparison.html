@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Issues - Before & After Fix</title>
+  <style>
+    :root {
+      --bg-dark: #0a0e17;
+      --bg-card: #111621;
+      --text-primary: #f8fafc;
+      --text-secondary: #e2e8f0;
+      --text-muted: #94a3b8;
+      --blue-medium: #3b82f6;
+      --blue-bright: #60a5fa;
+      --red: #ef4444;
+      --green: #10b981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      background: linear-gradient(135deg, #a78bfa, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      font-size: 1.125rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .comparison-card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      padding: 2rem;
+      border: 2px solid transparent;
+    }
+
+    .comparison-card.broken {
+      border-color: var(--red);
+    }
+
+    .comparison-card.fixed {
+      border-color: var(--green);
+    }
+
+    .card-label {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-label.broken {
+      background: linear-gradient(90deg, #ef4444, #dc2626);
+      color: white;
+    }
+
+    .card-label.fixed {
+      background: linear-gradient(90deg, #10b981, #059669);
+      color: white;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .preview-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    /* Broken nav styles */
+    .nav-broken {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 14px;
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      justify-content: center;
+    }
+
+    .nav-broken .nav-link {
+      padding: 0.5rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 10px;  /* ← PROBLEM: Only 10px */
+      transition: all 0.2s;
+    }
+
+    .nav-broken .nav-link.active {
+      background: rgba(59, 130, 246, 0.12);
+      color: var(--text-primary);
+      border-bottom: 2px solid var(--blue-medium);
+    }
+
+    /* Fixed nav styles */
+    .nav-fixed {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 14px;
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      justify-content: center;
+    }
+
+    .nav-fixed .nav-link {
+      padding: 0.5rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+
+    .nav-fixed .nav-link.active {
+      background: rgba(59, 130, 246, 0.18) !important;
+      border-radius: 9999px !important;  /* ← FIXED: Perfect pill */
+      border: none !important;
+      color: var(--text-primary);
+    }
+
+    /* Year tabs broken */
+    .year-tabs-broken {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 14px;
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .year-tabs-broken .year-btn {
+      padding: 0.4rem 0.9rem;
+      background: transparent;
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      border-radius: 10px;  /* ← PROBLEM: Only 10px */
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .year-tabs-broken .year-btn.active {
+      background: rgba(59, 130, 246, 0.18);
+      color: white;
+    }
+
+    /* Year tabs fixed */
+    .year-tabs-fixed {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 14px;
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .year-tabs-fixed .year-btn {
+      padding: 0.4rem 0.9rem;
+      background: transparent;
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      border-radius: 9999px;  /* ← FIXED: Perfect pill */
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .year-tabs-fixed .year-btn.active {
+      background: rgba(59, 130, 246, 0.18) !important;
+      border-radius: 9999px !important;  /* ← FIXED: Stays pill when active */
+      color: white !important;
+    }
+
+    .code-snippet {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.875rem;
+      overflow-x: auto;
+      color: #e2e8f0;
+    }
+
+    .highlight-problem {
+      background: rgba(239, 68, 68, 0.2);
+      padding: 0 0.25rem;
+      border-radius: 3px;
+    }
+
+    .highlight-fix {
+      background: rgba(16, 185, 129, 0.2);
+      padding: 0 0.25rem;
+      border-radius: 3px;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 3rem;
+      color: var(--blue-bright);
+      margin: 2rem 0;
+    }
+
+    .note {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 3px solid var(--blue-medium);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin: 3rem 0 1.5rem;
+      color: var(--text-primary);
+      border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+      padding-bottom: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔧 Navigation Fix: Before & After</h1>
+    <p class="subtitle">Based on your screenshots - showing exactly what's broken and how to fix it</p>
+
+    <h2 class="section-title">Issue #1: Main Homepage Global Navigation</h2>
+    
+    <div class="comparison-grid">
+      <div class="comparison-card broken">
+        <span class="card-label broken">❌ Broken (Current)</span>
+        <h3 class="card-title">Main Homepage - Image 2</h3>
+        <div class="preview-box">
+          <nav class="nav-broken">
+            <a href="#" class="nav-link active">Law</a>
+            <a href="#" class="nav-link">Education</a>
+            <a href="#" class="nav-link">Civic-Tech</a>
+            <a href="#" class="nav-link">Contact</a>
+          </nav>
+        </div>
+        <p style="color: var(--text-muted); margin-top: 1rem;">
+          ⚠️ Notice: "Law" button has sharp/slightly rounded corners instead of a full pill shape
+        </p>
+        <div class="code-snippet">
+border-radius: <span class="highlight-problem">var(--radius-sm)</span>  /* Only 10px! */</div>
+      </div>
+
+      <div class="comparison-card fixed">
+        <span class="card-label fixed">✅ Fixed (Target)</span>
+        <h3 class="card-title">How It Should Look</h3>
+        <div class="preview-box">
+          <nav class="nav-fixed">
+            <a href="#" class="nav-link active">Law</a>
+            <a href="#" class="nav-link">Education</a>
+            <a href="#" class="nav-link">Civic-Tech</a>
+            <a href="#" class="nav-link">Contact</a>
+          </nav>
+        </div>
+        <p style="color: var(--text-muted); margin-top: 1rem;">
+          ✅ Perfect: "Law" button is a smooth, rounded pill (matches Education Dashboard)
+        </p>
+        <div class="code-snippet">
+border-radius: <span class="highlight-fix">9999px !important</span>  /* Perfect pill! */</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Fix Location:</strong> In your <code>index.html</code> file, find the mobile CSS section (<code>@media (max-width: 720px)</code>) and update the active navigation link styles to use <code>border-radius: 9999px !important</code>
+    </div>
+
+    <h2 class="section-title">Issue #2: Year Tabs (Education Dashboard)</h2>
+
+    <div class="comparison-grid">
+      <div class="comparison-card broken">
+        <span class="card-label broken">❌ Broken (Current)</span>
+        <h3 class="card-title">Year Tabs - Image 3</h3>
+        <div class="preview-box">
+          <div class="year-tabs-broken">
+            <button class="year-btn active">2025</button>
+            <button class="year-btn">2024</button>
+            <button class="year-btn">2023</button>
+            <button class="year-btn">2022</button>
+            <button class="year-btn">References</button>
+          </div>
+        </div>
+        <p style="color: var(--text-muted); margin-top: 1rem;">
+          ⚠️ Notice: Year buttons have slight rounding but aren't true pills
+        </p>
+        <div class="code-snippet">
+border-radius: <span class="highlight-problem">var(--radius-full)</span>  /* Not overriding! */</div>
+      </div>
+
+      <div class="comparison-card fixed">
+        <span class="card-label fixed">✅ Fixed (Target)</span>
+        <h3 class="card-title">How It Should Look</h3>
+        <div class="preview-box">
+          <div class="year-tabs-fixed">
+            <button class="year-btn active">2025</button>
+            <button class="year-btn">2024</button>
+            <button class="year-btn">2023</button>
+            <button class="year-btn">2022</button>
+            <button class="year-btn">References</button>
+          </div>
+        </div>
+        <p style="color: var(--text-muted); margin-top: 1rem;">
+          ✅ Perfect: All year buttons are smooth, rounded pills
+        </p>
+        <div class="code-snippet">
+border-radius: <span class="highlight-fix">9999px !important</span>  /* Stays pill! */</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Fix Location:</strong> In your <code>education/index.html</code> file, update both <code>.year-tab</code> and <code>.year-tab.is-active</code> styles to use <code>border-radius: 9999px !important</code>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <h2 class="section-title">✅ What You Already Have Correct</h2>
+
+    <div class="comparison-card fixed">
+      <span class="card-label fixed">✓ Already Perfect</span>
+      <h3 class="card-title">Education Dashboard Global Nav - Image 1</h3>
+      <div class="preview-box">
+        <nav class="nav-fixed">
+          <a href="#" class="nav-link">Law</a>
+          <a href="#" class="nav-link active">Education</a>
+          <a href="#" class="nav-link">Civic-Tech</a>
+          <a href="#" class="nav-link">Contact</a>
+        </nav>
+      </div>
+      <p style="color: var(--green); margin-top: 1rem; font-weight: 600;">
+        ✓ This is already correct! The "Education" button shows the perfect pill shape we want everywhere.
+      </p>
+      <div class="note" style="border-left-color: var(--green); background: rgba(16, 185, 129, 0.1);">
+        <strong>No changes needed here!</strong> This Education Dashboard navigation is the gold standard. We just need to make the main homepage and year tabs match this style.
+      </div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <h2 class="section-title">📥 Download Fixed Files</h2>
+
+    <div style="background: var(--bg-card); padding: 2rem; border-radius: 18px; margin: 2rem 0;">
+      <h3 style="margin-bottom: 1rem;">Ready-to-use files:</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+          <strong>index-CORRECTED.html</strong> - Main homepage with fixed navigation
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+          <strong>year-tabs-fix.css</strong> - CSS snippet for year tabs
+        </li>
+        <li style="padding: 0.75rem 0;">
+          <strong>COMPLETE_NAVIGATION_FIX.md</strong> - Full instructions and code
+        </li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <strong>Summary:</strong> Two simple CSS changes will fix everything - just add <code>border-radius: 9999px !important</code> to your active navigation states in both files. All the code is ready to copy-paste from the downloaded files!
+    </div>
+  </div>
+</body>
+</html>

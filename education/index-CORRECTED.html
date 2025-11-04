@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-MPQ6XEHTJM');
   </script>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="VFpSvpFz0iNABMBlV7BiQw" async></script>
@@ -16,37 +15,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jay Spudvilas — Education Leader, ANU JD Student | Evidence-Based Systems</title>
   <meta name="description" content="Jay Spudvilas (Jayden Spudvilas-Powell): Education consultant, instructional leader, and ANU JD student specializing in governance, policy, evidence systems, and administrative law. Founder of GlassCase.org and Law & Learning.">
-  <meta name="keywords" content="Jay Spudvilas, Jayden Spudvilas-Powell, education consultant, instructional leadership, governance, policy design, administrative law, evidence systems, GlassCase, Law and Learning, ANU JD, Victorian teacher, education reform, compliance systems">
-  <meta name="author" content="Jay Spudvilas (Jayden Spudvilas-Powell)">
   <link rel="canonical" href="https://jayspudvilas.com/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://jayspudvilas.com/">
-  <meta property="og:title" content="Jay Spudvilas — Making Evidence Work">
-  <meta property="og:description" content="Education leader, ANU JD student, and founder of GlassCase.org and Law & Learning. Specializing in governance, policy, and evidence-based systems.">
-  <meta property="og:site_name" content="Jay Spudvilas">
-  <meta property="og:locale" content="en_AU">
-  <meta property="og:image" content="https://jayspudvilas.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Jay Spudvilas — Education Leader & ANU JD Student">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Jay Spudvilas — Making Evidence Work">
-  <meta name="twitter:description" content="Education consultant and ANU JD student specializing in governance, policy, and evidence systems.">
-  <meta name="twitter:image" content="https://jayspudvilas.com/og-image.png">
-  <meta name="twitter:image:alt" content="Jay Spudvilas — Education Leader & ANU JD Student">
-  
-  <!-- Identity links -->
-  <link rel="me" href="https://linkedin.com/in/jayspudvilas">
-  <link rel="me" href="https://orcid.org/0009-0000-0945-0380">
-  <link rel="me" href="https://github.com/nuncprotunc">
-  <link rel="me" href="https://glasscase.org/">
-  <link rel="me" href="https://lawandlearning.com/">
-  <link rel="me" href="https://bsky.app/profile/glasscase.org">
   
   <!-- Spectral for headings -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,34 +24,6 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap"></noscript>
-  
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Jay Spudvilas",
-    "alternateName": ["Jayden Spudvilas-Powell", "Jayden Leigh Spudvilas-Powell"],
-    "url": "https://jayspudvilas.com/",
-    "email": "jay@jayspudvilas.com",
-    "jobTitle": "Education Consultant & Instructional Leader",
-    "description": "Education leader, ANU JD student, and founder of GlassCase.org and Law & Learning. Specializing in governance, policy design, and evidence-based systems.",
-    "sameAs": [
-      "https://linkedin.com/in/jayspudvilas",
-      "https://orcid.org/0009-0000-0945-0380",
-      "https://github.com/nuncprotunc",
-      "https://glasscase.org/",
-      "https://lawandlearning.com/",
-      "https://bsky.app/profile/glasscase.org"
-    ],
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "Australian National University",
-      "sameAs": "https://www.anu.edu.au/"
-    },
-    "knowsAbout": ["Administrative Law", "Education Policy", "Governance", "Evidence Systems", "Instructional Leadership", "Regulatory Compliance", "Civic Technology"]
-  }
-  </script>
   
   <style>
     :root {
@@ -130,6 +72,12 @@
       --space-xl: 2rem;
       --space-2xl: 3rem;
       --space-3xl: 4rem;
+
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
 
       --border-medium: 1px solid rgba(148, 163, 184, 0.18);
     }
@@ -227,6 +175,11 @@
       animation: slideDown var(--transition-elegant);
     }
 
+    @keyframes slideDown {
+      from { transform: translateY(-12px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
     .header-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -236,11 +189,6 @@
       justify-content: space-between;
       gap: var(--space-sm);
       row-gap: var(--space-sm);
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
     }
 
     .logo-area {
@@ -288,6 +236,8 @@
       font-size: clamp(0.72rem, 2.8vw, 0.875rem);
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      flex: 1 1 auto;
+      min-width: 220px;
     }
 
     .global-nav__link {
@@ -311,7 +261,7 @@
       color: var(--text-primary);
       background: rgba(59, 130, 246, 0.12);
       border-bottom: 2px solid var(--blue-medium);
-      border-radius: 12px;
+      border-radius: var(--radius-sm);
       box-shadow: none;
     }
 
@@ -358,12 +308,14 @@
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
         white-space: nowrap;
+        border-radius: var(--radius-sm);
       }
 
+      /* CRITICAL FIX: Full pill shape on mobile */
       .global-nav__link[aria-current="page"],
       .global-nav__link--active {
         background: rgba(59, 130, 246, 0.18) !important;
-        border-radius: 9999px !important;
+        border-radius: var(--radius-full) !important;
         border: none !important;
         border-bottom: none !important;
         box-shadow: none !important;
@@ -648,25 +600,6 @@
       color: #93c5fd;
     }
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: clamp(8px, 1.2vw, 12px);
-      padding-block: 14px;
-      padding-inline: clamp(12px, 3vw, 32px);
-      background: #111621;
-      border-bottom: 1px solid var(--border-hairline);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      -webkit-backdrop-filter: saturate(130%) blur(10px);
-      backdrop-filter: saturate(130%) blur(10px);
-      flex-wrap: wrap;
-    }
-
     .footer {
       padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
       text-align: center;
@@ -735,14 +668,6 @@
         font-size: 0.8125rem;
       }
 
-      .header {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-      .logo-area { justify-content: center; margin: 0 auto; }
-      .header-pill { display: none; }
-
       .card-header {
         flex-direction: column;
         align-items: flex-start;
@@ -778,19 +703,13 @@
 </header>
 
 <main class="hero">
-  <!-- Hero logo - two circles with single upward arc -->
   <svg class="hero-logo" viewBox="0 0 400 180">
-    <!-- Single upward arc (NOT S-curve) -->
     <path d="M 100 130 Q 200 50, 300 130" 
           stroke="#1e40af" 
           stroke-width="7" 
           fill="none" 
           opacity="0.7"/>
-    
-    <!-- Purple circle (larger, at peak) -->
     <circle cx="200" cy="83" r="24" fill="#6b21a8"/>
-    
-    <!-- Blue circle (smaller, at right) -->
     <circle cx="300" cy="130" r="18" fill="#3E5BE8"/>
   </svg>
 

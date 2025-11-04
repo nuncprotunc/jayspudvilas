@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Fix Demo - Jay Spudvilas</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      color-scheme: dark;
+      --purple-deep: #6b21a8;
+      --purple-medium: #8b5cf6;
+      --purple-light: #a78bfa;
+      --purple-muted: #c4b5fd;
+      --blue-deep: #1e40af;
+      --blue-medium: #3b82f6;
+      --blue-bright: #60a5fa;
+      --blue-light: #93c5fd;
+      --bg-base: #0a0e17;
+      --bg-elevated: #0f1419;
+      --text-primary: #f8fafc;
+      --text-secondary: #e2e8f0;
+      --text-muted: #94a3b8;
+      --space-xs: 0.5rem;
+      --space-sm: 0.75rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-full: 9999px;
+      --border-medium: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .demo-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .demo-section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(17, 22, 33, 0.6);
+      border-radius: 18px;
+      border: var(--border-medium);
+    }
+
+    h1 {
+      font-family: 'Spectral', Georgia, serif;
+      font-style: italic;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--purple-muted) 0%, var(--blue-light) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      color: var(--blue-bright);
+      margin: 1.5rem 0 1rem;
+      font-size: 1.125rem;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .label-broken {
+      background: linear-gradient(90deg, #dc2626, #b91c1c);
+      color: white;
+    }
+
+    .label-fixed {
+      background: linear-gradient(90deg, #10b981, #059669);
+      color: white;
+    }
+
+    /* BROKEN NAVIGATION (Old Style) */
+    .header-broken {
+      padding: var(--space-sm) var(--space-lg);
+      background: rgba(17, 22, 33, 0.75);
+      backdrop-filter: blur(24px);
+      border-bottom: var(--border-medium);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .header-broken .global-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(42, 45, 66, 0.8);
+    }
+
+    .header-broken .global-nav__link {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.2s;
+    }
+
+    .header-broken .global-nav__link:hover {
+      color: var(--text-secondary);
+      background: rgba(59, 130, 246, 0.08);
+    }
+
+    /* OLD BROKEN ACTIVE STATE - Using var(--radius-sm) without !important */
+    .header-broken .global-nav__link--active {
+      color: var(--text-primary);
+      background: rgba(59, 130, 246, 0.12);
+      border-bottom: 2px solid var(--blue-medium);
+      border-radius: var(--radius-sm);  /* ← PROBLEM: Only 10px, not pill-shaped */
+      box-shadow: none;
+    }
+
+    /* FIXED NAVIGATION (New Style) */
+    .header-fixed {
+      padding: var(--space-sm) var(--space-lg);
+      background: rgba(17, 22, 33, 0.75);
+      backdrop-filter: blur(24px);
+      border-bottom: var(--border-medium);
+      border-radius: 12px;
+    }
+
+    .header-fixed .global-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(42, 45, 66, 0.8);
+    }
+
+    .header-fixed .global-nav__link {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.2s;
+    }
+
+    .header-fixed .global-nav__link:hover {
+      color: var(--text-secondary);
+      background: rgba(59, 130, 246, 0.08);
+    }
+
+    /* FIXED ACTIVE STATE - Using explicit values with !important */
+    .header-fixed .global-nav__link--active {
+      color: var(--text-primary);
+      background: rgba(59, 130, 246, 0.12);
+      border-radius: 9999px !important;  /* ← FIX: Perfect pill shape */
+      border-bottom: none !important;     /* ← FIX: Remove border */
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.4) !important;  /* ← FIX: Subtle glow */
+    }
+
+    .note {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 3px solid var(--blue-medium);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    .code-block {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(42, 45, 66, 0.8);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .code-block code {
+      color: var(--text-secondary);
+    }
+
+    .highlight {
+      background: rgba(139, 92, 246, 0.2);
+      padding: 0.125rem 0.25rem;
+      border-radius: 3px;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--blue-bright);
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h1>Navigation Bar CSS Fix</h1>
+
+    <div class="demo-section">
+      <h2>❌ Before (Broken)</h2>
+      <span class="label label-broken">Inconsistent Styling</span>
+      
+      <div class="header-broken">
+        <nav class="global-nav">
+          <a href="#" class="global-nav__link global-nav__link--active">Law</a>
+          <a href="#" class="global-nav__link">Education</a>
+          <a href="#" class="global-nav__link">Civic-Tech</a>
+          <a href="#" class="global-nav__link">Contact</a>
+        </nav>
+      </div>
+
+      <div class="note">
+        <strong>Problem:</strong> The active navigation item uses <code class="highlight">border-radius: var(--radius-sm)</code> which equals only 10px, creating a slightly rounded rectangle instead of a proper pill shape.
+      </div>
+
+      <h3>Broken CSS:</h3>
+      <div class="code-block"><code>.global-nav__link--active {
+  border-radius: var(--radius-sm);  /* Only 10px - not pill-shaped! */
+  border-bottom: 2px solid var(--blue-medium);
+}</code></div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="demo-section">
+      <h2>✅ After (Fixed)</h2>
+      <span class="label label-fixed">Consistent Pill Shape</span>
+      
+      <div class="header-fixed">
+        <nav class="global-nav">
+          <a href="#" class="global-nav__link global-nav__link--active">Law</a>
+          <a href="#" class="global-nav__link">Education</a>
+          <a href="#" class="global-nav__link">Civic-Tech</a>
+          <a href="#" class="global-nav__link">Contact</a>
+        </nav>
+      </div>
+
+      <div class="note">
+        <strong>Solution:</strong> Use <code class="highlight">border-radius: 9999px !important</code> to create a perfect pill shape, and remove the bottom border for a cleaner look. The <code>!important</code> ensures this overrides any other styles.
+      </div>
+
+      <h3>Fixed CSS:</h3>
+      <div class="code-block"><code>.global-nav__link--active {
+  border-radius: 9999px !important;  /* Perfect pill! */
+  border-bottom: none !important;     /* Clean edges */
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.4) !important;
+}</code></div>
+    </div>
+
+    <div class="demo-section">
+      <h2>📋 Quick Copy-Paste Fix</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+        Find this CSS in your <strong>@media (max-width: 720px)</strong> section and replace it:
+      </p>
+
+      <h3>Replace this:</h3>
+      <div class="code-block"><code>.global-nav__link[aria-current="page"],
+.global-nav__link--active {
+  border-radius: var(--radius-full);
+  border-bottom-width: 0;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.4);
+}</code></div>
+
+      <h3>With this:</h3>
+      <div class="code-block"><code>.global-nav__link[aria-current="page"],
+.global-nav__link--active {
+  border-radius: 9999px !important;
+  border-bottom: none !important;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.4) !important;
+}</code></div>
+
+      <div class="note">
+        <strong>Apply to both files:</strong>
+        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+          <li><code>index.html</code> (main homepage)</li>
+          <li><code>education/index.html</code> (Education Dashboard)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
