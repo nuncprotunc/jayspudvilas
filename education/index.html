@@ -323,6 +323,39 @@
         box-shadow: none !important;
         color: var(--text-primary);
       }
+
+      .year-tabs {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 0.35rem;
+        margin: var(--space-sm) auto var(--space-xl);
+        padding: 0.4rem 0.35rem;
+        border-radius: 9999px;
+        width: min(100%, 25rem);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .year-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .year-label {
+        margin-right: var(--space-xs);
+        font-size: 0.65rem;
+        flex: 0 0 auto;
+      }
+
+      .year-tab {
+        flex: 0 0 auto;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      #tab-references {
+        margin-left: 0;
+      }
     }
 
     .page {
