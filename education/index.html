@@ -325,16 +325,19 @@
       }
 
       .year-tabs {
-        flex-wrap: nowrap;
-        justify-content: center;
-        gap: 0.35rem;
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+        gap: 0.3rem;
         margin: var(--space-sm) auto var(--space-xl);
-        padding: 0.4rem 0.35rem;
+        padding: 0.4rem 0.4rem;
         border-radius: 9999px;
-        width: min(100%, 25rem);
+        width: min(100%, 22rem);
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        white-space: nowrap;
       }
 
       .year-tabs::-webkit-scrollbar {
@@ -342,15 +345,13 @@
       }
 
       .year-label {
-        margin-right: var(--space-xs);
-        font-size: 0.65rem;
-        flex: 0 0 auto;
+        display: none;
       }
 
       .year-tab {
         flex: 0 0 auto;
-        padding: 0.4rem 0.75rem;
-        font-size: 0.8rem;
+        padding: 0.38rem 0.8rem;
+        font-size: 0.78rem;
       }
 
       #tab-references {
