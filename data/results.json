@@ -1,14 +1,22 @@
 [
   {
     "domain": "Mathematics",
-    "d_value": 1.0734,
-    "sd_pooled": 10.5613,
-    "n": 22
+    "n": 23,
+    "mean_pre": 111.97,
+    "mean_post": 123.26,
+    "mean_gain": 11.29,
+    "sd_gain": 6.85,
+    "d": 1.65,
+    "g": 1.59
   },
   {
     "domain": "Reading",
-    "d_value": 0.83,
-    "sd_pooled": 11.5488,
-    "n": 21
+    "n": 21,
+    "mean_pre": 112.11,
+    "mean_post": 121.7,
+    "mean_gain": 9.59,
+    "sd_gain": 8.34,
+    "d": 1.15,
+    "g": 1.1
   }
 ]

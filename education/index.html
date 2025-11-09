@@ -1595,7 +1595,7 @@
     <section class="page-section" id="datasets">
       <div class="card tables-card observe-animate">
         <h2 class="card-title">📐 Mathematics (<a href="https://www.acer.org/au/pat/assessments" target="_blank" rel="noopener">PAT-M</a>): Detailed Results</h2>
-        <p class="note">Assessment window: 12 months · n = 22 students · Mean gain = 11.40 scale points · SD<sub>gain</sub> = 7.21 · Mean pre = 113.27 · Mean post = 124.67 · Cohen's <em>d</em> = 1.58 · Hedges' <em>g</em> = 1.52</p>
+        <p class="note" id="note-2025-math">Assessment window: 12 months · n = 22 students · Mean gain = 11.40 scale points · SD<sub>gain</sub> = 7.21 · Mean pre = 113.27 · Mean post = 124.67 · Cohen's <em>d</em> = 1.58 · Hedges' <em>g</em> = 1.52</p>
         <div class="tables-wrapper">
           <div class="data-table-container">
             <table class="data-table">
@@ -1631,6 +1631,7 @@
           <tr><td>Student 20</td><td>96.6</td><td>110.2</td><td class="gain-positive">+13.6</td><td><div class="gain-bar"><div class="gain-bar-fill" style="width:41%"></div></div></td></tr>
           <tr><td>Student 21</td><td>96.6</td><td>104.7</td><td class="gain-positive">+8.1</td><td><div class="gain-bar"><div class="gain-bar-fill" style="width:25%"></div></div></td></tr>
           <tr><td>Student 22</td><td>104.3</td><td>104.3</td><td class="gain-neutral">+0.0</td><td><div class="gain-bar"><div class="gain-bar-fill" style="width:0%"></div></div></td></tr>
+          <tr><td>Student 23</td><td>96.8</td><td>107.0</td><td class="gain-positive">+10.2</td><td><div class="gain-bar"><div class="gain-bar-fill" style="width:31%"></div></div></td></tr>
               </tbody>
             </table>
           </div>
@@ -1639,7 +1640,7 @@
 
       <div class="card tables-card observe-animate" style="margin-top: var(--space-lg);">
         <h2 class="card-title">📚 Reading (<a href="https://www.acer.org/au/pat/assessments" target="_blank" rel="noopener">PAT-R</a>): Detailed Results</h2>
-        <p class="note">Assessment window: 12 months · n = 21 students · Mean gain = 8.22 scale points · SD<sub>gain</sub> = 6.95 · Mean pre = 114.54 · Mean post = 122.76 · Cohen's <em>d</em> = 1.18 · Hedges' <em>g</em> = 1.14</p>
+        <p class="note" id="note-2025-reading">Assessment window: 12 months · n = 21 students · Mean gain = 8.22 scale points · SD<sub>gain</sub> = 6.95 · Mean pre = 114.54 · Mean post = 122.76 · Cohen's <em>d</em> = 1.18 · Hedges' <em>g</em> = 1.14</p>
         <div class="tables-wrapper">
           <div class="data-table-container">
             <table class="data-table">
@@ -2489,6 +2490,77 @@
           setTimeout(() => bar.style.width = width, 50);
         });
       }, 300);
+
+      // Load computed stats from data/results.json and inject into 2025 section
+      fetch('/data/results.json')
+        .then(r => r.json())
+        .then(results => {
+          const byDomain = Object.fromEntries(results.map(x => [x.domain, x]));
+          const m = byDomain['Mathematics'];
+          const rdg = byDomain['Reading'];
+          if (!m || !rdg) return;
+
+          // Update summary table (2025 rows)
+          const tblRows = document.querySelectorAll('#year-2025 .summary-card table tbody tr');
+          tblRows.forEach(tr => {
+            const cells = tr.querySelectorAll('td');
+            if (cells.length < 6) return;
+            const year = cells[0].textContent.trim();
+            const measure = cells[1].textContent.trim();
+            if (year === '2025' && measure === 'PAT-M') {
+              cells[2].textContent = m.n;
+              cells[3].textContent = m.mean_gain.toFixed(2);
+              cells[4].textContent = m.sd_gain.toFixed(2);
+              cells[5].textContent = m.d.toFixed(2);
+            }
+            if (year === '2025' && measure === 'PAT-R') {
+              cells[2].textContent = rdg.n;
+              cells[3].textContent = rdg.mean_gain.toFixed(2);
+              cells[4].textContent = rdg.sd_gain.toFixed(2);
+              cells[5].textContent = rdg.d.toFixed(2);
+            }
+          });
+
+          // Update stat cards for 2025
+          const statCards = document.querySelectorAll('#year-2025 .summary-grid .stat-card');
+          statCards.forEach(card => {
+            const badge = card.querySelector('.badge');
+            const val = card.querySelector('.stat-value');
+            if (!badge || !val) return;
+            const label = badge.textContent.trim();
+            if (label === 'Mathematics') {
+              val.textContent = `d = ${m.d.toFixed(2)}`;
+              val.setAttribute('data-value', m.d.toFixed(2));
+            }
+            if (label === 'Reading') {
+              val.textContent = `d = ${rdg.d.toFixed(2)}`;
+              val.setAttribute('data-value', rdg.d.toFixed(2));
+            }
+            if (label === 'Cohort') {
+              val.textContent = `n = ${m.n} / ${rdg.n}`;
+            }
+          });
+
+          // Update notes under datasets (2025)
+          const mathNote = document.getElementById('note-2025-math');
+          if (mathNote) {
+            mathNote.innerHTML = `Assessment window: 12 months · n = ${m.n} students · Mean gain = ${m.mean_gain.toFixed(2)} scale points · SD<sub>gain</sub> = ${m.sd_gain.toFixed(2)} · Mean pre = ${m.mean_pre.toFixed(2)} · Mean post = ${m.mean_post.toFixed(2)} · Cohen's <em>d</em> = ${m.d.toFixed(2)} · Hedges' <em>g</em> = ${m.g.toFixed(2)}`;
+          }
+          const readingNote = document.getElementById('note-2025-reading');
+          if (readingNote) {
+            readingNote.innerHTML = `Assessment window: 12 months · n = ${rdg.n} students · Mean gain = ${rdg.mean_gain.toFixed(2)} scale points · SD<sub>gain</sub> = ${rdg.sd_gain.toFixed(2)} · Mean pre = ${rdg.mean_pre.toFixed(2)} · Mean post = ${rdg.mean_post.toFixed(2)} · Cohen's <em>d</em> = ${rdg.d.toFixed(2)} · Hedges' <em>g</em> = ${rdg.g.toFixed(2)}`;
+          }
+
+          // Update metrics chip with n counts (e.g., "n = 22 & 21 students")
+          const chips = document.querySelectorAll('#year-2025 .pivot-metrics .chip--secondary');
+          chips.forEach(chip => {
+            const t = chip.textContent.trim();
+            if (/^n\s*=\s*\d+\s*&\s*\d+\s*students$/.test(t)) {
+              chip.textContent = `n = ${m.n} & ${rdg.n} students`;
+            }
+          });
+        })
+        .catch(() => {/* silent */});
     });
   </script>
 </body>
