@@ -2538,6 +2538,10 @@
             }
             if (label === 'Cohort') {
               val.textContent = `n = ${m.n} / ${rdg.n}`;
+              const desc = card.querySelector('.stat-desc');
+              if (desc) {
+                desc.textContent = `Mathematics n = ${m.n} · Reading n = ${rdg.n}`;
+              }
             }
           });
 
