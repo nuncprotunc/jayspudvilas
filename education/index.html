@@ -33,6 +33,9 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap"></noscript>
   <style>
     :root {
       color-scheme: dark;
@@ -235,10 +238,11 @@
     }
 
     .logo-text {
-      font-family: 'Spectral', Georgia, serif;
+      font-family: 'Spectral SC', 'Spectral', Georgia, serif;
       font-size: 1.375rem;
-      font-style: italic;
+      font-style: normal;
       font-weight: 600;
+      font-size-adjust: from-font;
       background: linear-gradient(135deg, var(--purple-muted) 0%, var(--blue-light) 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -403,10 +407,11 @@
     }
 
     .hero-name {
-      font-family: 'Spectral', Georgia, serif;
+      font-family: 'Spectral SC', 'Spectral', Georgia, serif;
       font-size: clamp(2.25rem, 6vw, 3.5rem);
-      font-style: italic;
-      font-weight: 700;
+      font-style: normal;
+      font-weight: 600;
+      font-size-adjust: from-font;
       background: linear-gradient(135deg, var(--purple-muted) 0%, var(--blue-light) 50%, var(--purple-light) 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -424,12 +429,14 @@
     }
 
     .hero-tagline {
+      font-family: 'Spectral SC', 'Spectral', Georgia, serif;
       font-size: 0.9375rem;
       color: #94a3b8;
       text-transform: uppercase;
       letter-spacing: 3px;
       font-weight: 500;
-      margin-bottom: 1.75rem;
+      font-size-adjust: from-font;
+      margin-bottom: var(--space-xl);
       animation: fadeInUp var(--transition-elegant) 0.5s;
     }
 
@@ -1445,7 +1452,7 @@
         <circle cx="300" cy="130" r="18" fill="#3E5BE8" />
       </svg>
       <h1 class="hero-name">Education</h1>
-      <div class="hero-tagline">EVIDENCE · INTEGRITY · DESIGN</div>
+      <div class="hero-tagline">FAIRNESS BY DESIGN</div>
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
@@ -1720,8 +1727,13 @@
           <circle cx="200" cy="83" r="24" fill="#6b21a8" />
           <circle cx="300" cy="130" r="18" fill="#3E5BE8" />
         </svg>
+<<<<<<< HEAD
         <h2 class="hero-name">Education</h2>
         <div class="hero-tagline">EVIDENCE · INTEGRITY · DESIGN</div>
+=======
+        <h1 class="hero-name">Education</h1>
+        <div class="hero-tagline">FAIRNESS BY DESIGN</div>
+>>>>>>> 4c0f1d1 (Brand typography + tagline: switch to Spectral SC (logo/name 600, tagline 500), remove italics site-wide; change tagline to 'FAIRNESS BY DESIGN' across pages; correct DIBELS label to '10-month window'; minor CSS smoothing (font-size-adjust); restore 2022 hero block)
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
@@ -1805,22 +1817,7 @@
           <p class="insight-summary">Effect sizes were computed using the gain-score method (Cohen's d = mean gain ÷ SD of gain) on matched pre–post data, appropriate for within-cohort designs.</p>
           <p class="insight-footnote">Figures recalculated 4 Nov 2025 using the gain-score method on matched pre–post data.</p>
         </div>
-      </section>
-
-      <section class="page-section" id="corroboration">
-        <h2 class="card-title" style="margin-bottom: var(--space-sm);">Independent Measures (Corroboration)</h2>
-        <p class="note">External assessments corroborate PAT growth for 2024, with exceptionally large effect sizes across multiple domains.</p>
-        <div class="summary-grid">
-          <div class="card stat-card observe-animate">
-            <span class="badge"><a href="https://www.mathfactlab.com/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">MathFactLab (Addition &amp; Subtraction)</a></span>
-            <div class="stat-value">d = 2.26</div>
-            <p class="stat-label">EOT3 → EOW6 (n = 26)</p>
-            <p class="stat-desc">Mean gain = 4.12 · SD = 1.82 · Hedges' g = 2.195</p>
-          </div>
-          <div class="card stat-card observe-animate">
-            <span class="badge"><a href="https://dibels.uoregon.edu/materials/dibels-australasian" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">DIBELS ORF</a></span>
-            <div class="stat-value">d = 2.48</div>
-            <p class="stat-label">Reading Composite (n = 28)</p>
+            <p class="stat-label">Reading Composite · 10-month window (n = 28)</p>
             <p class="stat-desc">Mean gain = 145.64 · SD = 58.69 · Hedges' g = 2.41</p>
           </div>
         </div>
@@ -1944,8 +1941,13 @@
           <circle cx="200" cy="83" r="24" fill="#6b21a8" />
           <circle cx="300" cy="130" r="18" fill="#3E5BE8" />
         </svg>
+<<<<<<< HEAD
         <h2 class="hero-name">Education</h2>
         <div class="hero-tagline">EVIDENCE · INTEGRITY · DESIGN</div>
+=======
+        <h1 class="hero-name">Education</h1>
+        <div class="hero-tagline">FAIRNESS BY DESIGN</div>
+>>>>>>> 4c0f1d1 (Brand typography + tagline: switch to Spectral SC (logo/name 600, tagline 500), remove italics site-wide; change tagline to 'FAIRNESS BY DESIGN' across pages; correct DIBELS label to '10-month window'; minor CSS smoothing (font-size-adjust); restore 2022 hero block)
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
@@ -2077,8 +2079,13 @@
           <circle cx="200" cy="83" r="24" fill="#6b21a8" />
           <circle cx="300" cy="130" r="18" fill="#3E5BE8" />
         </svg>
+<<<<<<< HEAD
         <h2 class="hero-name">Education</h2>
         <div class="hero-tagline">EVIDENCE · INTEGRITY · DESIGN</div>
+=======
+        <h1 class="hero-name">Education</h1>
+        <div class="hero-tagline">FAIRNESS BY DESIGN</div>
+>>>>>>> 4c0f1d1 (Brand typography + tagline: switch to Spectral SC (logo/name 600, tagline 500), remove italics site-wide; change tagline to 'FAIRNESS BY DESIGN' across pages; correct DIBELS label to '10-month window'; minor CSS smoothing (font-size-adjust); restore 2022 hero block)
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
@@ -2327,8 +2334,13 @@
           <circle cx="200" cy="83" r="24" fill="#6b21a8" />
           <circle cx="300" cy="130" r="18" fill="#3E5BE8" />
         </svg>
+<<<<<<< HEAD
         <h2 class="hero-name">Education</h2>
         <div class="hero-tagline">EVIDENCE · INTEGRITY · DESIGN</div>
+=======
+        <h1 class="hero-name">Education</h1>
+        <div class="hero-tagline">FAIRNESS BY DESIGN</div>
+>>>>>>> 4c0f1d1 (Brand typography + tagline: switch to Spectral SC (logo/name 600, tagline 500), remove italics site-wide; change tagline to 'FAIRNESS BY DESIGN' across pages; correct DIBELS label to '10-month window'; minor CSS smoothing (font-size-adjust); restore 2022 hero block)
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
