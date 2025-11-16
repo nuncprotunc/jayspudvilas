@@ -424,6 +424,209 @@
       letter-spacing: 0.02em;
     }
 
+    .footer-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.85fr);
+      gap: clamp(2.5rem, 5vw, 4rem);
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .footer-brand p {
+      font-size: 0.9375rem;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+      max-width: 28rem;
+      opacity: 0.92;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .footer-logo svg {
+      width: 44px;
+      height: 44px;
+      filter: drop-shadow(0 3px 12px var(--purple-glow));
+      transition: transform var(--transition-smooth), filter var(--transition-smooth);
+    }
+
+    .footer-logo:hover svg {
+      transform: scale(1.05) rotate(3deg);
+      filter: drop-shadow(0 4px 16px var(--purple-glow));
+    }
+
+    .footer-links-group {
+      display: flex;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      justify-content: flex-start;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    .footer-heading {
+      font-size: 0.6875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 0.875rem;
+      opacity: 0.75;
+    }
+
+    .footer-column a {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all var(--transition-smooth);
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .footer-column a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--blue-bright);
+      transition: width var(--transition-smooth);
+    }
+
+    .footer-column a:hover {
+      color: var(--blue-bright);
+      transform: translateX(2px);
+    }
+
+    .footer-column a:hover::after {
+      width: 100%;
+    }
+
+    .footer-cta {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+
+    .footer-cta > p {
+      line-height: 1.65;
+      font-size: 0.9375rem;
+      opacity: 0.9;
+    }
+
+    .footer-cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 1.25rem;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #6b21a8 0%, #3b82f6 100%);
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(107, 33, 168, 0.28), 0 1px 4px rgba(59, 130, 246, 0.16);
+      transition: all var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      width: fit-content;
+    }
+
+    .footer-cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity var(--transition-smooth);
+    }
+
+    .footer-cta-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 7px 20px rgba(107, 33, 168, 0.35), 0 2px 7px rgba(59, 130, 246, 0.22);
+    }
+
+    .footer-cta-button:hover::before {
+      opacity: 1;
+    }
+
+    .footer-cta-button:active {
+      transform: translateY(-1px);
+    }
+
+    .footer-legal-note {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 28rem;
+      opacity: 0.75;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: var(--space-3xl) auto 0;
+      padding-top: var(--space-lg);
+      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+
+    .footer-bottom .footer-attribution {
+      margin-bottom: 0;
+    }
+
+    .footer-bottom .footer-meta {
+      margin-bottom: 0;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 960px) {
+      .footer-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-2xl);
+      }
+
+      .footer-links-group {
+        justify-content: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
     @media (max-width: 768px) {
       .page-main {
         padding: var(--space-2xl) var(--space-md) var(--space-3xl);
@@ -539,20 +742,49 @@
 </main>
 
 <footer class="footer">
-  <nav class="footer-links">
-    <a href="https://glasscase.org">GlassCase</a>
-    <a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&amp;followMember=jayspudvilas">LinkedIn</a>
-    <a href="https://github.com/jayspudvilas">GitHub</a>
-    <a href="/legal.html">Privacy</a>
-  </nav>
+  <div class="footer-layout">
+    <section class="footer-brand">
+      <a href="https://jayspudvilas.com" class="footer-logo" aria-label="Jay Spudvilas home">
+        <svg viewBox="0 0 80 80" aria-hidden="true">
+          <path d="M 20 55 Q 40 35, 60 55" stroke="#1e40af" stroke-width="3.5" fill="none" opacity="0.7" />
+          <circle cx="40" cy="43" r="8" fill="#6b21a8" />
+          <circle cx="60" cy="55" r="6" fill="#3E5BE8" />
+        </svg>
+        <div>
+          <span class="logo-text">Jay Spudvilas</span>
+          <div class="hero-tagline" style="font-size: 0.75rem; letter-spacing: 0.24em; margin-bottom: 0;">FAIRNESS BY DESIGN</div>
+        </div>
+      </a>
+      <p>
+        Evidence systems across education and civic-tech, designed for fairness.
+      </p>
+    </section>
 
-  <p class="footer-attribution">
-    Jay Spudvilas (Jayden Spudvilas-Powell)
-  </p>
+    <nav class="footer-links-group" aria-label="Site and project links">
+      <div class="footer-column">
+        <h2 class="footer-heading">Site</h2>
+        <a href="/">Home</a>
+        <a href="/education/">Education</a>
+        <a href="/legal.html">Use &amp; Privacy</a>
+      </div>
+      <div class="footer-column">
+        <h2 class="footer-heading">Projects</h2>
+        <a href="https://lawandlearning.com">Law &amp; Learning</a>
+        <a href="https://glasscase.org">GlassCase.org</a>
+      </div>
+    </nav>
 
-  <p class="footer-meta">
-    Founder of GlassCase.org and Law &amp; Learning
-  </p>
+    <section class="footer-cta" aria-label="Join the community">
+      <h2 class="footer-heading">Join the community</h2>
+      <p>Stay in the loop with evidence systems, civic-tech, and ANU JD updates.</p>
+      <a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&amp;followMember=jayspudvilas" class="footer-cta-button">Follow on LinkedIn</a>
+    </section>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-attribution">Jay Spudvilas (Jayden Spudvilas-Powell)</p>
+    <p class="footer-meta"> 2014–2025 · Founder of GlassCase.org and Law &amp; Learning · <span style="opacity: 0.6;">Information only, not legal advice</span></p>
+  </div>
 </footer>
 
 </body>
