@@ -283,59 +283,191 @@
       box-shadow: none;
     }
 
+    /* Mobile hamburger menu */
+    .mobile-menu-button {
+      display: none;
+    }
+
     @media (max-width: 720px) {
       .header {
         padding: var(--space-xs) var(--space-md);
       }
 
       .header-inner {
-        flex-direction: column;
-        align-items: stretch;
-        gap: var(--space-xs);
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-sm);
       }
 
       .logo-area {
-        justify-content: center;
+        justify-content: flex-start;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 24px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 101;
+      }
+
+      .mobile-menu-button span {
+        width: 24px;
+        height: 2px;
+        background: #7B8A9E;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+      }
+
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-button[aria-expanded="true"] span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
       }
 
       .global-nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: nowrap;
-        gap: 0.35rem;
-        padding: 0.4rem 0.35rem;
-        border-radius: 9999px;
-        background: rgba(15, 23, 42, 0.65);
-        border: 1px solid rgba(42, 45, 66, 0.8);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        width: min(100%, 25rem);
-        margin: 0 auto;
+        display: none !important;
       }
 
-      .global-nav::-webkit-scrollbar {
-        display: none;
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: -320px;
+        width: 300px;
+        height: 100vh;
+        background: #0f172a;
+        border-right: 1px solid rgba(59, 130, 246, 0.25);
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 100;
+        padding: 80px 32px 32px;
+        overflow-y: auto;
       }
 
-      .global-nav__link {
-        flex: 0 0 auto;
+      .mobile-menu::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(107, 33, 168, 0.06) 0%, transparent 50%, rgba(59, 130, 246, 0.04) 100%);
+        pointer-events: none;
+      }
+
+      .mobile-menu::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(180deg, #60a5fa 0%, transparent 50%, #60a5fa 100%);
+        opacity: 0.3;
+      }
+
+      .mobile-menu.active {
+        left: 0;
+      }
+
+      .mobile-menu-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
         text-align: center;
-        padding: 0.4rem 0.7rem;
-        font-size: 0.72rem;
-        white-space: nowrap;
       }
 
-      .global-nav__link[aria-current="page"],
-      .global-nav__link--active {
-        background: rgba(59, 130, 246, 0.18) !important;
-        border-radius: 9999px !important;
-        border: none !important;
-        border-bottom: none !important;
-        box-shadow: none !important;
-        color: var(--text-primary);
+      .mobile-menu-title {
+        font-family: 'Spectral SC', 'Spectral', Georgia, serif;
+        font-size: 1.75rem;
+        color: #8093FF;
+        margin: 0 0 0.5rem 0;
+        text-shadow: 0 2px 8px rgba(96, 165, 250, 0.3);
+      }
+
+      .mobile-menu-subtitle {
+        font-size: 0.875rem;
+        color: #7B8A9E;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin: 0;
+      }
+
+      .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .mobile-menu a {
+        color: #E8F4F8;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 1rem 1.25rem 1rem 2.25rem;
+        border-radius: 12px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid transparent;
+      }
+
+      .mobile-menu a:hover {
+        color: #60a5fa;
+        background: rgba(59, 130, 246, 0.12);
+        transform: translateX(8px);
+        border-color: rgba(59, 130, 246, 0.3);
+        box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+      }
+
+      .mobile-menu a.active {
+        background: transparent;
+        color: #60a5fa;
+        border-color: transparent;
+        box-shadow: none;
+      }
+
+      .mobile-menu a.active::after {
+        content: '▶';
+        position: absolute;
+        left: 0.9rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.75rem;
+        color: #60a5fa;
+        opacity: 0.9;
+      }
+
+      .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 99;
+      }
+
+      .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
       }
 
       .year-tabs {
@@ -1632,14 +1764,31 @@
         <span class="logo-text">Jay Spudvilas</span>
       </a>
     </div>
+      <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="global-nav" aria-label="Primary">
-        <a class="global-nav__link" href="https://lawandlearning.com" target="_blank" rel="noopener">Law</a>
+        <a class="global-nav__link" href="https://glasscase.org" target="_blank" rel="noopener">GlassCase</a>
+        <a class="global-nav__link" href="https://lawandlearning.com" target="_blank" rel="noopener">Law &amp; Learning</a>
         <a class="global-nav__link global-nav__link--active" href="https://jayspudvilas.com/education/" aria-current="page">Education</a>
-        <a class="global-nav__link" href="https://glasscase.org" target="_blank" rel="noopener">Civic-Tech</a>
         <a class="global-nav__link" href="mailto:jay@jayspudvilas.com">Contact</a>
       </nav>
     </div>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <h2 class="mobile-menu-title">Jay Spudvilas</h2>
+      <p class="mobile-menu-subtitle">Fairness by Design</p>
+    </div>
+    <nav>
+      <a href="https://glasscase.org" onclick="closeMobileMenu()" target="_blank" rel="noopener">GlassCase</a>
+      <a href="https://lawandlearning.com" onclick="closeMobileMenu()" target="_blank" rel="noopener">Law &amp; Learning</a>
+      <a href="https://jayspudvilas.com/education/" onclick="closeMobileMenu()" class="active">Education</a>
+      <a href="mailto:jay@jayspudvilas.com" onclick="closeMobileMenu()">Contact</a>
+    </nav>
+  </div>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
 
   <main class="page">
     <!-- Year 2025 Section -->
@@ -2801,5 +2950,46 @@
         .catch(() => {/* silent */});
     });
   </script>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const button = document.querySelector('.mobile-menu-button');
+    if (!menu || !overlay || !button) return;
+
+    const isOpen = menu.classList.contains('active');
+    
+    if (isOpen) {
+        closeMobileMenu();
+    } else {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const button = document.querySelector('.mobile-menu-button');
+    if (!menu || !overlay || !button) return;
+    
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    button.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
+});
+</script>
+
 </body>
 </html>
