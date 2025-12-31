@@ -473,7 +473,14 @@
         opacity: 1;
         visibility: visible;
       }
+    }
 
+    @media (min-width: 721px) {
+      .mobile-menu-button { display: none !important; }
+      .mobile-menu, .mobile-menu-overlay { display: none !important; }
+    }
+
+    @media (max-width: 720px) {
       .year-tabs {
         display: inline-flex;
         align-items: center;
@@ -1772,6 +1779,7 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="global-nav" aria-label="Primary">
+        <a class="global-nav__link" href="https://jayspudvilas.com/">Home</a>
         <a class="global-nav__link" href="https://glasscase.org" target="_blank" rel="noopener">GlassCase</a>
         <a class="global-nav__link" href="https://lawandlearning.com" target="_blank" rel="noopener">Law &amp; Learning</a>
         <a class="global-nav__link global-nav__link--active" href="https://jayspudvilas.com/education/" aria-current="page">Education</a>
@@ -1787,6 +1795,7 @@
       <p class="mobile-menu-subtitle">Fairness by Design</p>
     </div>
     <nav>
+      <a href="https://jayspudvilas.com/" onclick="closeMobileMenu()">Home</a>
       <a href="https://glasscase.org" onclick="closeMobileMenu()" target="_blank" rel="noopener">GlassCase</a>
       <a href="https://lawandlearning.com" onclick="closeMobileMenu()" target="_blank" rel="noopener">Law &amp; Learning</a>
       <a href="https://jayspudvilas.com/education/" onclick="closeMobileMenu()" class="active">Education</a>
