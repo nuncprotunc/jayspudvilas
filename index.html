@@ -450,6 +450,50 @@
       border-bottom-color: #60a5fa;
     }
 
+    .hero-bio {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      text-align: left;
+    }
+
+    .hero-portrait {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 32px rgba(107, 33, 168, 0.25);
+    }
+
+    .hero-bio-text {
+      flex: 1;
+    }
+
+    .hero-bio-text .hero-description {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero-bio {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero-portrait {
+        width: 120px;
+        height: 120px;
+      }
+      .hero-bio-text .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
     .specialties {
       display: flex;
       justify-content: center;
@@ -599,7 +643,9 @@
       flex-shrink: 0;
     }
 
-    /* All cards now equal width - no special first-child treatment */
+    .cards .card:first-child {
+      grid-column: 1 / -1;
+    }
 
     .card-content {
       color: #9DADC0;
@@ -982,7 +1028,10 @@
   <h1 class="hero-name">Jay Spudvilas</h1>
   <div class="hero-tagline">FAIRNESS BY DESIGN</div>
   <p class="hero-subtitle">Administrative Law &amp; Governance · ANU JD (2026)</p>
-  
+
+  <div class="hero-bio">
+    <img src="portrait.png" alt="Jay Spudvilas" class="hero-portrait" loading="eager" decoding="async">
+    <div class="hero-bio-text">
   <p class="hero-description">
     I build tools that make administrative decision-making visible — mapping how discretion operates, where delay clusters, and how process design shapes fairness. The transparency work lives at <a href="https://glasscase.org">GlassCase.org</a>.
   </p>
@@ -990,6 +1039,8 @@
   <p class="hero-description">
     Twelve years in public education governance shaped this focus: implementing statutory frameworks, building audit-ready systems, navigating compliance. I'm formalising it through the ANU Juris Doctor (2026). Legal education tools are released through <a href="https://lawandlearning.com">Law &amp; Learning</a>.
   </p>
+    </div>
+  </div>
 
   <div class="specialties">
     <span>Administrative Law · FOI · Governance Systems</span>
