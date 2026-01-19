@@ -9,25 +9,21 @@ import sys
 def crop_portrait_for_circle(input_path, output_path, size=800):
     """
     Crop portrait to square format optimized for circular display
-    Focus on left side where subject is positioned
+    Focus on center where head/shoulders are positioned
     """
     img = Image.open(input_path)
     width, height = img.size
     
     print(f"Original size: {width}x{height}")
     
-    # For this landscape image, we want to crop a square from the left side
-    # where the subject is positioned, focusing on face and upper body
-    # ZOOM IN: Use smaller crop size to focus more on subject
-    # SHIFT SW: Position to capture upper body and face more prominently
-    
-    # Use 55% of height as crop size to zoom in closer
-    crop_size = int(height * 0.55)
-    
-    # Position crop to capture subject - shift southwest
-    # Subject is on left side, we want upper body centered in circle
-    left = int(width * 0.08)  # Start from left, capturing subject
-    top = int(height * 0.12)  # Start slightly down to focus on upper body/face
+    # For circular avatars, the crop must be centered on the face.
+    # The previous crop drifted too far SW (arm/knee dominated), especially on mobile.
+    # Strategy: slightly larger crop + shift NE so head/shoulders sit near center.
+
+    crop_size = int(height * 0.8)
+
+    left = int(width * 0.11)
+    top = int(height * 0.0)
     right = left + crop_size
     bottom = top + crop_size
     
