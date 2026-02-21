@@ -151,6 +151,21 @@ function closeMobileMenu() {
 function jsInitReadingToggle() {
   const btn = document.getElementById('jsReadingToggle');
   if (!btn) return;
+
+  function shouldShow() {
+    const path = window.location.pathname;
+    const isHome = path === '/' || path === '/index.html';
+    const isMobile = window.matchMedia('(max-width: 720px)').matches;
+    return isHome && !isMobile;
+  }
+
+  function syncVisibility() {
+    btn.style.display = shouldShow() ? '' : 'none';
+  }
+
+  syncVisibility();
+  window.addEventListener('resize', syncVisibility);
+
   btn.addEventListener('click', function() {
     const pressed = btn.getAttribute('aria-pressed') === 'true';
     btn.setAttribute('aria-pressed', String(!pressed));
