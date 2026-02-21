@@ -25,11 +25,7 @@ const JS_SITE = {
             <span class="logo-text">Jay Spudvilas</span>
           </a>
         </div>
-        <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
         <nav class="global-nav" aria-label="Primary">
-          <a class="global-nav__link" href="https://jayspudvilas.com/">Home</a>
           <a class="global-nav__link" href="https://glasscase.org" target="_blank" rel="noopener">GlassCase</a>
           <a class="global-nav__link" href="https://lightkey.org" target="_blank" rel="noopener">LightKey</a>
           <a class="global-nav__link" href="https://lawandlearning.com" target="_blank" rel="noopener">Law &amp; Learning</a>
@@ -37,6 +33,16 @@ const JS_SITE = {
           <a class="global-nav__link" href="https://jayspudvilas.com/legal/">Use &amp; Privacy</a>
           <a class="global-nav__link" href="mailto:jay@jayspudvilas.com">Contact</a>
         </nav>
+        <button class="js-reading-toggle" id="jsReadingToggle"
+                aria-pressed="false"
+                aria-label="Toggle relaxed reading spacing"
+                title="Wider line spacing for easier reading">
+          <span class="toggle-icon" aria-hidden="true">Aa</span>
+          <span>Relaxed reading</span>
+        </button>
+        <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
   `,
@@ -48,7 +54,6 @@ const JS_SITE = {
         <p class="mobile-menu-subtitle">Fairness by Design</p>
       </div>
       <nav>
-        <a href="https://jayspudvilas.com/" onclick="closeMobileMenu()">Home</a>
         <a href="https://glasscase.org" onclick="closeMobileMenu()" target="_blank" rel="noopener">GlassCase</a>
         <a href="https://lightkey.org" onclick="closeMobileMenu()" target="_blank" rel="noopener">LightKey</a>
         <a href="https://lawandlearning.com" onclick="closeMobileMenu()" target="_blank" rel="noopener">Law &amp; Learning</a>
@@ -143,8 +148,19 @@ function closeMobileMenu() {
   document.body.style.overflow = '';
 }
 
+function jsInitReadingToggle() {
+  const btn = document.getElementById('jsReadingToggle');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    const pressed = btn.getAttribute('aria-pressed') === 'true';
+    btn.setAttribute('aria-pressed', String(!pressed));
+    document.body.classList.toggle('reading-relaxed', !pressed);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   jsInjectComponents();
+  jsInitReadingToggle();
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMobileMenu();
   });
