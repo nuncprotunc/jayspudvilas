@@ -182,6 +182,7 @@ function jsSyncMobileHeaderCentering() {
   const isMobile = window.matchMedia('(max-width: 720px)').matches;
   if (isMobile) {
     headerInner.style.position = 'relative';
+    headerInner.style.justifyContent = 'flex-end';
     logoArea.style.position = 'absolute';
     logoArea.style.left = '50%';
     logoArea.style.transform = 'translateX(-50%)';
@@ -197,6 +198,7 @@ function jsSyncMobileHeaderCentering() {
     }
   } else {
     headerInner.style.position = '';
+    headerInner.style.justifyContent = '';
     logoArea.style.position = '';
     logoArea.style.left = '';
     logoArea.style.transform = '';
