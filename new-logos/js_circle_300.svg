@@ -1,0 +1,21 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="js-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6b21a8"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="150" cy="150" r="146" fill="#0a0e17" stroke="url(#js-ring)" stroke-width="4"/>
+  <!--
+    Canonical 80x80 mark bbox: x[20..66] y[35..61] → centre (43, 48)
+    Scale s=2.8. Translate so scaled centre (43*2.8, 48*2.8)=(120.4, 134.4) → (150,150)
+    tx = 150 - 120.4 = 29.6,  ty = 150 - 134.4 = 15.6
+    transform="scale(2.8) translate(10.57, 5.57)"  [tx/s, ty/s]
+  -->
+  <g transform="translate(34.6, 15.6) scale(2.8)">
+    <path d="M 20 55 Q 40 35, 60 55" stroke="#1e40af" stroke-width="3.5" fill="none" opacity="0.7"/>
+    <circle cx="40" cy="43" r="8" fill="#6b21a8"/>
+    <circle cx="60" cy="55" r="6" fill="#3E5BE8"/>
+  </g>
+</svg>

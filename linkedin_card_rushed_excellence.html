@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Card - Rushed Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #1a1a2e;
+      padding: 2rem;
+    }
+
+    .linkedin-card {
+      width: 1200px;
+      height: 630px;
+      background: #0a0e17;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    /* Gradient mesh background */
+    .linkedin-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 20% 20%, rgba(107, 33, 168, 0.15) 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Decorative accent lines - top left */
+    .accent-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 630px;
+      z-index: 2;
+    }
+
+    .accent-line {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 8px;
+      background: linear-gradient(180deg, #6b21a8 0%, #3b82f6 100%);
+      opacity: 0.8;
+    }
+
+    .accent-line:nth-child(1) {
+      left: 0;
+      width: 12px;
+      opacity: 0.9;
+    }
+
+    .accent-line:nth-child(2) {
+      left: 20px;
+      width: 10px;
+      opacity: 0.7;
+    }
+
+    .accent-line:nth-child(3) {
+      left: 38px;
+      width: 8px;
+      opacity: 0.5;
+    }
+
+    /* Decorative dots - bottom right */
+    .accent-dots {
+      position: absolute;
+      bottom: 60px;
+      right: 80px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 2;
+    }
+
+    .dot-connector {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #6b21a8 0%, #3b82f6 100%);
+      opacity: 0.6;
+    }
+
+    .dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8b5cf6 0%, #60a5fa 100%);
+      box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+    }
+
+    .dot:last-child {
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    }
+
+    /* Content container */
+    .content {
+      position: relative;
+      z-index: 3;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 160px;
+      text-align: center;
+    }
+
+    /* Quote text */
+    .quote-text {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #f8fafc;
+      margin-bottom: 60px;
+      max-width: 880px;
+      letter-spacing: -0.02em;
+    }
+
+    .highlight {
+      color: #60a5fa;
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    /* Author attribution */
+    .author {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: #94a3b8;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Download instructions */
+    .instructions {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(17, 22, 33, 0.95);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      color: #cbd5e1;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.875rem;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .instructions strong {
+      color: #60a5fa;
+    }
+
+    @media (max-width: 1300px) {
+      .linkedin-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1200 / 630;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="linkedin-card">
+    <!-- Decorative accent lines -->
+    <div class="accent-lines">
+      <div class="accent-line"></div>
+      <div class="accent-line"></div>
+      <div class="accent-line"></div>
+    </div>
+
+    <!-- Decorative dots -->
+    <div class="accent-dots">
+      <div class="dot-connector"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="quote-text">
+        The next failure in Australian education policy won't look like balanced literacy. It'll look like <span class="highlight">rushed excellence</span>.
+      </div>
+      <div class="author">Jay Spudvilas</div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <strong>To save as image:</strong> Right-click the card above → "Save image as..." or take a screenshot<br>
+    Recommended size: 1200×630px (LinkedIn optimal)
+  </div>
+</body>
+</html>
