@@ -173,9 +173,38 @@ function jsInitReadingToggle() {
   });
 }
 
+function jsSyncMobileHeaderCentering() {
+  const headerInner = document.querySelector('.header-inner');
+  const logoArea = document.querySelector('.logo-area');
+  if (!headerInner || !logoArea) return;
+
+  const isMobile = window.matchMedia('(max-width: 720px)').matches;
+  if (isMobile) {
+    headerInner.style.position = 'relative';
+    logoArea.style.position = 'absolute';
+    logoArea.style.left = '50%';
+    logoArea.style.transform = 'translateX(-50%)';
+    logoArea.style.justifyContent = 'center';
+    logoArea.style.margin = '0';
+    logoArea.style.width = 'max-content';
+    logoArea.style.zIndex = '100';
+  } else {
+    headerInner.style.position = '';
+    logoArea.style.position = '';
+    logoArea.style.left = '';
+    logoArea.style.transform = '';
+    logoArea.style.justifyContent = '';
+    logoArea.style.margin = '';
+    logoArea.style.width = '';
+    logoArea.style.zIndex = '';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   jsInjectComponents();
   jsInitReadingToggle();
+  jsSyncMobileHeaderCentering();
+  window.addEventListener('resize', jsSyncMobileHeaderCentering);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMobileMenu();
   });
