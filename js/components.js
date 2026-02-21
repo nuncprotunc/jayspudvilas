@@ -176,6 +176,7 @@ function jsInitReadingToggle() {
 function jsSyncMobileHeaderCentering() {
   const headerInner = document.querySelector('.header-inner');
   const logoArea = document.querySelector('.logo-area');
+  const menuButton = document.querySelector('.mobile-menu-button');
   if (!headerInner || !logoArea) return;
 
   const isMobile = window.matchMedia('(max-width: 720px)').matches;
@@ -188,6 +189,12 @@ function jsSyncMobileHeaderCentering() {
     logoArea.style.margin = '0';
     logoArea.style.width = 'max-content';
     logoArea.style.zIndex = '100';
+
+    if (menuButton) {
+      menuButton.style.marginLeft = 'auto';
+      menuButton.style.position = 'relative';
+      menuButton.style.zIndex = '101';
+    }
   } else {
     headerInner.style.position = '';
     logoArea.style.position = '';
@@ -197,6 +204,12 @@ function jsSyncMobileHeaderCentering() {
     logoArea.style.margin = '';
     logoArea.style.width = '';
     logoArea.style.zIndex = '';
+
+    if (menuButton) {
+      menuButton.style.marginLeft = '';
+      menuButton.style.position = '';
+      menuButton.style.zIndex = '';
+    }
   }
 }
 
