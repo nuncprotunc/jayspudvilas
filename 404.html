@@ -742,47 +742,7 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <div class="logo-area">
-      <a href="https://jayspudvilas.com" class="logo-link" aria-label="Jay Spudvilas home">
-        <svg viewBox="0 0 80 80" aria-hidden="true">
-          <path d="M 20 55 Q 40 35, 60 55" stroke="#1e40af" stroke-width="3.5" fill="none" opacity="0.7" />
-          <circle cx="40" cy="43" r="8" fill="#6b21a8" />
-          <circle cx="60" cy="55" r="6" fill="#3E5BE8" />
-        </svg>
-        <span class="logo-text">Jay Spudvilas</span>
-      </a>
-    </div>
-    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="global-nav" aria-label="Primary">
-      <a class="global-nav__link" href="https://jayspudvilas.com/">Home</a>
-      <a class="global-nav__link" href="https://glasscase.org" target="_blank" rel="noopener">GlassCase</a>
-      <a class="global-nav__link" href="https://lawandlearning.com" target="_blank" rel="noopener">Law &amp; Learning</a>
-      <a class="global-nav__link" href="https://jayspudvilas.com/education/">Education</a>
-      <a class="global-nav__link" href="https://jayspudvilas.com/legal/">Use &amp; Privacy</a>
-      <a class="global-nav__link" href="mailto:jay@jayspudvilas.com">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-header">
-    <h2 class="mobile-menu-title">Jay Spudvilas</h2>
-    <p class="mobile-menu-subtitle">Fairness by Design</p>
-  </div>
-  <nav>
-    <a href="https://jayspudvilas.com/" onclick="closeMobileMenu()">Home</a>
-    <a href="https://glasscase.org" onclick="closeMobileMenu()" target="_blank" rel="noopener">GlassCase</a>
-    <a href="https://lawandlearning.com" onclick="closeMobileMenu()" target="_blank" rel="noopener">Law &amp; Learning</a>
-    <a href="https://jayspudvilas.com/education/" onclick="closeMobileMenu()">Education</a>
-    <a href="https://jayspudvilas.com/legal/" onclick="closeMobileMenu()">Use &amp; Privacy</a>
-    <a href="mailto:jay@jayspudvilas.com" onclick="closeMobileMenu()">Contact</a>
-  </nav>
-</div>
-<div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+<div id="js-header"></div>
 
 <main class="nf-main" aria-labelledby="nf-title">
   <section class="nf-card" role="region">
@@ -804,91 +764,9 @@
   </section>
 </main>
 
-<footer class="footer">
-  <div class="footer-layout">
-    <section class="footer-brand">
-      <a href="https://jayspudvilas.com" class="footer-logo" aria-label="Jay Spudvilas home">
-        <svg viewBox="0 0 80 80" aria-hidden="true">
-          <path d="M 20 55 Q 40 35, 60 55" stroke="#1e40af" stroke-width="3.5" fill="none" opacity="0.7" />
-          <circle cx="40" cy="43" r="8" fill="#6b21a8" />
-          <circle cx="60" cy="55" r="6" fill="#3E5BE8" />
-        </svg>
-        <div>
-          <span class="logo-text">Jay Spudvilas</span>
-          <div class="hero-tagline" style="font-size: 0.75rem; letter-spacing: 0.24em; margin-bottom: 0;">FAIRNESS BY DESIGN</div>
-        </div>
-      </a>
-      <p>
-        Evidence systems across education and civic-tech, designed for fairness.
-      </p>
-    </section>
+<div id="js-footer"></div>
 
-    <nav class="footer-links-group" aria-label="Site and project links">
-      <div class="footer-column">
-        <h2 class="footer-heading">Site</h2>
-        <a href="/">Home</a>
-        <a href="/education/">Education</a>
-        <a href="/legal/">Use &amp; Privacy</a>
-      </div>
-      <div class="footer-column">
-        <h2 class="footer-heading">Projects</h2>
-        <a href="https://lawandlearning.com">Law &amp; Learning</a>
-        <a href="https://glasscase.org">GlassCase.org</a>
-      </div>
-    </nav>
-
-    <section class="footer-cta" aria-label="Join the community">
-      <h2 class="footer-heading">Join the community</h2>
-      <p>Updates on evidence systems, civic-tech and the ANU JD.</p>
-      <a href="https://linkedin.com/in/jayspudvilas/" class="footer-cta-button">Follow on LinkedIn</a>
-    </section>
-  </div>
-
-  <div class="footer-bottom">
-    <p class="footer-attribution">&copy; 2014–2026 Jay Spudvilas (Jayden Spudvilas-Powell)</p>
-    <p class="footer-meta">Built in Australia · Founder of GlassCase.org and Law &amp; Learning · Made for everyone who believes fairness should be visible · <span style="opacity: 0.6;">Information only, not legal advice</span></p>
-  </div>
-</footer>
-
-<script>
-function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('mobileMenuOverlay');
-    const button = document.querySelector('.mobile-menu-button');
-    if (!menu || !overlay || !button) return;
-
-    const isOpen = menu.classList.contains('active');
-    
-    if (isOpen) {
-        closeMobileMenu();
-    } else {
-        menu.classList.add('active');
-        overlay.classList.add('active');
-        button.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('mobileMenuOverlay');
-    const button = document.querySelector('.mobile-menu-button');
-    if (!menu || !overlay || !button) return;
-    
-    menu.classList.remove('active');
-    overlay.classList.remove('active');
-    button.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeMobileMenu();
-        }
-    });
-});
-</script>
+<script src="/js/components.js"></script>
 
 </body>
 </html>
