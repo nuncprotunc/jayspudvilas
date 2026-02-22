@@ -112,6 +112,10 @@ radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.12) 0%, transparent 50%
 --border-subtle: 1px solid #2a2d42;
 --border-medium: 1px solid #2a2d42;
 --border-glow: 1px solid #2a2d42;
+/* Reading mode variables (match homepage) */
+--lh-body: 1.6;
+--ls-body: 0.01em;
+--ws-body: 0.03em;
 }
 * {
 margin: 0;
@@ -123,9 +127,18 @@ body {
 font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
 background: var(--bg-base);
 color: var(--text-primary);
-line-height: 1.6;
+line-height: var(--lh-body);
+letter-spacing: var(--ls-body);
+word-spacing: var(--ws-body);
 position: relative;
 overflow-x: hidden;
+transition: line-height 0.3s ease, letter-spacing 0.3s ease, word-spacing 0.3s ease;
+}
+
+body.reading-relaxed {
+--lh-body: 2.2;
+--ls-body: 0.08em;
+--ws-body: 0.12em;
 }
 a {
 color: var(--blue-bright);

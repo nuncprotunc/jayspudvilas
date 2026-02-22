@@ -76,6 +76,11 @@
       --space-2xl: 3rem;
       --space-3xl: 4rem;
 
+      /* Reading mode variables (match homepage) */
+      --lh-body: 1.6;
+      --ls-body: 0.01em;
+      --ws-body: 0.03em;
+
       --border-medium: 1px solid rgba(148, 163, 184, 0.18);
     }
 
@@ -93,9 +98,18 @@
       font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg-base);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: var(--lh-body);
+      letter-spacing: var(--ls-body);
+      word-spacing: var(--ws-body);
       position: relative;
       overflow-x: hidden;
+      transition: line-height 0.3s ease, letter-spacing 0.3s ease, word-spacing 0.3s ease;
+    }
+
+    body.reading-relaxed {
+      --lh-body: 2.2;
+      --ls-body: 0.08em;
+      --ws-body: 0.12em;
     }
 
     a {
