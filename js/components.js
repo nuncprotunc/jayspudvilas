@@ -157,8 +157,9 @@ function jsInitReadingToggle() {
     const isHome = path === '/' || path === '/index.html';
     const isEducation = path.startsWith('/education');
     const isLegal = path.startsWith('/legal');
+    const is404 = path === '/404.html';
     const isMobile = window.matchMedia('(max-width: 720px)').matches;
-    return (isHome || isEducation || isLegal) && !isMobile;
+    return (isHome || isEducation || isLegal || is404) && !isMobile;
   }
 
   function syncVisibility() {
