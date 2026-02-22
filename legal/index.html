@@ -485,6 +485,136 @@ visibility: visible;
 .mobile-menu-button { display: none !important; }
 .mobile-menu, .mobile-menu-overlay { display: none !important; }
 }
+.legal-hero {
+max-width: 1100px;
+margin: 0 auto;
+padding: 56px 28px 0;
+text-align: center;
+}
+
+.legal-hero-label {
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+color: var(--blue-bright);
+font-weight: 600;
+margin-bottom: 10px;
+}
+
+.legal-hero h1 {
+font-family: 'Spectral SC', 'Spectral', Georgia, serif;
+font-size: clamp(26px, 5vw, 36px);
+font-weight: 700;
+line-height: 1.2;
+color: #8093FF;
+margin-bottom: 14px;
+}
+
+.legal-hero-sub {
+font-size: 16px;
+color: var(--text-tertiary);
+line-height: 1.85;
+max-width: 880px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 8px;
+}
+
+.legal-updated {
+font-size: 12.5px;
+color: var(--text-muted);
+margin-bottom: 40px;
+}
+
+.legal-body {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 28px 80px;
+}
+
+.legal-card {
+background: var(--bg-glass);
+-webkit-backdrop-filter: blur(24px) saturate(180%);
+backdrop-filter: blur(24px) saturate(180%);
+border: var(--border-medium);
+border-radius: 14px;
+padding: 2.25rem 2.5rem;
+box-shadow: var(--shadow-md);
+}
+
+.legal-section + .legal-section {
+margin-top: 1.75rem;
+padding-top: 1.5rem;
+border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.legal-section-num {
+font-size: 10px;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: var(--text-muted);
+font-weight: 600;
+margin-bottom: 4px;
+}
+
+.legal-section h2 {
+font-family: 'Spectral SC', 'Spectral', Georgia, serif;
+font-size: 1.0625rem;
+font-weight: 700;
+color: var(--text-secondary);
+margin-bottom: 0.75rem;
+line-height: 1.3;
+}
+
+.legal-section p {
+font-size: 15px;
+color: var(--text-tertiary);
+line-height: 1.85;
+}
+
+.legal-section p + p {
+margin-top: 0.75rem;
+}
+
+.legal-section ul {
+margin: 0.6rem 0 0.75rem 1.1rem;
+display: flex;
+flex-direction: column;
+gap: 0.3rem;
+}
+
+.legal-section li {
+font-size: 15px;
+color: var(--text-tertiary);
+line-height: 1.75;
+}
+
+.legal-section a {
+color: var(--blue-bright);
+text-decoration: none;
+border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+transition: color 0.2s, border-color 0.2s;
+}
+
+.legal-section a:hover {
+color: var(--blue-light);
+border-color: var(--blue-light);
+}
+
+.legal-callout {
+background: rgba(59, 130, 246, 0.08);
+border: 1px solid rgba(59, 130, 246, 0.25);
+border-radius: 8px;
+padding: 0.9rem 1.1rem;
+margin-top: 0.75rem;
+}
+
+.legal-callout p {
+font-size: 14px;
+color: var(--blue-light);
+line-height: 1.75;
+}
+
 .page-main {
 max-width: 1100px;
 margin: 0 auto;
@@ -511,39 +641,6 @@ max-width: 720px;
 margin: 0 auto var(--space-xl);
 letter-spacing: -0.02em;
 }
-.legal-card {
-background: var(--bg-glass);
--webkit-backdrop-filter: blur(24px) saturate(180%);
-backdrop-filter: blur(24px) saturate(180%);
-border: var(--border-medium);
-border-radius: var(--radius-lg);
-padding: var(--space-xl);
-box-shadow: var(--shadow-md);
-}
-.legal-section + .legal-section {
-margin-top: var(--space-lg);
-padding-top: var(--space-md);
-border-top: 1px solid rgba(148, 163, 184, 0.2);
-}
-.legal-section h2 {
-font-size: 1.05rem;
-font-weight: 600;
-letter-spacing: 0.04em;
-text-transform: uppercase;
-color: var(--text-secondary);
-margin-bottom: var(--space-xs);
-}
-.legal-section p,
-.legal-section ul {
-font-size: 0.95rem;
-color: var(--text-tertiary);
-line-height: 1.7;
-}
-.legal-section ul {
-padding-left: 1.1rem;
-margin-top: 0.25rem;
-}
-.legal-section li { margin-bottom: 0.25rem; }
 .footer {
 padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
 text-align: center;
@@ -768,31 +865,41 @@ flex-direction: column;
 align-items: flex-start;
 }
 }
+@media (max-width: 640px) {
+.legal-hero {
+padding: 40px 20px 0;
+}
+.legal-body {
+padding: 0 20px 64px;
+}
+.legal-card {
+padding: 1.5rem 1.25rem;
+}
+}
 @media (max-width: 768px) {
 .page-main {
 padding: var(--space-2xl) var(--space-md) var(--space-3xl);
-}
-.legal-card {
-padding: var(--space-lg);
 }
 }
 </style>
 </head>
 <body>
 <div id="js-header"></div>
-<main class="page-main" aria-labelledby="legal-title">
-<header class="page-header">
-<h1 id="legal-title" class="page-title">Use, Privacy &amp; Legal</h1>
-<p class="page-subtitle">
-Plain-English notes on how this site works. This page explains what the content is (and isn't), how analytics are used, and the basics on copyright, reuse and governing law.
-</p>
-<p class="page-subtitle" style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.8;">
-Last updated: 22 February 2026
-</p>
-</header>
-<section class="legal-card" aria-label="Use, privacy and legal information">
-<section class="legal-section">
-<h2>1. Information only — not legal advice</h2>
+
+<div class="legal-hero">
+<p class="legal-hero-label">jayspudvilas.com</p>
+<h1>Use, Privacy &amp; Legal</h1>
+<p class="legal-hero-sub">Plain-English notes on how this site works. This page explains what the content is (and isn't), how analytics are used, and the basics on copyright, reuse and governing law.</p>
+<p class="legal-updated">Last updated: 22 February 2026</p>
+</div>
+
+<main class="legal-body" aria-labelledby="legal-title">
+
+<div class="legal-card">
+
+<section class="legal-section" aria-labelledby="s1">
+<p class="legal-section-num">Section 1</p>
+<h2 id="s1">Information only &mdash; not legal advice</h2>
 <p>
 jayspudvilas.com is a personal site. It shares my work and projects in education, governance, and civic-tech informed by information and administrative law.
 </p>
@@ -806,8 +913,10 @@ Unless clearly stated otherwise, all views are my own and do not represent any c
 This site links to external sites and projects. I am not responsible for the content or practices of those sites. My projects &mdash; <a href="https://glasscase.org">GlassCase</a> (glasscase.org, including its accessibility initiative <a href="https://lightkey.org">LightKey</a> at lightkey.org) and <a href="https://lawandlearning.com">Law &amp; Learning</a> (lawandlearning.com) &mdash; have their own terms and privacy notices (<a href="https://glasscase.org/legal">GlassCase</a>, <a href="https://lightkey.org/legal/">LightKey</a>, <a href="https://lawandlearning.com/legal">Law &amp; Learning</a>).
 </p>
 </section>
-<section class="legal-section">
-<h2>2. Accuracy &amp; liability</h2>
+
+<section class="legal-section" aria-labelledby="s2">
+<p class="legal-section-num">Section 2</p>
+<h2 id="s2">Accuracy &amp; liability</h2>
 <p>
 I aim to keep information accurate and up to date, but I cannot guarantee completeness or that everything remains current over time.
 </p>
@@ -818,8 +927,10 @@ All content and resources on this site are provided "as is" and "as available" w
 Use of this site is at your discretion. To the extent permitted by law, I am not liable for any loss, damage or costs arising from your use of, or reliance on, this site or any linked resources. Nothing in this notice excludes, restricts or modifies any consumer guarantee or other right that cannot be excluded under Australian law.
 </p>
 </section>
-<section class="legal-section">
-<h2>3. Education data</h2>
+
+<section class="legal-section" aria-labelledby="s3">
+<p class="legal-section-num">Section 3</p>
+<h2 id="s3">Education data</h2>
 <p>
 Outcome data on the Education page are reported at cohort level and de-identified to the extent reasonably practicable. I do not publish information intended to identify individual students, families, or staff.
 </p>
@@ -830,8 +941,10 @@ Data presented here is drawn from publicly available sources and my own professi
 This data is shared for educational and professional purposes and is not intended for use as evidence in legal, employment, or administrative proceedings.
 </p>
 </section>
-<section class="legal-section">
-<h2>4. Copyright &amp; reuse</h2>
+
+<section class="legal-section" aria-labelledby="s4">
+<p class="legal-section-num">Section 4</p>
+<h2 id="s4">Copyright &amp; reuse</h2>
 <p>
 Unless otherwise noted, the content on this site is &copy; 2014–2026 Jay Spudvilas (Jayden Spudvilas-Powell).
 </p>
@@ -848,8 +961,10 @@ This site may reproduce or reference legislation, case law and government docume
 For permission to use content beyond the scope described above, contact <a href="mailto:jay@jayspudvilas.com">jay@jayspudvilas.com</a>.
 </p>
 </section>
-<section class="legal-section">
-<h2>5. Privacy, analytics &amp; cookies</h2>
+
+<section class="legal-section" aria-labelledby="s5">
+<p class="legal-section-num">Section 5</p>
+<h2 id="s5">Privacy, analytics &amp; cookies</h2>
 <p>
 This site uses Google Analytics and Ahrefs Analytics to understand aggregate traffic and usage patterns. I do not use these tools for advertising or behavioural profiling.
 </p>
@@ -885,14 +1000,21 @@ This site is not directed at children under 16, and I do not knowingly collect p
 You can contact me to ask what personal information, if any, I hold about you. If you believe any personal information I hold about you is inaccurate, you can contact me to request correction. If you believe I have handled your personal information in a way that breaches your privacy, you can contact me to make a complaint and I will respond within 30 days.
 </p>
 </section>
-<section class="legal-section">
-<h2>6. Accessibility</h2>
-<p>
-I aim to make this site accessible to all users, including people with disabilities. The site is designed to work with screen readers, keyboard navigation, and browser-based assistive technologies. If you experience an accessibility barrier on this site, please contact me at <a href="mailto:jay@jayspudvilas.com">jay@jayspudvilas.com</a> so I can address it.
+
+<section class="legal-section" aria-labelledby="s6">
+<p class="legal-section-num">Section 6</p>
+<h2 id="s6">Accessibility</h2>
+<div class="legal-callout">
+<p>I aim to make this site accessible to all users, including people with disabilities. Accessibility is a priority, not an afterthought.</p>
+</div>
+<p style="margin-top: 0.75rem;">
+The site is designed to work with screen readers, keyboard navigation, and browser-based assistive technologies. If you experience an accessibility barrier on this site, please contact me at <a href="mailto:jay@jayspudvilas.com">jay@jayspudvilas.com</a> so I can address it.
 </p>
 </section>
-<section class="legal-section">
-<h2>7. Governing law, jurisdiction &amp; contact</h2>
+
+<section class="legal-section" aria-labelledby="s7">
+<p class="legal-section-num">Section 7</p>
+<h2 id="s7">Governing law, jurisdiction &amp; contact</h2>
 <p>
 This site is operated from the <a href="https://www.act.gov.au/" target="_blank" rel="noopener">Australian Capital Territory</a>, Australia. The law of the Australian Capital Territory governs any disputes or issues arising out of or in connection with this site. Any disputes will be subject to the non-exclusive jurisdiction of the courts of the Australian Capital Territory. I encourage informal resolution of any concerns before formal proceedings. Education-related content reflects Victorian professional experience.
 </p>
@@ -904,7 +1026,8 @@ If you have questions or concerns about this notice, you can contact me at
 If any provision of this notice is found to be void or unenforceable, that provision will be severed and the remaining provisions will continue in full force and effect.
 </p>
 </section>
-</section>
+
+</div>
 </main>
 <div id="js-footer"></div>
 
