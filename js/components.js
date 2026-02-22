@@ -153,22 +153,9 @@ function jsInitReadingToggle() {
   if (!btn) return;
 
   function shouldShow() {
-    const path = window.location.pathname.toLowerCase();
-
-    const isHome = path === '/' || path === '/index.html';
-    const isEducation =
-      path === '/education' ||
-      path === '/education/' ||
-      path.startsWith('/education/');
-    const isLegal =
-      path === '/legal' ||
-      path === '/legal/' ||
-      path.startsWith('/legal/');
-    const is404 =
-      path === '/404' ||
-      path === '/404.html';
     const isMobile = window.matchMedia('(max-width: 720px)').matches;
-    return (isHome || isEducation || isLegal || is404) && !isMobile;
+    // Show on all pages for desktop / larger viewports.
+    return !isMobile;
   }
 
   function syncVisibility() {
