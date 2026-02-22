@@ -107,7 +107,7 @@ const JS_SITE = {
 
       <div class="footer-bottom">
         <p class="footer-attribution">&copy; 2014&ndash;2026 Jay Spudvilas</p>
-        <p class="footer-meta">Built in Australia &middot; Founder of GlassCase.org and Law &amp; Learning &middot; Made for everyone who believes fairness should be visible &middot; <span style="opacity: 0.6;">Information only, not legal advice</span></p>
+        <p class="footer-meta">Built in Australia &middot; Founder of GlassCase.org and Law &amp; Learning &middot; Made for everyone who believes fairness should be visible &middot; <span style="opacity: 0.6;">Information only, not legal advice</span> &middot; <a href="#" onclick="if(typeof resetAnalyticsConsent==='function')resetAnalyticsConsent();return false;" style="opacity:0.6;text-decoration:underline;">Cookie settings</a></p>
       </div>
     </footer>
   `
