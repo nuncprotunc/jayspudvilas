@@ -309,8 +309,47 @@
       color: var(--text-primary);
       background: rgba(59, 130, 246, 0.12);
       border-bottom: 2px solid var(--blue-medium);
-      border-radius: 12px;
-      box-shadow: none;
+      padding-bottom: 0.25rem;
+    }
+
+    /* Relaxed reading toggle button (match homepage) */
+    .js-reading-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: rgba(17, 22, 33, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 6px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .js-reading-toggle:hover {
+      border-color: var(--blue-medium);
+      color: var(--blue-bright);
+      background: rgba(59, 130, 246, 0.1);
+    }
+
+    .js-reading-toggle:focus-visible {
+      outline: 2px solid var(--blue-medium);
+      outline-offset: 2px;
+    }
+
+    .js-reading-toggle[aria-pressed="true"] {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--blue-medium);
+      color: var(--blue-light);
+    }
+
+    .js-reading-toggle .toggle-icon {
+      font-size: 14px;
+      font-weight: 600;
     }
 
     /* Mobile hamburger menu */
