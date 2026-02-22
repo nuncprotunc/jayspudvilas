@@ -155,8 +155,10 @@ function jsInitReadingToggle() {
   function shouldShow() {
     const path = window.location.pathname;
     const isHome = path === '/' || path === '/index.html';
+    const isEducation = path.startsWith('/education');
+    const isLegal = path.startsWith('/legal');
     const isMobile = window.matchMedia('(max-width: 720px)').matches;
-    return isHome && !isMobile;
+    return (isHome || isEducation || isLegal) && !isMobile;
   }
 
   function syncVisibility() {
