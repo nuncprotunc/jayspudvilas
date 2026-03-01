@@ -97,6 +97,43 @@
   font-size: 13px !important;
 }
 
+.hero-tagline-footer {
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  margin-bottom: 0;
+}
+
+.footer-meta-muted {
+  opacity: 0.6;
+}
+
+a.footer-meta-muted {
+  text-decoration: underline;
+}
+
 .footer-attribution {
   font-size: 15px !important;
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    position: relative;
+    justify-content: flex-end;
+  }
+
+  .logo-area {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    margin: 0;
+    width: max-content;
+    z-index: 100;
+  }
+
+  .mobile-menu-button {
+    margin-left: auto;
+    position: relative;
+    z-index: 101;
+  }
 }

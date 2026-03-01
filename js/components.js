@@ -77,7 +77,7 @@ const JS_SITE = {
             </svg>
             <div>
               <span class="logo-text">Jay Spudvilas</span>
-              <div class="hero-tagline" style="font-size: 0.75rem; letter-spacing: 0.24em; margin-bottom: 0;">FAIRNESS BY DESIGN</div>
+              <div class="hero-tagline hero-tagline-footer">FAIRNESS BY DESIGN</div>
             </div>
           </a>
           <p>Evidence systems across education and civic-tech, designed for fairness.</p>
@@ -107,7 +107,7 @@ const JS_SITE = {
 
       <div class="footer-bottom">
         <p class="footer-attribution">&copy; 2014&ndash;2026 Jay Spudvilas</p>
-        <p class="footer-meta">Built in Australia &middot; Founder of GlassCase.org and Law &amp; Learning &middot; Made for everyone who believes fairness should be visible &middot; <span style="opacity: 0.6;">Information only, not legal advice</span> &middot; <a href="#" onclick="if(typeof resetAnalyticsConsent==='function')resetAnalyticsConsent();return false;" style="opacity:0.6;text-decoration:underline;">Cookie settings</a></p>
+        <p class="footer-meta">Built in Australia &middot; Founder of GlassCase.org and Law &amp; Learning &middot; Made for everyone who believes fairness should be visible &middot; <span class="footer-meta-muted">Information only, not legal advice</span> &middot; <a href="#" class="footer-meta-muted" onclick="if(typeof resetAnalyticsConsent==='function')resetAnalyticsConsent();return false;">Cookie settings</a></p>
       </div>
     </footer>
   `
@@ -172,53 +172,9 @@ function jsInitReadingToggle() {
   });
 }
 
-function jsSyncMobileHeaderCentering() {
-  const headerInner = document.querySelector('.header-inner');
-  const logoArea = document.querySelector('.logo-area');
-  const menuButton = document.querySelector('.mobile-menu-button');
-  if (!headerInner || !logoArea) return;
-
-  const isMobile = window.matchMedia('(max-width: 720px)').matches;
-  if (isMobile) {
-    headerInner.style.position = 'relative';
-    headerInner.style.justifyContent = 'flex-end';
-    logoArea.style.position = 'absolute';
-    logoArea.style.left = '50%';
-    logoArea.style.transform = 'translateX(-50%)';
-    logoArea.style.justifyContent = 'center';
-    logoArea.style.margin = '0';
-    logoArea.style.width = 'max-content';
-    logoArea.style.zIndex = '100';
-
-    if (menuButton) {
-      menuButton.style.marginLeft = 'auto';
-      menuButton.style.position = 'relative';
-      menuButton.style.zIndex = '101';
-    }
-  } else {
-    headerInner.style.position = '';
-    headerInner.style.justifyContent = '';
-    logoArea.style.position = '';
-    logoArea.style.left = '';
-    logoArea.style.transform = '';
-    logoArea.style.justifyContent = '';
-    logoArea.style.margin = '';
-    logoArea.style.width = '';
-    logoArea.style.zIndex = '';
-
-    if (menuButton) {
-      menuButton.style.marginLeft = '';
-      menuButton.style.position = '';
-      menuButton.style.zIndex = '';
-    }
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   jsInjectComponents();
   jsInitReadingToggle();
-  jsSyncMobileHeaderCentering();
-  window.addEventListener('resize', jsSyncMobileHeaderCentering);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMobileMenu();
   });
