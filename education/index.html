@@ -665,6 +665,15 @@
       margin-bottom: var(--space-2xl);
     }
 
+    .effect-chart {
+      margin-top: var(--space-md);
+    }
+    .effect-chart svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     .card {
       background: var(--bg-glass);
       backdrop-filter: blur(24px) saturate(180%);
@@ -1738,8 +1747,8 @@
 
   <main class="page">
 
-    <!-- Year 2025 Section -->
-    <section id="year-2025" class="year-view is-active" role="tabpanel" aria-labelledby="tab-2025" tabindex="0">
+    <!-- Overview Section (default landing) -->
+    <section id="year-overview" class="year-view is-active" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
     <section class="hero">
       <svg class="hero-logo" viewBox="0 0 400 180" aria-hidden="true">
         <path d="M 100 130 Q 200 50, 300 130" stroke="#1e40af" stroke-width="7" fill="none" opacity="0.7" />
@@ -1751,6 +1760,98 @@
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
+      <button id="tab-overview" class="year-tab is-active" role="tab" aria-selected="true" aria-controls="year-overview" data-year="overview"><span>Overview</span></button>
+      <button id="tab-2025" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2025" tabindex="-1" data-year="2025"><span>2025</span></button>
+      <button id="tab-2024" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2024" tabindex="-1" data-year="2024"><span>2024</span></button>
+      <button id="tab-2023" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2023" tabindex="-1" data-year="2023"><span>2023</span></button>
+      <button id="tab-2022" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2022" tabindex="-1" data-year="2022"><span>2022</span></button>
+      <button id="tab-references" class="year-tab" role="tab" aria-selected="false" aria-controls="year-references" tabindex="-1" data-year="references"><span>References</span></button>
+    </nav>
+
+      <p class="hero-description">Four cohorts, 2022&ndash;2025. Sustained within-cohort growth across literacy and numeracy. Choose a year to read in detail, or scan the comparison below.</p>
+    </section>
+
+    <section class="page-section">
+      <div class="summary-grid">
+        <div class="card stat-card observe-animate">
+          <span class="badge">Cohorts</span>
+          <div class="stat-value">4</div>
+          <p class="stat-label">Years documented</p>
+          <p class="stat-desc">2022, 2023, 2024 and 2025 &mdash; consecutive Grade 5/6 cohorts.</p>
+        </div>
+        <div class="card stat-card observe-animate">
+          <span class="badge">Effect size range</span>
+          <div class="stat-value">d = 0.80 &ndash; 2.48</div>
+          <p class="stat-label">Across all measures</p>
+          <p class="stat-desc">Every effect size exceeds Hattie&rsquo;s hinge point (d = 0.40).</p>
+        </div>
+        <div class="card stat-card observe-animate">
+          <span class="badge">Students</span>
+          <div class="stat-value">~100</div>
+          <p class="stat-label">Whole-class samples</p>
+          <p class="stat-desc">Four non-overlapping Grade 5/6 cohorts &mdash; no selection.</p>
+        </div>
+      </div>
+
+      <div class="card observe-animate">
+        <h2 class="card-title" style="text-align: center; margin-bottom: var(--space-md);">Effect sizes across cohorts</h2>
+        <p class="note" style="text-align: center; max-width: 64ch; margin: 0 auto var(--space-xl);">Cohen&rsquo;s d for each measure. Reference lines mark Hattie&rsquo;s hinge (d = 0.40), large effect (d = 0.80) and very large effect (d = 1.20). d = standardised within-cohort gain (gain &divide; SD of gain scores).</p>
+
+        <div class="effect-chart" role="img" aria-label="Bar chart of effect sizes across six measures. 2025 PAT-M d = 1.65; 2025 PAT-R d = 1.15; 2024 PAT-M d = 1.05; 2024 PAT-R d = 0.80; 2024 DIBELS ORF d = 2.48; 2023 DIBELS MAZE d = 1.16.">
+          <svg viewBox="0 0 800 420" aria-hidden="true">
+            <line x1="160" y1="48" x2="160" y2="390" stroke="rgba(216,210,236,0.15)" stroke-width="1" />
+            <line x1="253.8" y1="48" x2="253.8" y2="390" stroke="rgba(216,210,236,0.25)" stroke-width="1" stroke-dasharray="4,4" />
+            <line x1="347.7" y1="48" x2="347.7" y2="390" stroke="rgba(216,210,236,0.25)" stroke-width="1" stroke-dasharray="4,4" />
+            <line x1="441.5" y1="48" x2="441.5" y2="390" stroke="rgba(216,210,236,0.25)" stroke-width="1" stroke-dasharray="4,4" />
+            <text x="253.8" y="38" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="rgba(216,210,236,0.5)">0.4</text>
+            <text x="347.7" y="38" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="rgba(216,210,236,0.5)">0.8</text>
+            <text x="441.5" y="38" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="rgba(216,210,236,0.5)">1.2</text>
+
+            <text x="148" y="85" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#D8D2EC">2025 PAT-M</text>
+            <rect id="chart-bar-patm" x="160" y="64" width="387.1" height="32" rx="3" fill="#7EA8FF" />
+            <text id="chart-d-patm" x="555.1" y="85" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#E8E4F5">1.65</text>
+
+            <text x="148" y="139" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#D8D2EC">2025 PAT-R</text>
+            <rect id="chart-bar-patr" x="160" y="118" width="269.8" height="32" rx="3" fill="#7EA8FF" />
+            <text id="chart-d-patr" x="437.8" y="139" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#E8E4F5">1.15</text>
+
+            <text x="148" y="193" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#D8D2EC">2024 PAT-M</text>
+            <rect x="160" y="172" width="246.3" height="32" rx="3" fill="#7EA8FF" />
+            <text x="414.3" y="193" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#E8E4F5">1.05</text>
+
+            <text x="148" y="247" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#D8D2EC">2024 PAT-R</text>
+            <rect x="160" y="226" width="187.7" height="32" rx="3" fill="#7EA8FF" />
+            <text x="355.7" y="247" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#E8E4F5">0.80</text>
+
+            <text x="148" y="301" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#D8D2EC">2024 DIBELS ORF</text>
+            <rect x="160" y="280" width="581.8" height="32" rx="3" fill="#7EA8FF" />
+            <text x="749.8" y="301" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#E8E4F5">2.48</text>
+
+            <text x="148" y="355" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#D8D2EC">2023 DIBELS MAZE</text>
+            <rect x="160" y="334" width="272.2" height="32" rx="3" fill="#7EA8FF" />
+            <text x="440.2" y="355" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#E8E4F5">1.16</text>
+          </svg>
+        </div>
+      </div>
+
+      <p class="note" style="text-align: center; margin-top: var(--space-2xl);">Select a year above to read cohort-specific results, or view <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">full references</a>.</p>
+    </section>
+    </section>
+
+    <!-- Year 2025 Section -->
+    <section id="year-2025" class="year-view" role="tabpanel" aria-labelledby="tab-2025" hidden tabindex="0">
+    <section class="hero">
+      <svg class="hero-logo" viewBox="0 0 400 180" aria-hidden="true">
+        <path d="M 100 130 Q 200 50, 300 130" stroke="#1e40af" stroke-width="7" fill="none" opacity="0.7" />
+        <circle cx="200" cy="83" r="24" fill="#6b21a8" />
+        <circle cx="300" cy="130" r="18" fill="#3E5BE8" />
+      </svg>
+      <h1 class="hero-name">Education</h1>
+      <div class="hero-tagline">FAIRNESS BY DESIGN</div>
+
+    <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
+      <span class="year-label">Year</span>
+      <button id="tab-overview" class="year-tab" role="tab" aria-selected="false" aria-controls="year-overview" tabindex="-1" data-year="overview"><span>Overview</span></button>
       <button id="tab-2025" class="year-tab is-active" role="tab" aria-selected="true" aria-controls="year-2025" data-year="2025"><span>2025</span></button>
       <button id="tab-2024" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2024" tabindex="-1" data-year="2024"><span>2024</span></button>
       <button id="tab-2023" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2023" tabindex="-1" data-year="2023"><span>2023</span></button>
@@ -2028,6 +2129,7 @@
     
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
+      <button id="tab-overview" class="year-tab" role="tab" aria-selected="false" aria-controls="year-overview" tabindex="-1" data-year="overview"><span>Overview</span></button>
       <button id="tab-2025" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2025" tabindex="-1" data-year="2025"><span>2025</span></button>
       <button id="tab-2024" class="year-tab is-active" role="tab" aria-selected="true" aria-controls="year-2024" data-year="2024"><span>2024</span></button>
       <button id="tab-2023" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2023" tabindex="-1" data-year="2023"><span>2023</span></button>
@@ -2232,6 +2334,7 @@
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
+      <button id="tab-overview" class="year-tab" role="tab" aria-selected="false" aria-controls="year-overview" tabindex="-1" data-year="overview"><span>Overview</span></button>
       <button id="tab-2025" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2025" tabindex="-1" data-year="2025"><span>2025</span></button>
       <button id="tab-2024" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2024" tabindex="-1" data-year="2024"><span>2024</span></button>
       <button id="tab-2023" class="year-tab is-active" role="tab" aria-selected="true" aria-controls="year-2023" data-year="2023"><span>2023</span></button>
@@ -2365,6 +2468,7 @@
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
+      <button id="tab-overview" class="year-tab" role="tab" aria-selected="false" aria-controls="year-overview" tabindex="-1" data-year="overview"><span>Overview</span></button>
       <button id="tab-2025" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2025" tabindex="-1" data-year="2025"><span>2025</span></button>
       <button id="tab-2024" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2024" tabindex="-1" data-year="2024"><span>2024</span></button>
       <button id="tab-2023" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2023" tabindex="-1" data-year="2023"><span>2023</span></button>
@@ -2615,6 +2719,7 @@
 
     <nav class="year-tabs" role="tablist" aria-label="Years" style="margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
       <span class="year-label">Year</span>
+      <button id="tab-overview" class="year-tab" role="tab" aria-selected="false" aria-controls="year-overview" tabindex="-1" data-year="overview"><span>Overview</span></button>
       <button id="tab-2025" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2025" tabindex="-1" data-year="2025"><span>2025</span></button>
       <button id="tab-2024" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2024" tabindex="-1" data-year="2024"><span>2024</span></button>
       <button id="tab-2023" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2023" tabindex="-1" data-year="2023"><span>2023</span></button>
@@ -2743,7 +2848,7 @@
       if (fromHash && panels.some(p => p.id === fromHash)) {
         activate(fromHash, false);
       } else {
-        activate('year-2025', false);
+        activate('year-overview', false);
       }
 
       // Intersection Observer for scroll animations
@@ -2830,6 +2935,22 @@
               }
             }
           });
+
+          // Update overview comparison chart bars (2025, from results.json)
+          (function () {
+            var x0 = 160, scale = 234.6154;
+            function setBar(rectId, labelId, d) {
+              var rect = document.getElementById(rectId);
+              var label = document.getElementById(labelId);
+              if (!rect || !label) return;
+              var w = d * scale;
+              rect.setAttribute('width', w.toFixed(1));
+              label.setAttribute('x', (x0 + w + 8).toFixed(1));
+              label.textContent = d.toFixed(2);
+            }
+            setBar('chart-bar-patm', 'chart-d-patm', m.d);
+            setBar('chart-bar-patr', 'chart-d-patr', rdg.d);
+          })();
 
           // Update notes under datasets (2025)
           const mathNote = document.getElementById('note-2025-math');
