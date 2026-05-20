@@ -1167,6 +1167,9 @@
       gap: var(--space-md);
     }
     .work-entry {
+      display: flex;
+      gap: var(--space-lg);
+      align-items: flex-start;
       background: var(--bg-glass);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
       backdrop-filter: blur(24px) saturate(180%);
@@ -1175,6 +1178,7 @@
       padding: var(--space-lg) var(--space-xl);
       transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
     }
+    .work-entry__body { flex: 1; min-width: 0; }
     .work-entry:hover {
       transform: translateY(-2px);
       border-color: rgba(139, 92, 246, 0.28);
@@ -1209,6 +1213,32 @@
       font-weight: 600;
     }
     .work-entry__link:hover { color: #93c5fd; }
+
+    /* Line-icon tile — a visual anchor for each entry */
+    .work-icon {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(59, 130, 246, 0.10));
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      transition: border-color var(--transition-smooth), transform var(--transition-smooth);
+    }
+    .work-icon svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+      color: #c8d2ea;
+    }
+    .card .work-icon { margin-bottom: var(--space-md); }
+    .card:hover .work-icon,
+    .work-entry:hover .work-icon {
+      border-color: rgba(139, 92, 246, 0.45);
+      transform: scale(1.05);
+    }
 
     /* Tools grid */
     .work-cards {
@@ -1274,40 +1304,52 @@
   <div class="work-list">
 
     <article class="work-entry">
-      <p class="work-entry__meta">Senate submission · Parliament of Australia · March 2026</p>
-      <h3 class="work-entry__title">Review of the National Emergency Declaration Act 2020</h3>
-      <p class="work-entry__desc">A submission to the Senate Legal and Constitutional Affairs Legislation Committee's review of the Act — on the oversight and accountability structures governing how national emergencies are declared, extended and reviewed.</p>
-      <div class="work-entry__links">
-        <a class="work-entry__link" href="https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Legal_and_Constitutional_Affairs/NED48/Submissions" target="_blank" rel="noopener">View submissions →</a>
-        <a class="work-entry__link" href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">Record on ORCID →</a>
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 27 L32 13 L54 27"/><path d="M18 27V47M32 27V47M46 27V47"/><path d="M11 47H53"/><path d="M8 53H56"/></svg></span>
+      <div class="work-entry__body">
+        <p class="work-entry__meta">Senate submission · Parliament of Australia · March 2026</p>
+        <h3 class="work-entry__title">Review of the National Emergency Declaration Act 2020</h3>
+        <p class="work-entry__desc">A submission to the Senate Legal and Constitutional Affairs Legislation Committee's review of the Act — on the oversight and accountability structures governing how national emergencies are declared, extended and reviewed.</p>
+        <div class="work-entry__links">
+          <a class="work-entry__link" href="https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Legal_and_Constitutional_Affairs/NED48/Submissions" target="_blank" rel="noopener">View submissions →</a>
+          <a class="work-entry__link" href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">Record on ORCID →</a>
+        </div>
       </div>
     </article>
 
     <article class="work-entry">
-      <p class="work-entry__meta">Position paper · GlassCase · February 2026</p>
-      <h3 class="work-entry__title">Making Integrity Visible</h3>
-      <p class="work-entry__desc">A position paper setting out the GlassCase approach: why institutional integrity should be observable, and how open, statute-aligned tools can make the way public decisions are taken legible.</p>
-      <div class="work-entry__links">
-        <a class="work-entry__link" href="https://doi.org/10.5281/zenodo.18814499" target="_blank" rel="noopener">Read on Zenodo (DOI) →</a>
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32C18 19 46 19 56 32 46 45 18 45 8 32Z"/><circle cx="32" cy="32" r="7"/></svg></span>
+      <div class="work-entry__body">
+        <p class="work-entry__meta">Position paper · GlassCase · February 2026</p>
+        <h3 class="work-entry__title">Making Integrity Visible</h3>
+        <p class="work-entry__desc">A position paper setting out the GlassCase approach: why institutional integrity should be observable, and how open, statute-aligned tools can make the way public decisions are taken legible.</p>
+        <div class="work-entry__links">
+          <a class="work-entry__link" href="https://doi.org/10.5281/zenodo.18814499" target="_blank" rel="noopener">Read on Zenodo (DOI) →</a>
+        </div>
       </div>
     </article>
 
     <article class="work-entry">
-      <p class="work-entry__meta">Position paper · LightKey · February 2026</p>
-      <h3 class="work-entry__title">When the Pathway Is the Barrier</h3>
-      <p class="work-entry__desc">A position paper on cognitive accessibility in administrative processes — what happens when the process itself, rather than the entitlement, is what shuts people out.</p>
-      <div class="work-entry__links">
-        <a class="work-entry__link" href="https://doi.org/10.5281/zenodo.18814594" target="_blank" rel="noopener">Read on Zenodo (DOI) →</a>
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 53V15C19 13 20 12 22 12H42C44 12 45 13 45 15V53"/><path d="M12 53H52"/><circle cx="39" cy="33" r="2.5" fill="currentColor" stroke="none"/></svg></span>
+      <div class="work-entry__body">
+        <p class="work-entry__meta">Position paper · LightKey · February 2026</p>
+        <h3 class="work-entry__title">When the Pathway Is the Barrier</h3>
+        <p class="work-entry__desc">A position paper on cognitive accessibility in administrative processes — what happens when the process itself, rather than the entitlement, is what shuts people out.</p>
+        <div class="work-entry__links">
+          <a class="work-entry__link" href="https://doi.org/10.5281/zenodo.18814594" target="_blank" rel="noopener">Read on Zenodo (DOI) →</a>
+        </div>
       </div>
     </article>
 
     <article class="work-entry">
-      <p class="work-entry__meta">Senate submission · Parliament of Australia · October 2025</p>
-      <h3 class="work-entry__title">Freedom of Information Amendment Bill 2025</h3>
-      <p class="work-entry__desc">A submission to the Senate Legal and Constitutional Affairs Legislation Committee on the Bill's proposed changes to Australia's FOI regime — focused on how the drafting would shape the transparency and reviewability of administrative decisions.</p>
-      <div class="work-entry__links">
-        <a class="work-entry__link" href="https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Legal_and_Constitutional_Affairs/FOIBill2025/Submissions" target="_blank" rel="noopener">View submissions →</a>
-        <a class="work-entry__link" href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">Record on ORCID →</a>
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="30" width="36" height="24" rx="4"/><path d="M22 30V22C22 15 28 11 34 13"/><circle cx="32" cy="40" r="3.5"/><path d="M32 43.5V48"/></svg></span>
+      <div class="work-entry__body">
+        <p class="work-entry__meta">Senate submission · Parliament of Australia · October 2025</p>
+        <h3 class="work-entry__title">Freedom of Information Amendment Bill 2025</h3>
+        <p class="work-entry__desc">A submission to the Senate Legal and Constitutional Affairs Legislation Committee on the Bill's proposed changes to Australia's FOI regime — focused on how the drafting would shape the transparency and reviewability of administrative decisions.</p>
+        <div class="work-entry__links">
+          <a class="work-entry__link" href="https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Legal_and_Constitutional_Affairs/FOIBill2025/Submissions" target="_blank" rel="noopener">View submissions →</a>
+          <a class="work-entry__link" href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">Record on ORCID →</a>
+        </div>
       </div>
     </article>
 
@@ -1322,6 +1364,7 @@
   <div class="work-cards">
 
     <article class="card">
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="12" width="18" height="18" rx="3"/><rect x="34" y="12" width="18" height="18" rx="3"/><rect x="12" y="34" width="18" height="18" rx="3"/><rect x="34" y="34" width="18" height="18" rx="3"/></svg></span>
       <div class="card-eyebrow">GlassCase · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">Consideration Matrix</h3></div></div>
       <p class="card-content">Administrative decisions turn on which considerations a decision-maker <em>must</em> weigh and which they merely <em>may</em>. The Consideration Matrix maps that mandatory/discretionary split so a decision — or its review — can be audited against it.</p>
@@ -1329,6 +1372,7 @@
     </article>
 
     <article class="card">
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="9" width="32" height="46" rx="3"/><path d="M23 21H41M23 29H41M23 47H34"/><rect x="23" y="35" width="20" height="6" rx="1.5" fill="currentColor" stroke="none"/></svg></span>
       <div class="card-eyebrow">GlassCase · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">FOI Redaction Taxonomy</h3></div></div>
       <p class="card-content">FOI refusals are hard to compare because agencies describe redactions inconsistently. The taxonomy gives redaction decisions a shared vocabulary, making FOI decision quality legible across agencies.</p>
@@ -1336,6 +1380,7 @@
     </article>
 
     <article class="card">
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 46A20 20 0 0 1 51 46"/><path d="M32 46L44 30"/><circle cx="32" cy="46" r="3.5" fill="currentColor" stroke="none"/></svg></span>
       <div class="card-eyebrow">GlassCase · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">Institutional Stress Mapper</h3></div></div>
       <p class="card-content">A composite indicator that draws scattered signals of institutional health into a single, trackable measure of where an institution is under strain.</p>
@@ -1343,6 +1388,7 @@
     </article>
 
     <article class="card">
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="15" y="14" width="34" height="40" rx="4"/><rect x="25" y="9" width="14" height="9" rx="2.5"/><path d="M23 30H41M23 38H41M23 46H34"/></svg></span>
       <div class="card-eyebrow">Law &amp; Learning · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">Court Observation Tool</h3></div></div>
       <p class="card-content">Structured templates that turn a courtroom visit into a repeatable learning exercise — what to watch for, how to record it, how to reflect on it afterwards.</p>
@@ -1350,6 +1396,7 @@
     </article>
 
     <article class="card">
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18 25 13 39 18 52 13 52 46 39 51 25 46 12 51Z"/><path d="M25 13V46M39 18V51"/></svg></span>
       <div class="card-eyebrow">Law &amp; Learning · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">GDPR Study Map</h3></div></div>
       <p class="card-content">A doctrinal map of the GDPR aligned to the CIPP/E syllabus — the architecture of the regime laid out so its structure is visible at a glance.</p>
@@ -1357,6 +1404,7 @@
     </article>
 
     <article class="card">
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50H22V39H34V28H46V17H54"/></svg></span>
       <div class="card-eyebrow">LightKey · Guide</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">Making an FOI Request</h3></div></div>
       <p class="card-content">A plain-language, cognitively accessible walkthrough of how to make a Freedom of Information request — the administrative pathway broken into clear, navigable steps.</p>
@@ -1373,6 +1421,7 @@
   </div>
   <div class="work-feature">
     <article class="card">
+      <span class="work-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 51H53"/><path d="M21 51V40M32 51V30M43 51V20"/></svg></span>
       <div class="card-eyebrow">Education outcomes · 2022–2025</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">Four cohorts, measured</h3></div></div>
       <p class="card-content">Twelve years in Victorian public education governance, and four consecutive Grade 5/6 cohorts tracked with matched pre/post data. The education page sets out the effect sizes, the method behind them, and an honest account of what a single-school design can and cannot show.</p>
