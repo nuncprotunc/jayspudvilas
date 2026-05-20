@@ -109,9 +109,8 @@ const JS_SITE = {
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-attribution">&copy; 2014&ndash;2026 Jay Spudvilas</p>
-        <p class="footer-meta">Built in Australia &middot; Founder of GlassCase.org and Law &amp; Learning &middot; Made for everyone who believes fairness should be visible &middot; <span class="footer-meta-muted">Information only, not legal advice</span> &middot; <a href="#" class="footer-meta-muted" onclick="if(typeof resetAnalyticsConsent==='function')resetAnalyticsConsent();return false;">Cookie settings</a></p>
-        <p class="footer-meta footer-meta-muted">GlassCase&trade; is a trade mark of Jayden Spudvilas-Powell.</p>
+        <p class="footer-attribution">&copy; 2014&ndash;2026 Jay Spudvilas &middot; Built in Australia</p>
+        <p class="footer-meta"><span class="footer-meta-muted">Information only, not legal advice</span> &middot; <a href="#" class="footer-meta-muted" onclick="if(typeof resetAnalyticsConsent==='function')resetAnalyticsConsent();return false;">Cookie settings</a> &middot; <span class="footer-meta-muted">GlassCase&trade; is a trade mark of Jayden Spudvilas-Powell.</span></p>
       </div>
     </footer>
   `

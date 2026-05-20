@@ -711,6 +711,18 @@
     .data-toggle[open] > summary::before { content: '▾  '; }
     .data-toggle > summary:hover { color: var(--blue-bright); }
 
+    /* Quiet caption tying the cohort caveat to the chart it belongs to */
+    .chart-caveat {
+      margin: var(--space-lg) auto 0;
+      max-width: 64ch;
+      padding-top: var(--space-md);
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
     .card {
       background: var(--bg-glass);
       backdrop-filter: blur(24px) saturate(180%);
@@ -1922,11 +1934,10 @@
             <text x="440.2" y="292" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#E8E4F5">1.16</text>
           </svg>
         </div>
+        <p class="chart-caveat">Within-cohort outcomes from four consecutive classes taught by one teacher in a single school &mdash; not a controlled trial. Effect sizes are standardised pre&ndash;post gains benchmarked against published norms: they describe the size of each change, not its cause.</p>
       </div>
 
-      <p class="note" style="text-align: center; max-width: 64ch; margin: var(--space-2xl) auto 0;"><strong>Reading these results:</strong> These are within-cohort outcomes from four consecutive classes taught by one teacher in a single school &mdash; not a controlled trial. Effect sizes are standardised pre&ndash;post gains benchmarked against published norms; they describe the size of each change, not its cause, and cohort-specific factors cannot be ruled out.</p>
-
-      <p class="note" style="text-align: center; margin-top: var(--space-lg);">Select a year above to read cohort-specific results, or view <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">full references</a>.</p>
+      <p class="note" style="text-align: center; margin-top: var(--space-2xl);">Select a year above to read cohort-specific results, or view <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">full references</a>.</p>
     </section>
     </section>
 
@@ -3092,7 +3103,7 @@
     });
   </script>
 
-<script src="/js/components.js?v=20260521"></script>
+<script src="/js/components.js?v=20260521b"></script>
 
 </body>
 </html>

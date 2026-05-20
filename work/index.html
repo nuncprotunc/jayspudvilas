@@ -1220,22 +1220,6 @@
     }
     .work-feature { max-width: 1120px; margin: 0 auto; }
 
-    /* Scaffold marker — remove each badge once the entry is filled in */
-    .work-todo {
-      display: inline-block;
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #fbbf24;
-      background: rgba(251, 191, 36, 0.12);
-      border: 1px solid rgba(251, 191, 36, 0.35);
-      border-radius: 6px;
-      padding: 2px 7px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-    }
-
     .work-end-note {
       max-width: 1120px;
       margin: var(--space-3xl) auto 0;
@@ -1282,45 +1266,50 @@
 
 </main>
 
-<!-- ============================================================
-     SCAFFOLD — delete this comment block once the page is populated.
-     • Submissions: replace every [bracketed] placeholder, write each
-       work-entry__desc, and swap every href="#" for the real
-       document / inquiry-page URL.
-     • Remove each <span class="work-todo"> badge as that entry is done.
-     • Tools: the card copy is a usable first draft — verify the
-       wording, and deep-link each card to the specific tool page if
-       a direct URL exists (currently linking the project root).
-     ============================================================ -->
-
 <section class="work-section" aria-labelledby="submissions-title">
   <div class="work-section-head">
     <h2 class="work-section-title" id="submissions-title">Submissions &amp; writing</h2>
-    <p class="work-section-intro">Formal submissions to public inquiries, and longer-form analysis — authored, dated, and linked to the source document.</p>
+    <p class="work-section-intro">Submissions to parliamentary inquiries and published position papers — authored, dated, and linked to the source.</p>
   </div>
   <div class="work-list">
 
     <article class="work-entry">
-      <p class="work-entry__meta">Senate submission · FOI reform · 2025</p>
-      <h3 class="work-entry__title">Submission to the [committee name] inquiry into Freedom of Information reform <span class="work-todo">draft</span></h3>
-      <p class="work-entry__desc">[One to two sentences: what the inquiry was examining, the gap you identified, and the reform you argued for. Frame it — the "why this mattered" — rather than summarising the document.]</p>
+      <p class="work-entry__meta">Senate submission · Parliament of Australia · March 2026</p>
+      <h3 class="work-entry__title">Review of the National Emergency Declaration Act 2020</h3>
+      <p class="work-entry__desc">A submission to the Senate Legal and Constitutional Affairs Legislation Committee's review of the Act — on the oversight and accountability structures governing how national emergencies are declared, extended and reviewed.</p>
       <div class="work-entry__links">
-        <a class="work-entry__link" href="#">Read the submission (PDF) →</a>
-        <a class="work-entry__link" href="#">Inquiry page →</a>
+        <a class="work-entry__link" href="https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Legal_and_Constitutional_Affairs/NED48/Submissions" target="_blank" rel="noopener">View submissions →</a>
+        <a class="work-entry__link" href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">Record on ORCID →</a>
       </div>
     </article>
 
     <article class="work-entry">
-      <p class="work-entry__meta">Senate submission · Emergency declaration oversight · 2025–2026</p>
-      <h3 class="work-entry__title">Submission on the oversight of emergency declarations <span class="work-todo">draft</span></h3>
-      <p class="work-entry__desc">[One to two sentences: the oversight gap in how emergency declarations are made or reviewed, and the change you proposed.]</p>
+      <p class="work-entry__meta">Position paper · GlassCase · February 2026</p>
+      <h3 class="work-entry__title">Making Integrity Visible</h3>
+      <p class="work-entry__desc">A position paper setting out the GlassCase approach: why institutional integrity should be observable, and how open, statute-aligned tools can make the way public decisions are taken legible.</p>
       <div class="work-entry__links">
-        <a class="work-entry__link" href="#">Read the submission (PDF) →</a>
-        <a class="work-entry__link" href="#">Inquiry page →</a>
+        <a class="work-entry__link" href="https://doi.org/10.5281/zenodo.18814499" target="_blank" rel="noopener">Read on Zenodo (DOI) →</a>
       </div>
     </article>
 
-    <!-- Add further submissions or published analysis as new <article class="work-entry"> blocks. -->
+    <article class="work-entry">
+      <p class="work-entry__meta">Position paper · LightKey · February 2026</p>
+      <h3 class="work-entry__title">When the Pathway Is the Barrier</h3>
+      <p class="work-entry__desc">A position paper on cognitive accessibility in administrative processes — what happens when the process itself, rather than the entitlement, is what shuts people out.</p>
+      <div class="work-entry__links">
+        <a class="work-entry__link" href="https://doi.org/10.5281/zenodo.18814594" target="_blank" rel="noopener">Read on Zenodo (DOI) →</a>
+      </div>
+    </article>
+
+    <article class="work-entry">
+      <p class="work-entry__meta">Senate submission · Parliament of Australia · October 2025</p>
+      <h3 class="work-entry__title">Freedom of Information Amendment Bill 2025</h3>
+      <p class="work-entry__desc">A submission to the Senate Legal and Constitutional Affairs Legislation Committee on the Bill's proposed changes to Australia's FOI regime — focused on how the drafting would shape the transparency and reviewability of administrative decisions.</p>
+      <div class="work-entry__links">
+        <a class="work-entry__link" href="https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Legal_and_Constitutional_Affairs/FOIBill2025/Submissions" target="_blank" rel="noopener">View submissions →</a>
+        <a class="work-entry__link" href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">Record on ORCID →</a>
+      </div>
+    </article>
 
   </div>
 </section>
@@ -1328,7 +1317,7 @@
 <section class="work-section" aria-labelledby="tools-title">
   <div class="work-section-head">
     <h2 class="work-section-title" id="tools-title">Tools &amp; instruments</h2>
-    <p class="work-section-intro">Diagnostic tools built to make administrative process legible. Each lives on its project site — here is what it does and why it exists.</p>
+    <p class="work-section-intro">Open, citable instruments built to make administrative process legible — most deposited with a DOI. Here is what each does and why it exists.</p>
   </div>
   <div class="work-cards">
 
@@ -1336,42 +1325,42 @@
       <div class="card-eyebrow">GlassCase · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">Consideration Matrix</h3></div></div>
       <p class="card-content">Administrative decisions turn on which considerations a decision-maker <em>must</em> weigh and which they merely <em>may</em>. The Consideration Matrix maps that mandatory/discretionary split so a decision — or its review — can be audited against it.</p>
-      <a href="https://glasscase.org" class="card-link">Open on glasscase.org →</a>
+      <a href="https://doi.org/10.5281/zenodo.18087523" class="card-link" target="_blank" rel="noopener">View on Zenodo (DOI) →</a>
     </article>
 
     <article class="card">
       <div class="card-eyebrow">GlassCase · Tool</div>
-      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Redaction Taxonomy</h3></div></div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">FOI Redaction Taxonomy</h3></div></div>
       <p class="card-content">FOI refusals are hard to compare because agencies describe redactions inconsistently. The taxonomy gives redaction decisions a shared vocabulary, making FOI decision quality legible across agencies.</p>
-      <a href="https://glasscase.org" class="card-link">Open on glasscase.org →</a>
+      <a href="https://doi.org/10.5281/zenodo.18062442" class="card-link" target="_blank" rel="noopener">View on Zenodo (DOI) →</a>
     </article>
 
     <article class="card">
       <div class="card-eyebrow">GlassCase · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">Institutional Stress Mapper</h3></div></div>
       <p class="card-content">A composite indicator that draws scattered signals of institutional health into a single, trackable measure of where an institution is under strain.</p>
-      <a href="https://glasscase.org" class="card-link">Open on glasscase.org →</a>
+      <a href="https://doi.org/10.5281/zenodo.18522839" class="card-link" target="_blank" rel="noopener">View on Zenodo (DOI) →</a>
     </article>
 
     <article class="card">
       <div class="card-eyebrow">Law &amp; Learning · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">Court Observation Tool</h3></div></div>
       <p class="card-content">Structured templates that turn a courtroom visit into a repeatable learning exercise — what to watch for, how to record it, how to reflect on it afterwards.</p>
-      <a href="https://lawandlearning.com" class="card-link">Open on lawandlearning.com →</a>
+      <a href="https://doi.org/10.5281/zenodo.18659537" class="card-link" target="_blank" rel="noopener">View on Zenodo (DOI) →</a>
     </article>
 
     <article class="card">
       <div class="card-eyebrow">Law &amp; Learning · Tool</div>
       <div class="card-header"><div class="card-title-group"><h3 class="card-title">GDPR Study Map</h3></div></div>
       <p class="card-content">A doctrinal map of the GDPR aligned to the CIPP/E syllabus — the architecture of the regime laid out so its structure is visible at a glance.</p>
-      <a href="https://lawandlearning.com" class="card-link">Open on lawandlearning.com →</a>
+      <a href="https://lawandlearning.com" class="card-link" target="_blank" rel="noopener">Open on lawandlearning.com →</a>
     </article>
 
     <article class="card">
-      <div class="card-eyebrow">LightKey · Guides</div>
-      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Pathway guides</h3></div></div>
-      <p class="card-content">Plain-language, cognitively accessible walkthroughs of administrative processes — such as how to make an FOI request — designed so the path is navigable for everyone.</p>
-      <a href="https://lightkey.org" class="card-link" target="_blank" rel="noopener">Open on lightkey.org →</a>
+      <div class="card-eyebrow">LightKey · Guide</div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Making an FOI Request</h3></div></div>
+      <p class="card-content">A plain-language, cognitively accessible walkthrough of how to make a Freedom of Information request — the administrative pathway broken into clear, navigable steps.</p>
+      <a href="https://doi.org/10.5281/zenodo.20302675" class="card-link" target="_blank" rel="noopener">View on Zenodo (DOI) →</a>
     </article>
 
   </div>
@@ -1398,7 +1387,7 @@
 
 <div id="js-footer"></div>
 
-<script src="/js/components.js?v=20260521"></script>
+<script src="/js/components.js?v=20260521b"></script>
 
 </body>
 </html>
