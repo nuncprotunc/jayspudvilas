@@ -66,6 +66,9 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css?v=2026-03-02">
   <style>
     :root {
@@ -83,7 +86,10 @@
       --blue-bright: #7EA8FF;
       --blue-light: #A8C0FF;
       --blue-glow: rgba(59, 130, 246, 0.3);
-      
+
+      /* Soft serif for the display heading — matches the homepage */
+      --font-display: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+
       --bg-base: #0a0e17;
       --bg-elevated: #0f1419;
       --bg-card: #111621;
@@ -588,17 +594,15 @@
     }
 
     .hero-name {
-      font-family: 'Spectral SC', 'Spectral', Georgia, serif;
-      font-size: clamp(2.25rem, 6vw, 3.5rem);
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
       font-style: normal;
       font-weight: 600;
-      font-size-adjust: from-font;
-      color: #8093FF;
+      color: #7EA8FF;
       margin-bottom: var(--space-md);
-      letter-spacing: -0.03em;
-      line-height: 1.15;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
       animation: fadeInUp var(--transition-elegant) 0.4s;
-      text-shadow: 0 0 40px var(--purple-glow);
     }
 
     @keyframes fadeInUp {
@@ -1787,7 +1791,7 @@
         </div>
         <div class="card stat-card observe-animate">
           <span class="badge">Students</span>
-          <div class="stat-value">~100</div>
+          <div class="stat-value">&asymp;100</div>
           <p class="stat-label">Whole-class samples</p>
           <p class="stat-desc">Four non-overlapping Grade 5/6 cohorts &mdash; no selection.</p>
         </div>
@@ -1795,7 +1799,7 @@
 
       <div class="card observe-animate">
         <h2 class="card-title" style="text-align: center; margin-bottom: var(--space-md);">Effect sizes across cohorts</h2>
-        <p class="note" style="text-align: center; max-width: 64ch; margin: 0 auto var(--space-xl);">Cohen&rsquo;s d for each measure. Reference lines mark Hattie&rsquo;s hinge (d = 0.40), large effect (d = 0.80) and very large effect (d = 1.20). d = standardised within-cohort gain (gain &divide; SD of gain scores).</p>
+        <p class="note" style="text-align: center; max-width: 64ch; margin: 0 auto var(--space-xl);">Cohen&rsquo;s d for each measure. Reference lines mark Hattie&rsquo;s hinge (d = 0.40), large effect (d = 0.80) and very large effect (d = 1.20) &mdash; on Hattie&rsquo;s rule of thumb, roughly one, two and three years of schooling growth. d = standardised within-cohort gain (gain &divide; SD of gain scores).</p>
 
         <div class="effect-chart" role="img" aria-label="Bar chart of effect sizes across six measures. 2025 PAT-M d = 1.65; 2025 PAT-R d = 1.15; 2024 PAT-M d = 1.05; 2024 PAT-R d = 0.80; 2024 DIBELS ORF d = 2.48; 2023 DIBELS MAZE d = 1.16.">
           <svg viewBox="0 0 800 340" aria-hidden="true">
@@ -2611,7 +2615,7 @@
                     <td data-right>5.10</td>
                     <td data-right class="gain-positive">+0.59</td>
                     <td data-right><strong>0.66</strong></td>
-                    <td><span class="effect-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706);">Medium-Large</span></td>
+                    <td><span class="effect-badge" style="background: rgba(245,158,11,0.15); color: #f59e0b;">Medium-Large</span></td>
                   </tr>
                   <tr>
                     <td style="text-align: left;">Supports me if confused</td>
@@ -2619,7 +2623,7 @@
                     <td data-right>5.07</td>
                     <td data-right class="gain-positive">+0.59</td>
                     <td data-right><strong>0.66</strong></td>
-                    <td><span class="effect-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706);">Medium-Large</span></td>
+                    <td><span class="effect-badge" style="background: rgba(245,158,11,0.15); color: #f59e0b;">Medium-Large</span></td>
                   </tr>
                   <tr>
                     <td style="text-align: left;">Connects to prior learning</td>
@@ -2627,7 +2631,7 @@
                     <td data-right>4.87</td>
                     <td data-right class="gain-positive">+0.58</td>
                     <td data-right><strong>0.64</strong></td>
-                    <td><span class="effect-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706);">Medium-Large</span></td>
+                    <td><span class="effect-badge" style="background: rgba(245,158,11,0.15); color: #f59e0b;">Medium-Large</span></td>
                   </tr>
                 </tbody>
               </table>
