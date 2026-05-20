@@ -1924,7 +1924,9 @@
         </div>
       </div>
 
-      <p class="note" style="text-align: center; margin-top: var(--space-2xl);">Select a year above to read cohort-specific results, or view <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">full references</a>.</p>
+      <p class="note" style="text-align: center; max-width: 64ch; margin: var(--space-2xl) auto 0;"><strong>Reading these results:</strong> These are within-cohort outcomes from four consecutive classes taught by one teacher in a single school &mdash; not a controlled trial. Effect sizes are standardised pre&ndash;post gains benchmarked against published norms; they describe the size of each change, not its cause, and cohort-specific factors cannot be ruled out.</p>
+
+      <p class="note" style="text-align: center; margin-top: var(--space-lg);">Select a year above to read cohort-specific results, or view <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">full references</a>.</p>
     </section>
     </section>
 
@@ -2039,7 +2041,7 @@
           <span class="badge">Mathematics</span>
           <div class="stat-value" data-value="1.58">d = 1.58</div>
           <p class="stat-label">Cohen's d (effect size)</p>
-          <p class="stat-desc">Very large impact: the average student moved from the 50th to the 94th–95th percentile.</p>
+          <p class="stat-desc">Very large effect — equivalent to the average student shifting from about the 50th to the 94th–95th percentile.</p>
           <span class="effect-badge">Observed Growth</span>
         </div>
         <div class="card stat-card observe-animate">
@@ -2047,7 +2049,7 @@
           <span class="badge">Reading</span>
           <div class="stat-value" data-value="1.18">d = 1.18</div>
           <p class="stat-label">Cohen's d (effect size)</p>
-          <p class="stat-desc">Large impact: the average student moved from the 50th to the 88th percentile.</p>
+          <p class="stat-desc">Large effect — equivalent to the average student shifting from about the 50th to the 88th percentile.</p>
           <span class="effect-badge">Large Observed Growth</span>
         </div>
         <div class="card stat-card observe-animate">
@@ -2201,14 +2203,14 @@
         <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="12" width="36" height="8" rx="2.5"/><rect x="14" y="24" width="36" height="8" rx="2.5"/><rect x="14" y="36" width="36" height="8" rx="2.5"/><rect x="14" y="48" width="36" height="8" rx="2.5"/></svg></span>
         <span class="badge">Cross-Cohort Consistency</span>
         <div class="stat-value">d = 0.80 – 2.48</div>
-        <p class="stat-label">Replicated Effect Sizes</p>
-        <p class="stat-desc">Replicated effect sizes across four consecutive cohorts (2022–2025).</p>
+        <p class="stat-label">Consistent Effect Sizes</p>
+        <p class="stat-desc">Effect sizes in the large-to-very-large range across all four consecutive cohorts (2022–2025).</p>
       </div>
     </section>
 
     <section class="page-section observe-animate">
       <p class="note" style="margin-top: 1rem;">Effect sizes and ≥2-year growth proportions were recalculated in <a href="https://cran.r-project.org/" target="_blank" rel="noopener">R 4.5.2</a> (November 2025) using the gain-score method on matched pre–post data (n = 21–22). Analyses verified against ACER PAT technical manuals and benchmarked to national norms (<a href="https://www.taylorfrancis.com/books/mono/10.4324/9780203887332/visible-learning-john-hattie" target="_blank" rel="noopener">Hattie, 2009</a>).</p>
-      <p class="note"><strong>Study Limitations:</strong> Single-school cohort design without randomized control group. While effect sizes are benchmarked against national norms, causal attribution requires controlled comparison. Results reflect within-cohort growth and may be influenced by cohort-specific factors.</p>
+      <p class="note"><strong>Study Limitations:</strong> Single-school cohort design without a randomised control group. Effect sizes are benchmarked against national norms, but causal attribution would require controlled comparison. Results reflect within-cohort growth and may be influenced by cohort-specific factors.</p>
       <p class="note"><strong>Implementation Note:</strong> These outcomes were achieved with standard class sizes (21–22 students), regular curriculum time blocks (90 min/day literacy + numeracy), and no additional staffing or funding. Evidence-based routines included daily explicit instruction (<a href="https://eric.ed.gov/?id=EJ971753" target="_blank" rel="noopener">Rosenshine's Principles of Instruction (2012)</a>), Partner Reading &amp; Paragraph Shrinking (<a href="https://doi.org/10.3102/00028312034001174" target="_blank" rel="noopener">Fuchs et al. (1997) Peer-Assisted Learning Strategies</a>; <a href="https://psycnet.apa.org/record/2015-40806-010" target="_blank" rel="noopener">Burns et al. (2016) Tier 1 Reading Framework</a>) and weekly progress monitoring with targeted intervention grouping.</p>
       <p class="note" style="margin-bottom: 0;"><strong>Methodology Transparency:</strong> Analysis code, simulation protocols, and methodological documentation available in repository. Contact for access to anonymized data extracts and pre-post matching protocols.</p>
       <p class="note" style="font-size: 0.8rem; opacity: 0.8; margin-top: 1rem;"><strong>Research notes:</strong> Explicit instruction and daily review informed by <a href="https://eric.ed.gov/?id=EJ971753" target="_blank" rel="noopener">Rosenshine (2012)</a> and <a href="https://www.taylorfrancis.com/books/mono/10.4324/9780203887332/visible-learning-john-hattie" target="_blank" rel="noopener">Hattie (2009)</a>; peer-assisted learning draws on <a href="https://doi.org/10.3102/00028312034001174" target="_blank" rel="noopener">Fuchs et al. (1997)</a> and <a href="https://psycnet.apa.org/record/2015-40806-010" target="_blank" rel="noopener">Burns et al. (2016)</a>. <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">Full references →</a></p>
@@ -2422,7 +2424,8 @@
         <p class="note" style="margin-top: 1rem;"><strong>Data Source:</strong> <a href="https://www.acer.org/au/pat/assessments" target="_blank" rel="noopener">PAT-Mathematics</a> and <a href="https://www.acer.org/au/pat/assessments" target="_blank" rel="noopener">PAT-Reading</a> (2024). Assessment window varied by student. All student data is fully anonymised (Student 1–N).</p>
       <p class="note"><strong>Corroboration:</strong> Independent measures (<a href="https://www.mathfactlab.com/" target="_blank" rel="noopener">MathFactLab</a>, <a href="https://dibels.uoregon.edu/materials/dibels-australasian" target="_blank" rel="noopener">DIBELS ORF</a>) align with PAT growth patterns, providing triangulated evidence of instructional impact.</p>
       <p class="note"><strong>Implementation Note:</strong> Outcomes achieved with standard class sizes (27–28 students) and no additional resources. Daily routines: 15-min explicit math instruction (<a href="https://eric.ed.gov/?id=EJ971753" target="_blank" rel="noopener">Rosenshine's Principles of Instruction (2012)</a>), 20-min Partner Reading &amp; Paragraph Shrinking (<a href="https://doi.org/10.3102/00028312034001174" target="_blank" rel="noopener">Fuchs et al. (1997) Peer-Assisted Learning Strategies</a>; <a href="https://psycnet.apa.org/record/2015-40806-010" target="_blank" rel="noopener">Burns et al. (2016) Tier 1 Reading Framework</a>), weekly assessment-informed grouping. Time investment: 90 min/day structured literacy + numeracy blocks, weekly 30-min planning per learning group. Formative assessment and student feedback routines follow <a href="https://www.solutiontree.com/embedded-formative-assessment-second-ed.html" target="_blank" rel="noopener">Wiliam's work on embedded formative assessment (2011)</a> and <a href="https://eric.ed.gov/?id=ED540960" target="_blank" rel="noopener">Kane & Staiger's MET Project findings (2012)</a>.</p>
-      <p class="note" style="margin-bottom: 0;">All 2024 figures recomputed in November 2025 using the gain-score method on matched pre–post data (<a href="https://cran.r-project.org/" target="_blank" rel="noopener">R 4.5.2</a>).</p>
+      <p class="note">All 2024 figures recomputed in November 2025 using the gain-score method on matched pre–post data (<a href="https://cran.r-project.org/" target="_blank" rel="noopener">R 4.5.2</a>).</p>
+      <p class="note" style="margin-bottom: 0;"><strong>Study Limitations:</strong> Single-school cohort taught by one teacher, without a randomised control group. Effect sizes describe within-cohort pre–post change benchmarked against published norms, not a causal estimate; the independent measures (MathFactLab, DIBELS ORF) corroborate the pattern but share the same design limitation.</p>
       <p class="note" style="font-size: 0.8rem; opacity: 0.8; margin-top: 1rem;"><strong>Research notes:</strong> Formative assessment and student surveys guided by <a href="https://www.solutiontree.com/embedded-formative-assessment-second-ed.html" target="_blank" rel="noopener">Wiliam (2011)</a> and <a href="https://eric.ed.gov/?id=ED540960" target="_blank" rel="noopener">Kane & Staiger (2012)</a>; corroboration via <a href="https://www.mathfactlab.com/" target="_blank" rel="noopener">MathFactLab</a> and <a href="https://dibels.uoregon.edu/materials/dibels-australasian" target="_blank" rel="noopener">DIBELS ORF</a>. <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">Full references →</a></p>
       </section>
     </section>
@@ -2464,7 +2467,7 @@
             </div>
 
             <div class="pivot-body">
-              <p>Focused comprehension routines and explicit instruction produced within-cohort growth aligned with the upper band of published interventions.</p>
+              <p>Focused comprehension routines and explicit instruction coincided with within-cohort growth aligned with the upper band of published interventions.</p>
               <p>Conducted in a government primary school in Melbourne's outer western suburbs; 61% LBOTE, 1% Aboriginal and Torres Strait Islander students. All student data is fully anonymised (<em>Student 1–N</em>). Effect sizes computed using the gain-score method on matched pre–post <a href="https://dibels.uoregon.edu/materials/dibels-australasian" target="_blank" rel="noopener">DIBELS MAZE</a> data.</p>
             </div>
           </div>
@@ -2561,6 +2564,7 @@
         <p class="note" style="margin-top: 1rem;"><strong>Context:</strong> This cohort was taught over a 4-month period (2023). <a href="https://dibels.uoregon.edu/materials/dibels-australasian" target="_blank" rel="noopener">DIBELS MAZE</a> is a standardized reading comprehension assessment. All student data is fully anonymised (Student 1–N).</p>
       <p class="note"><strong>Implementation Note:</strong> Compressed 4-month intervention used daily 20-min explicit comprehension instruction (<a href="https://eric.ed.gov/?id=EJ971753" target="_blank" rel="noopener">Rosenshine's Principles of Instruction (2012)</a>) with MAZE practice (<a href="https://dibels.uoregon.edu/materials/dibels-australasian" target="_blank" rel="noopener">DIBELS MAZE</a>). Standard class size (26 students), no additional resources. Demonstrates how focused, evidence-based routines can accelerate outcomes within regular curriculum constraints. The focus on reading comprehension and fluency reflects frameworks from <a href="https://www.wiley.com/en-us/Essentials+of+Assessing%2C+Preventing%2C+and+Overcoming+Reading+Difficulties+-p-9781118845240" target="_blank" rel="noopener">Kilpatrick (2015)</a> for preventing reading difficulties.</p>
       <p class="note">Figures computed in <a href="https://cran.r-project.org/" target="_blank" rel="noopener">R 4.5.2</a> (November 2025) using the gain-score method on matched pre–post data.</p>
+      <p class="note"><strong>Study Limitations:</strong> Single-school cohort over a compressed four-month window, taught by one teacher without a randomised control group. The effect size describes within-cohort pre–post change benchmarked against published norms, not a causal estimate.</p>
       <p class="note" style="font-size: 0.8rem; opacity: 0.8; margin-top: 1rem;"><strong>Research notes:</strong> Tier 1 reading comprehension routines draw on <a href="https://eric.ed.gov/?id=EJ971753" target="_blank" rel="noopener">Rosenshine (2012)</a>, <a href="https://www.wiley.com/en-us/Essentials+of+Assessing%2C+Preventing%2C+and+Overcoming+Reading+Difficulties+-p-9781118845240" target="_blank" rel="noopener">Kilpatrick (2015)</a>, and <a href="https://dibels.uoregon.edu/materials/dibels-australasian" target="_blank" rel="noopener">DIBELS MAZE</a> assessment framework. <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">Full references →</a></p>
       </section>
     </section>
@@ -2591,7 +2595,7 @@
             <p class="cohort-note__subtitle">Grade 5/6 · Victorian Government School · South Western Victorian Region (SWVR)</p>
             <div class="cohort-note__rule"></div>
 
-            <p class="pivot-hero">In a national pilot of student voice, agency and perception measures, this Grade 5/6 cohort ranked at the <strong>97th percentile nationally</strong>, well above the <strong>Top 10 percent benchmark</strong> across every domain.</p>
+            <p class="pivot-hero">In a national pilot of student voice, agency and perception measures, this Grade 5/6 cohort rated their classroom around the <strong>97th percentile</strong> on the Monte Carlo benchmark &mdash; above the <strong>Top-10% benchmark</strong> across every domain.</p>
 
             <div class="pivot-metrics">
               <div class="metrics-row">
@@ -2625,14 +2629,14 @@
             <span class="badge">National Percentile</span>
             <div class="stat-value">97th</div>
             <p class="stat-label">Monte Carlo Estimate</p>
-            <p class="stat-desc">5M-simulation benchmark ranks Jay ahead of 97% of teachers in the Top-10% pilot.</p>
+            <p class="stat-desc">Monte Carlo estimate placing this cohort's ratings near the 97th percentile of the Top-10% pilot benchmark.</p>
           </div>
           <div class="card stat-card observe-animate">
             <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10 L37.3 24.7 L52.9 25.2 L40.6 34.8 L44.9 49.8 L32 41 L19.1 49.8 L23.4 34.8 L11.1 25.2 L26.7 24.7 Z"/></svg></span>
-            <span class="badge">Strongest Domain</span>
+            <span class="badge">Strongest Item</span>
             <div class="stat-value">d = 0.74</div>
             <p class="stat-label">Helps Students Focus</p>
-            <p class="stat-desc">Classroom environment composite (focus + wellbeing) landed in the national Top 3%.</p>
+            <p class="stat-desc">Highest-rated of the 10 surveyed items — a large effect.</p>
           </div>
         </div>
 
@@ -2811,7 +2815,8 @@
             <p class="stat-desc">Exceeds all 6 benchmark items.</p>
           </div>
         </div>
-        <p class="note" style="margin-top: var(--space-md);"><strong>Interpretation:</strong> Jay's Relationships score (5.42) exceeds the <strong>mean</strong> of the national Top 10% (5.25), not just the threshold. This places Jay above the 95th percentile nationally. Monte Carlo estimate: <strong>97th percentile</strong>.</p>
+        <p class="note" style="margin-top: var(--space-md);"><strong>Interpretation:</strong> Jay's Relationships score (5.42) sits above the <strong>mean</strong> of the national Top 10% (5.25), not just the threshold. On the Monte Carlo benchmark, that corresponds to an estimated <strong>97th percentile</strong>.</p>
+        <p class="note"><strong>Study Limitations:</strong> Single-cohort perception survey compared with school-wide staff averages and a national Top-10% benchmark — not a controlled trial. The percentile figure is a Monte Carlo estimate against the CSP/Pivot pilot dataset, and reflects how this cohort rated their classroom rather than an independent ranking of teachers.</p>
         <p class="note" style="margin-top: var(--space-md);"><strong>Data Source:</strong> PIVOT Student Survey on Teaching (2022). Survey administered to Grade 5/6 cohort (n ≈ 25 students). School-wide averages represent mean scores across all teaching staff.</p>
         <p class="note"><strong>Benchmark:</strong> National Top 10% data from the <a href="https://cybersafetyproject.com/wp-content/uploads/2025/05/Pivot-Cyber-Safety-Project-Evidence-and-Impact-Report-2025-New-Insights-into-Effective-Online-Safety-Education.pdf" target="_blank" rel="noopener">Cyber Safety Project &amp; Pivot Evidence &amp; Impact Report (2025)</a>, based on pilot study across multiple Australian schools. Student perception data aligns with <a href="https://eric.ed.gov/?id=ED540960" target="_blank" rel="noopener">Kane & Staiger's MET Project (2012)</a> on the value of student surveys for measuring teaching quality.</p>
         <p class="note" style="margin-bottom: 0;">All analyses conducted in <a href="https://cran.r-project.org/" target="_blank" rel="noopener">R 4.5.2</a> (November 2025). Monte Carlo simulation code (5M iterations), item-level data, and full methodological protocols available in repository.</p>
