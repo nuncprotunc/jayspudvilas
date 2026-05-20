@@ -696,6 +696,21 @@
     }
     .range-line svg { width: 100%; height: auto; display: block; }
 
+    /* Collapsible student-level data tables */
+    .data-toggle { margin-top: var(--space-md); }
+    .data-toggle > summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: var(--space-sm) 0;
+      transition: color var(--transition-smooth);
+    }
+    .data-toggle > summary::-webkit-details-marker { display: none; }
+    .data-toggle > summary::before { content: '▸  '; }
+    .data-toggle[open] > summary::before { content: '▾  '; }
+    .data-toggle > summary:hover { color: var(--blue-bright); }
+
     .card {
       background: var(--bg-glass);
       backdrop-filter: blur(24px) saturate(180%);
@@ -2052,25 +2067,23 @@
         <h2 class="card-title">Effect Size Analysis &amp; Teacher Effectiveness</h2>
         <div class="insight-stack">
           <article class="insight-item">
-            <h3 class="insight-title">📊 Mathematics: d = 1.58 (Very Large Effect)</h3>
-            <p><strong>Quantitative interpretation:</strong> A Cohen's d of 1.58 means the average student scored 1.58 standard deviations above their baseline, lifting the median learner from the 50th to roughly the <strong>94th–95th percentile</strong>.</p>
-            <p><strong>Research context (<a href="https://www.taylorfrancis.com/books/mono/10.4324/9780203887332/visible-learning-john-hattie" target="_blank" rel="noopener">Hattie, 2009</a>):</strong> This exceeds the "hinge point" of d = 0.40 for educationally significant impact. These results above d ≈ 1.2 align with the upper range reported in published interventions.</p>
+            <h3 class="insight-title">Mathematics — d = 1.65</h3>
+            <p>Well above Hattie's d = 0.40 "hinge point" for educationally significant impact, and past the d ≈ 1.2 mark reported for the strongest published interventions (<a href="https://www.taylorfrancis.com/books/mono/10.4324/9780203887332/visible-learning-john-hattie" target="_blank" rel="noopener">Hattie, 2009</a>).</p>
+          </article>
+
+          <article class="insight-item">
+            <h3 class="insight-title">Reading — d = 1.15</h3>
+            <p>Typical reading interventions deliver d = 0.50–0.70; at d = 1.15, this cohort's reading growth is roughly double that national average.</p>
           </article>
 
           <article class="insight-item">
             <h3 class="insight-title">Interpretation</h3>
-            <p>Effect sizes of d = 1.58 (Mathematics) and d = 1.18 (Reading) shift typical learners to the <strong>94th–95th</strong> and <strong>88th percentiles</strong> respectively, aligning this cohort's growth with the upper range reported in published interventions (<a href="https://www.taylorfrancis.com/books/mono/10.4324/9780203887332/visible-learning-john-hattie" target="_blank" rel="noopener">Hattie, 2009</a>; <a href="https://eric.ed.gov/?id=ED540960" target="_blank" rel="noopener">Kane &amp; Staiger's MET Project findings (2012)</a>; <a href="https://doi.org/10.1257/aer.104.9.2633" target="_blank" rel="noopener">Chetty et al. (2014) Teacher Value-Added Study</a>). These results exceed typical Year 5/6 growth benchmarks and are consistent with high-impact instructional practice reported in the literature. Students achieved gains typically expected after two or more years of instruction.</p>
-          </article>
-
-          <article class="insight-item">
-            <h3 class="insight-title">📚 Reading: d = 1.18 (Large Effect)</h3>
-            <p><strong>Quantitative interpretation:</strong> The average reader improved by 1.18 standard deviations, moving from the 50th to approximately the <strong>88th percentile</strong>.</p>
-            <p><strong>Research context:</strong> Typical reading interventions deliver d = 0.50–0.70. Achieving d = 1.18 represents reading progress almost double the national intervention average, placing these reading outcomes in the upper range reported in published studies.</p>
+            <p>Combined, these gains are consistent with high-impact instructional practice and with the teacher-effectiveness literature (<a href="https://eric.ed.gov/?id=ED540960" target="_blank" rel="noopener">Kane &amp; Staiger, 2012</a>; <a href="https://doi.org/10.1257/aer.104.9.2633" target="_blank" rel="noopener">Chetty et al., 2014</a>) — growth of a size typically expected after two or more years of instruction.</p>
           </article>
         </div>
 
-        <p class="insight-summary">Combined PAT growth (mean d = 1.38) is aligned with the upper range reported in published interventions, with effect sizes exceeding typical Year 5/6 benchmarks. Applying the ≥8 scale-point PAT growth threshold (a practical benchmark for two years' growth, not an ACER standard), 68.2% (15 of 22) of students achieved at least two years' growth in mathematics and 47.6% (10 of 21) in reading.</p>
-        <p class="insight-summary">Effect sizes were computed using the gain-score method (Cohen's d = mean gain ÷ SD of gain) on matched pre–post data, appropriate for within-cohort designs.</p>
+        <p class="insight-summary">Combined PAT growth averages d = 1.40, exceeding typical Year 5/6 benchmarks. On a practical ≥8 scale-point threshold (≈ two years' growth — not an ACER standard), 16 of 23 students (69.6%) reached at least two years' growth in mathematics and 10 of 21 (47.6%) in reading.</p>
+        <p class="insight-summary">Effect sizes use the gain-score method (Cohen's d = mean gain ÷ SD of gain) on matched pre–post data, appropriate for within-cohort designs.</p>
         <p class="insight-footnote">References: <a href="https://www.taylorfrancis.com/books/mono/10.4324/9780203887332/visible-learning-john-hattie" target="_blank" rel="noopener">Visible Learning (Hattie, 2009)</a>; <a href="https://eric.ed.gov/?id=ED540960" target="_blank" rel="noopener">Kane &amp; Staiger's MET Project findings (2012)</a>; <a href="https://doi.org/10.1016/j.econedurev.2010.12.006" target="_blank" rel="noopener">Hanushek (2011) Economic Value of Teacher Quality</a>; <a href="https://doi.org/10.1257/aer.104.9.2633" target="_blank" rel="noopener">Chetty et al. (2014) Teacher Value-Added Study</a>. Analyses cross-checked against PAT technical manuals.</p>
       </div>
     </section>
@@ -2089,8 +2102,10 @@
 
     <section class="page-section" id="datasets">
       <div class="card tables-card observe-animate">
-        <h2 class="card-title">📐 Mathematics (<a href="https://www.acer.org/au/pat/assessments" target="_blank" rel="noopener">PAT-M</a>): Detailed Results</h2>
-        <p class="note" id="note-2025-math">Assessment window: 12 months · n = 22 students · Mean gain = 11.40 scale points · SD<sub>gain</sub> = 7.21 · Mean pre = 113.27 · Mean post = 124.67 · Cohen's <em>d</em> = 1.58 · Hedges' <em>g</em> = 1.52</p>
+        <h2 class="card-title">Mathematics (<a href="https://www.acer.org/au/pat/assessments" target="_blank" rel="noopener">PAT-M</a>): Detailed Results</h2>
+        <p class="note" id="note-2025-math">Assessment window: 12 months · n = 23 students · Mean gain = 11.29 scale points · SD<sub>gain</sub> = 6.85 · Mean pre = 111.97 · Mean post = 123.26 · Cohen's <em>d</em> = 1.65 · Hedges' <em>g</em> = 1.59</p>
+        <details class="data-toggle">
+          <summary>Show all 23 students</summary>
         <div class="tables-wrapper">
           <div class="data-table-container">
             <table class="data-table">
@@ -2131,11 +2146,14 @@
             </table>
           </div>
         </div>
+        </details>
       </div>
 
       <div class="card tables-card observe-animate" style="margin-top: var(--space-lg);">
-        <h2 class="card-title">📚 Reading (<a href="https://www.acer.org/au/pat/assessments" target="_blank" rel="noopener">PAT-R</a>): Detailed Results</h2>
-        <p class="note" id="note-2025-reading">Assessment window: 12 months · n = 21 students · Mean gain = 8.22 scale points · SD<sub>gain</sub> = 6.95 · Mean pre = 114.54 · Mean post = 122.76 · Cohen's <em>d</em> = 1.18 · Hedges' <em>g</em> = 1.14</p>
+        <h2 class="card-title">Reading (<a href="https://www.acer.org/au/pat/assessments" target="_blank" rel="noopener">PAT-R</a>): Detailed Results</h2>
+        <p class="note" id="note-2025-reading">Assessment window: 12 months · n = 21 students · Mean gain = 9.59 scale points · SD<sub>gain</sub> = 8.34 · Mean pre = 112.11 · Mean post = 121.70 · Cohen's <em>d</em> = 1.15 · Hedges' <em>g</em> = 1.10</p>
+        <details class="data-toggle">
+          <summary>Show all 21 students</summary>
         <div class="tables-wrapper">
           <div class="data-table-container">
             <table class="data-table">
@@ -2174,6 +2192,7 @@
             </table>
           </div>
         </div>
+        </details>
       </div>
     </section>
 
