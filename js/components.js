@@ -31,7 +31,6 @@ const JS_SITE = {
           <a class="global-nav__link" href="https://lawandlearning.com" target="_blank" rel="noopener">Law &amp; Learning</a>
           <a class="global-nav__link" href="https://jayspudvilas.com/work/">Work</a>
           <a class="global-nav__link" href="https://jayspudvilas.com/education/">Education</a>
-          <a class="global-nav__link" href="https://jayspudvilas.com/legal/">Use &amp; Privacy</a>
           <a class="global-nav__link" href="mailto:jay@jayspudvilas.com">Contact</a>
         </nav>
         <button class="js-reading-toggle" id="jsReadingToggle"
@@ -60,7 +59,6 @@ const JS_SITE = {
         <a href="https://lawandlearning.com" onclick="closeMobileMenu()" target="_blank" rel="noopener">Law &amp; Learning</a>
         <a href="https://jayspudvilas.com/work/" onclick="closeMobileMenu()">Work</a>
         <a href="https://jayspudvilas.com/education/" onclick="closeMobileMenu()">Education</a>
-        <a href="https://jayspudvilas.com/legal/" onclick="closeMobileMenu()">Use &amp; Privacy</a>
         <a href="mailto:jay@jayspudvilas.com" onclick="closeMobileMenu()">Contact</a>
       </nav>
     </div>
