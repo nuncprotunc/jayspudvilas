@@ -43,12 +43,12 @@
   <link rel="me" href="https://substack.com/@glasscase">
   <link rel="me" href="https://glasscase.substack.com/">
   
-  <!-- Spectral for headings -->
+  <!-- Crimson Pro (headings) + Spectral SC (brand mark) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&display=swap"></noscript>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500;600&display=swap"></noscript>
@@ -125,13 +125,16 @@
       --purple-medium: #8b5cf6;
       --purple-light: #a78bfa;
       --purple-muted: #c4b5fd;
-      --purple-glow: rgba(139, 92, 246, 0.4);
-      
+      --purple-glow: rgba(139, 92, 246, 0.24);
+
       --blue-deep: #1e40af;
       --blue-medium: #3b82f6;
       --blue-bright: #60a5fa;
       --blue-light: #93c5fd;
-      --blue-glow: rgba(59, 130, 246, 0.3);
+      --blue-glow: rgba(59, 130, 246, 0.18);
+
+      /* Soft serif for display headings; body stays Inter */
+      --font-display: 'Crimson Pro', Georgia, 'Times New Roman', serif;
       
       --bg-base: #0a0e17;
       --bg-elevated: #0f1419;
@@ -144,8 +147,8 @@
       --text-muted: #94a3b8;
       
       --gradient-primary: linear-gradient(135deg, #6b21a8 0%, #3b82f6 100%);
-      --gradient-mesh: radial-gradient(ellipse at 20% 20%, rgba(107, 33, 168, 0.15) 0%, transparent 50%),
-                       radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
+      --gradient-mesh: radial-gradient(ellipse at 20% 20%, rgba(107, 33, 168, 0.07) 0%, transparent 50%),
+                       radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
       
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
       --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.16);
@@ -215,7 +218,7 @@
       text-decoration-color: var(--blue-bright);
     }
 
-    /* Animated gradient mesh background */
+    /* Static gradient mesh background — calm, no motion */
     body::before {
       content: '';
       position: fixed;
@@ -224,41 +227,9 @@
       right: 0;
       bottom: 0;
       background: var(--gradient-mesh);
+      opacity: 0.55;
       pointer-events: none;
       z-index: -1;
-      animation: meshShift 30s ease-in-out infinite;
-    }
-
-    @keyframes meshShift {
-      0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
-      50% { opacity: 0.8; transform: scale(1.05) rotate(1deg); }
-    }
-
-    /* Floating particles */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: 
-        radial-gradient(2px 2px at 20% 30%, rgba(139, 92, 246, 0.3), transparent),
-        radial-gradient(2px 2px at 60% 70%, rgba(59, 130, 246, 0.2), transparent),
-        radial-gradient(1px 1px at 50% 50%, rgba(147, 197, 253, 0.2), transparent),
-        radial-gradient(1px 1px at 80% 10%, rgba(196, 181, 253, 0.3), transparent),
-        radial-gradient(2px 2px at 90% 60%, rgba(107, 33, 168, 0.2), transparent);
-      background-size: 200% 200%;
-      background-position: 0% 0%;
-      animation: particleFloat 60s ease infinite;
-      pointer-events: none;
-      z-index: -1;
-      opacity: 0.4;
-    }
-
-    @keyframes particleFloat {
-      0%, 100% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
     }
 
     .header {
@@ -612,12 +583,7 @@
       max-width: 320px;
       display: block;
       filter: drop-shadow(0 8px 24px var(--purple-glow));
-      animation: float 6s ease-in-out infinite, fadeIn var(--transition-elegant);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      animation: fadeIn var(--transition-elegant);
     }
 
     @keyframes fadeIn {
@@ -626,14 +592,14 @@
     }
 
     .hero-name {
-      font-family: 'Spectral SC', 'Spectral', Georgia, serif;
-      font-size: clamp(2.25rem, 6vw, 3.5rem);
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
       font-weight: 600;
       font-style: normal;
       color: #8093FF;
       margin-bottom: 1rem;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
     }
 
     .hero-tagline {
@@ -787,10 +753,10 @@
     .cards {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 3rem 2rem 4rem;
+      padding: 4rem 2rem 5rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 2rem;
+      gap: 2.25rem;
     }
 
     .card {
@@ -799,7 +765,7 @@
       backdrop-filter: blur(24px) saturate(180%);
       border: 1px solid rgba(148, 163, 184, 0.18);
       border-radius: 18px;
-      padding: 2.25rem;
+      padding: 2.5rem;
       box-shadow: var(--shadow-md);
       position: relative;
       overflow: hidden;
@@ -819,9 +785,9 @@
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-xl), 0 0 40px rgba(139, 92, 246, 0.2);
-      border-color: rgba(139, 92, 246, 0.4);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg), 0 0 24px rgba(139, 92, 246, 0.12);
+      border-color: rgba(139, 92, 246, 0.28);
     }
 
     .card:hover::before {
@@ -855,20 +821,18 @@
       height: 32px;
       border-radius: 8px;
       box-shadow: 0 6px 16px rgba(15, 23, 42, 0.35);
+      opacity: 0.85;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 0.4rem 0.9rem;
-      border-radius: 6px;
+    /* Section eyebrow — quiet wayfinding label above each card heading */
+    .card-eyebrow {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 0.6875rem;
-      font-weight: 700;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, #6b21a8 5%, #3b82f6 100%);
-      color: white;
-      white-space: nowrap;
-      flex-shrink: 0;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
     }
 
     .cards .card:first-child {
@@ -1206,10 +1170,6 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .badge {
-        align-self: flex-start;
-      }
     }
   </style>
 </head>
@@ -1260,12 +1220,12 @@
 
 <section class="cards">
   <div class="card">
+    <div class="card-eyebrow">Civic-Tech</div>
     <div class="card-header">
       <div class="card-title-group">
         <img src="glasscase-favicon-64.svg" alt="GlassCase mark" class="card-icon" loading="lazy" decoding="async">
         <h2 class="card-title">GlassCase.org</h2>
       </div>
-      <span class="badge">CIVIC-TECH</span>
     </div>
     <p class="card-content">
       Civic-legal data lab making administrative process visible. I build diagnostic tools for FOI, decision review, and transparency analysis.
@@ -1277,12 +1237,12 @@
   </div>
 
   <div class="card">
+    <div class="card-eyebrow">Education</div>
     <div class="card-header">
       <div class="card-title-group">
         <img src="lawandlearning-favicon-64.svg" alt="Law &amp; Learning mark" class="card-icon" loading="lazy" decoding="async">
         <h2 class="card-title">Law &amp; Learning</h2>
       </div>
-      <span class="badge">EDUCATION</span>
     </div>
     <p class="card-content">
       Evidence-based study tools for law students, grounded in cognitive science.
@@ -1294,9 +1254,10 @@
   </div>
 
   <div class="card">
+    <div class="card-eyebrow">Accessibility</div>
     <div class="card-header">
       <div class="card-title-group">
-        <svg width="32" height="32" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-icon lk-card-icon" aria-hidden="true">
           <defs><linearGradient id="lk-ci-ring" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#9A5530"/><stop offset="100%" stop-color="#3D7A8A"/></linearGradient></defs>
           <circle cx="150" cy="150" r="146" fill="#F5F0E8" stroke="url(#lk-ci-ring)" stroke-width="4"/>
           <path d="M 75 240 L 75 155 Q 75 70 150 70 Q 225 70 225 155 L 225 240" stroke="#5C4D3A" stroke-width="6" fill="#F5F0E8"/>
@@ -1308,7 +1269,6 @@
         </svg>
         <h2 class="card-title">LightKey</h2>
       </div>
-      <span class="badge">ACCESSIBILITY</span>
     </div>
     <p class="card-content">
       Public-facing pathway guides designed for cognitive accessibility — making administrative and legal processes navigable for everyone.
@@ -1320,12 +1280,11 @@
   </div>
 
   <div class="card" style="grid-column: 1 / -1;">
+    <div class="card-eyebrow">Foundation</div>
     <div class="card-header">
       <div class="card-title-group">
-        <img src="jayspudvilas-favicon-64.svg" alt="Jay Spudvilas mark" class="card-icon" loading="lazy" decoding="async">
         <h2 class="card-title">Education Background</h2>
       </div>
-      <span class="badge">FOUNDATION</span>
     </div>
     <p class="card-content">
       Twelve years in Victorian public education governance: classroom teacher to Learning Specialist and acting Assistant Principal.
