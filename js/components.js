@@ -29,6 +29,7 @@ const JS_SITE = {
           <a class="global-nav__link" href="https://glasscase.org" target="_blank" rel="noopener">GlassCase</a>
           <a class="global-nav__link" href="https://lightkey.org" target="_blank" rel="noopener">LightKey</a>
           <a class="global-nav__link" href="https://lawandlearning.com" target="_blank" rel="noopener">Law &amp; Learning</a>
+          <a class="global-nav__link" href="https://jayspudvilas.com/work/">Work</a>
           <a class="global-nav__link" href="https://jayspudvilas.com/education/">Education</a>
           <a class="global-nav__link" href="https://jayspudvilas.com/legal/">Use &amp; Privacy</a>
           <a class="global-nav__link" href="mailto:jay@jayspudvilas.com">Contact</a>
@@ -57,6 +58,7 @@ const JS_SITE = {
         <a href="https://glasscase.org" onclick="closeMobileMenu()" target="_blank" rel="noopener">GlassCase</a>
         <a href="https://lightkey.org" onclick="closeMobileMenu()" target="_blank" rel="noopener">LightKey</a>
         <a href="https://lawandlearning.com" onclick="closeMobileMenu()" target="_blank" rel="noopener">Law &amp; Learning</a>
+        <a href="https://jayspudvilas.com/work/" onclick="closeMobileMenu()">Work</a>
         <a href="https://jayspudvilas.com/education/" onclick="closeMobileMenu()">Education</a>
         <a href="https://jayspudvilas.com/legal/" onclick="closeMobileMenu()">Use &amp; Privacy</a>
         <a href="mailto:jay@jayspudvilas.com" onclick="closeMobileMenu()">Contact</a>
@@ -87,6 +89,7 @@ const JS_SITE = {
           <div class="footer-column">
             <h2 class="footer-heading">Site</h2>
             <a href="/">Home</a>
+            <a href="/work/">Work</a>
             <a href="/education/">Education</a>
             <a href="/legal/">Use &amp; Privacy</a>
           </div>

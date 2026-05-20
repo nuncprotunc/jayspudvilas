@@ -4,33 +4,33 @@
 <script src="/js/consent-gate.js" defer></script>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jay Spudvilas | Fairness by Design</title>
-  <meta name="description" content="Jay Spudvilas — Administrative law and governance practitioner. Founder of GlassCase.org and Law & Learning. ANU JD (2026–2028). ORCID 0009-0000-0945-0380.">
-  <meta name="keywords" content="Jay Spudvilas, Jayden Spudvilas-Powell, Jayden Leigh Spudvilas-Powell, education leadership, instructional leadership, governance, policy design, administrative law, information law, freedom of information, FOI, evidence systems, GlassCase, Law and Learning, LightKey, ANU JD, Victorian teacher, education reform, compliance systems, public sector integrity, policy implementation, regulatory compliance, legal education, legal design, accountability frameworks, Consideration Matrix, Redaction Taxonomy, Institutional Stress Mapper, Court Observation Tool">
+  <title>Selected Work | Jay Spudvilas</title>
+  <meta name="description" content="Selected work by Jay Spudvilas — submissions, civic-transparency tools, and case studies across administrative law, governance and education.">
+  <meta name="keywords" content="Jay Spudvilas, Jayden Spudvilas-Powell, selected work, portfolio, Senate submissions, FOI reform, administrative law, GlassCase, Consideration Matrix, Redaction Taxonomy, Institutional Stress Mapper, Court Observation Tool, education outcomes">
   <meta name="author" content="Jay Spudvilas (Jayden Spudvilas-Powell)">
-  <link rel="canonical" href="https://jayspudvilas.com/">
+  <link rel="canonical" href="https://jayspudvilas.com/work/">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   
   <!-- Open Graph -->
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://jayspudvilas.com/">
-  <meta property="og:title" content="Jay Spudvilas | Fairness by Design">
-  <meta property="og:description" content="Administrative law and governance practitioner. Founder of GlassCase.org and Law & Learning. ANU JD (2026–2028).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jayspudvilas.com/work/">
+  <meta property="og:title" content="Selected Work | Jay Spudvilas">
+  <meta property="og:description" content="Submissions, civic-transparency tools, and case studies across administrative law, governance and education.">
   <meta property="og:site_name" content="Jay Spudvilas">
   <meta property="og:locale" content="en_AU">
   <meta property="og:image" content="https://jayspudvilas.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Jay Spudvilas | Fairness by Design">
-  
+  <meta property="og:image:alt" content="Selected Work | Jay Spudvilas">
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://jayspudvilas.com/">
-  <meta name="twitter:title" content="Jay Spudvilas | Fairness by Design">
-  <meta name="twitter:description" content="Administrative law and governance practitioner. Founder of GlassCase.org and Law & Learning. ANU JD (2026–2028).">
+  <meta name="twitter:url" content="https://jayspudvilas.com/work/">
+  <meta name="twitter:title" content="Selected Work | Jay Spudvilas">
+  <meta name="twitter:description" content="Submissions, civic-transparency tools, and case studies across administrative law, governance and education.">
   <meta name="twitter:image" content="https://jayspudvilas.com/og-image.png">
-  <meta name="twitter:image:alt" content="Jay Spudvilas | Fairness by Design">
+  <meta name="twitter:image:alt" content="Selected Work | Jay Spudvilas">
   
   <!-- Identity links -->
   <link rel="me" href="https://linkedin.com/in/jayspudvilas">
@@ -96,11 +96,11 @@
         "inLanguage": "en-AU"
       },
       {
-        "@type": "WebPage",
-        "@id": "https://jayspudvilas.com/#webpage",
-        "url": "https://jayspudvilas.com/",
-        "name": "Jay Spudvilas | Fairness by Design",
-        "description": "Jay Spudvilas (Jayden Spudvilas-Powell) — administrative law and governance practitioner. Founder of GlassCase and Law & Learning.",
+        "@type": "CollectionPage",
+        "@id": "https://jayspudvilas.com/work/#webpage",
+        "url": "https://jayspudvilas.com/work/",
+        "name": "Selected Work | Jay Spudvilas",
+        "description": "Submissions, civic-transparency tools, and case studies by Jay Spudvilas across administrative law, governance and education.",
         "isPartOf": {
           "@id": "https://jayspudvilas.com/#website"
         },
@@ -1140,6 +1140,116 @@
         align-items: flex-start;
       }
     }
+    /* ---- Work page ---- */
+    .work-section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .work-section + .work-section { margin-top: var(--space-3xl); }
+    .work-section-head { max-width: 680px; margin: 0 auto var(--space-xl); text-align: center; }
+    .work-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.6vw, 2.1rem);
+      font-weight: 600;
+      color: #7EA8FF;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .work-section-intro { font-size: 0.975rem; color: #9DADC0; line-height: 1.7; }
+
+    /* Submissions / writing list */
+    .work-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .work-entry {
+      background: var(--bg-glass);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 14px;
+      padding: var(--space-lg) var(--space-xl);
+      transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+    }
+    .work-entry:hover {
+      transform: translateY(-2px);
+      border-color: rgba(139, 92, 246, 0.28);
+      box-shadow: var(--shadow-md);
+    }
+    .work-entry__meta {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.55rem;
+    }
+    .work-entry__title {
+      font-size: 1.1875rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 0.55rem;
+    }
+    .work-entry__desc {
+      font-size: 0.95rem;
+      color: #9DADC0;
+      line-height: 1.7;
+      margin-bottom: 0.9rem;
+    }
+    .work-entry__links { display: flex; gap: var(--space-lg); flex-wrap: wrap; }
+    .work-entry__link {
+      color: #60a5fa;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    .work-entry__link:hover { color: #93c5fd; }
+
+    /* Tools grid */
+    .work-cards {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+    .work-feature { max-width: 1120px; margin: 0 auto; }
+
+    /* Scaffold marker — remove each badge once the entry is filled in */
+    .work-todo {
+      display: inline-block;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fbbf24;
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: 6px;
+      padding: 2px 7px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .work-end-note {
+      max-width: 1120px;
+      margin: var(--space-3xl) auto 0;
+      padding: 0 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .work-cards { grid-template-columns: 1fr; }
+      .work-section { padding: 0 1.25rem; }
+      .work-entry { padding: var(--space-md) var(--space-lg); }
+    }
   </style>
 </head>
 <body>
@@ -1163,110 +1273,128 @@
     <circle cx="300" cy="130" r="18" fill="#3E5BE8"/>
   </svg>
 
-  <h1 class="hero-name">Jay Spudvilas</h1>
+  <h1 class="hero-name">Selected Work</h1>
   <div class="hero-tagline">FAIRNESS BY DESIGN</div>
-  <p class="hero-subtitle">Administrative Law &amp; Governance · ANU Juris Doctor (2026–2028)</p>
 
-  <div class="hero-bio">
-    <img src="/portrait.png" alt="Jay Spudvilas" class="hero-portrait" loading="eager" decoding="async">
-    <div class="hero-bio-text">
   <p class="hero-description">
-    I build tools that make administrative decision-making visible — mapping how discretion operates, where delay clusters, and how process design shapes fairness. The transparency work lives at <a href="https://glasscase.org">GlassCase™.org</a>.
+    Submissions, instruments and case studies — the work itself, with the reasoning behind it. Each entry frames a problem and an outcome, then links out to where the work lives: <a href="https://glasscase.org">GlassCase</a>, <a href="https://lawandlearning.com">Law &amp; Learning</a> and <a href="https://lightkey.org" target="_blank" rel="noopener">LightKey</a>.
   </p>
-  
-  <p class="hero-description">
-    Twelve years in public education governance shaped this focus: implementing statutory frameworks, building audit-ready systems, navigating compliance. I'm formalising it through the ANU Juris Doctor (2026–2028). Classroom impact and cohort outcomes are documented on the <a href="/education/">Education Outcomes</a> page. Legal education tools are released through <a href="https://lawandlearning.com">Law &amp; Learning</a>.
-  </p>
-    </div>
-  </div>
-
-  <div class="specialties">
-    <span>Administrative Law · FOI · Governance Systems</span>
-    <span>Process Design · Transparency · Civic-Tech</span>
-  </div>
 
 </main>
 
-<section class="cards">
-  <div class="card">
-    <div class="card-eyebrow">Civic-Tech</div>
-    <div class="card-header">
-      <div class="card-title-group">
-        <img src="glasscase-favicon-64.svg" alt="GlassCase mark" class="card-icon" loading="lazy" decoding="async">
-        <h2 class="card-title">GlassCase.org</h2>
-      </div>
-    </div>
-    <p class="card-content">
-      Civic-legal data lab making administrative process visible. I build diagnostic tools for FOI, decision review, and transparency analysis.
-    </p>
-    <p class="card-meta">
-      Current tools: Consideration Matrix (mandatory/discretionary considerations), Redaction Taxonomy (FOI decision quality), Institutional Stress Mapper (composite indicator for institutional health). Senate submissions on FOI reform and emergency declaration oversight (2025–2026). All work is open, DOI-linked, and audit-ready.
-    </p>
-    <a href="https://glasscase.org" class="card-link">glasscase.org →</a>
-  </div>
+<!-- ============================================================
+     SCAFFOLD — delete this comment block once the page is populated.
+     • Submissions: replace every [bracketed] placeholder, write each
+       work-entry__desc, and swap every href="#" for the real
+       document / inquiry-page URL.
+     • Remove each <span class="work-todo"> badge as that entry is done.
+     • Tools: the card copy is a usable first draft — verify the
+       wording, and deep-link each card to the specific tool page if
+       a direct URL exists (currently linking the project root).
+     ============================================================ -->
 
-  <div class="card">
-    <div class="card-eyebrow">Education</div>
-    <div class="card-header">
-      <div class="card-title-group">
-        <img src="lawandlearning-favicon-64.svg" alt="Law &amp; Learning mark" class="card-icon" loading="lazy" decoding="async">
-        <h2 class="card-title">Law &amp; Learning</h2>
-      </div>
-    </div>
-    <p class="card-content">
-      Evidence-based study tools for law students, grounded in cognitive science.
-    </p>
-    <p class="card-meta">
-      Live tools: Court Observation Tool (structured templates for legal education), GDPR Study Map (doctrinal architecture aligned to CIPP/E). All open-access and research-informed.
-    </p>
-    <a href="https://lawandlearning.com" class="card-link">lawandlearning.com →</a>
+<section class="work-section" aria-labelledby="submissions-title">
+  <div class="work-section-head">
+    <h2 class="work-section-title" id="submissions-title">Submissions &amp; writing</h2>
+    <p class="work-section-intro">Formal submissions to public inquiries, and longer-form analysis — authored, dated, and linked to the source document.</p>
   </div>
+  <div class="work-list">
 
-  <div class="card">
-    <div class="card-eyebrow">Accessibility</div>
-    <div class="card-header">
-      <div class="card-title-group">
-        <svg width="32" height="32" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-icon lk-card-icon" aria-hidden="true">
-          <defs><linearGradient id="lk-ci-ring" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#9A5530"/><stop offset="100%" stop-color="#3D7A8A"/></linearGradient></defs>
-          <circle cx="150" cy="150" r="146" fill="#F5F0E8" stroke="url(#lk-ci-ring)" stroke-width="4"/>
-          <path d="M 75 240 L 75 155 Q 75 70 150 70 Q 225 70 225 155 L 225 240" stroke="#5C4D3A" stroke-width="6" fill="#F5F0E8"/>
-          <path d="M 128 70 L 132 50 L 168 50 L 172 70" stroke="#9A5530" stroke-width="5" fill="rgba(154,85,48,0.15)"/>
-          <circle cx="150" cy="54" r="5" fill="#9A5530"/>
-          <line x1="150" y1="59" x2="150" y2="68" stroke="#9A5530" stroke-width="3"/>
-          <line x1="75" y1="240" x2="225" y2="240" stroke="#5C4D3A" stroke-width="6"/>
-          <line x1="90" y1="234" x2="210" y2="234" stroke="#3D7A8A" stroke-width="3" opacity="0.5"/>
-        </svg>
-        <h2 class="card-title">LightKey</h2>
+    <article class="work-entry">
+      <p class="work-entry__meta">Senate submission · FOI reform · 2025</p>
+      <h3 class="work-entry__title">Submission to the [committee name] inquiry into Freedom of Information reform <span class="work-todo">draft</span></h3>
+      <p class="work-entry__desc">[One to two sentences: what the inquiry was examining, the gap you identified, and the reform you argued for. Frame it — the "why this mattered" — rather than summarising the document.]</p>
+      <div class="work-entry__links">
+        <a class="work-entry__link" href="#">Read the submission (PDF) →</a>
+        <a class="work-entry__link" href="#">Inquiry page →</a>
       </div>
-    </div>
-    <p class="card-content">
-      Public-facing pathway guides designed for cognitive accessibility — making administrative and legal processes navigable for everyone.
-    </p>
-    <p class="card-meta">
-      A GlassCase initiative. Structured guides that translate complex institutional processes into clear, step-by-step pathways. Open access.
-    </p>
-    <a href="https://lightkey.org" class="card-link" target="_blank" rel="noopener">lightkey.org →</a>
-  </div>
+    </article>
 
-  <div class="card" style="grid-column: 1 / -1;">
-    <div class="card-eyebrow">Foundation</div>
-    <div class="card-header">
-      <div class="card-title-group">
-        <img src="jayspudvilas-favicon-64.svg" alt="Jay Spudvilas mark" class="card-icon" loading="lazy" decoding="async">
-        <h2 class="card-title">Education Background</h2>
+    <article class="work-entry">
+      <p class="work-entry__meta">Senate submission · Emergency declaration oversight · 2025–2026</p>
+      <h3 class="work-entry__title">Submission on the oversight of emergency declarations <span class="work-todo">draft</span></h3>
+      <p class="work-entry__desc">[One to two sentences: the oversight gap in how emergency declarations are made or reviewed, and the change you proposed.]</p>
+      <div class="work-entry__links">
+        <a class="work-entry__link" href="#">Read the submission (PDF) →</a>
+        <a class="work-entry__link" href="#">Inquiry page →</a>
       </div>
-    </div>
-    <p class="card-content">
-      Twelve years in Victorian public education governance: classroom teacher to Learning Specialist and acting Assistant Principal.
-    </p>
-    <p class="card-meta">
-      Implemented OHS Act 2004 (Vic) and Disability Standards for Education 2005 (Cth). Built audit-ready systems. This shaped my focus on administrative process and discretion.
-    </p>
-    <div class="btn-row">
-      <a href="/education/" class="btn btn-secondary btn-compact">Evidence in Action →</a>
-    </div>
+    </article>
+
+    <!-- Add further submissions or published analysis as new <article class="work-entry"> blocks. -->
+
   </div>
 </section>
+
+<section class="work-section" aria-labelledby="tools-title">
+  <div class="work-section-head">
+    <h2 class="work-section-title" id="tools-title">Tools &amp; instruments</h2>
+    <p class="work-section-intro">Diagnostic tools built to make administrative process legible. Each lives on its project site — here is what it does and why it exists.</p>
+  </div>
+  <div class="work-cards">
+
+    <article class="card">
+      <div class="card-eyebrow">GlassCase · Tool</div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Consideration Matrix</h3></div></div>
+      <p class="card-content">Administrative decisions turn on which considerations a decision-maker <em>must</em> weigh and which they merely <em>may</em>. The Consideration Matrix maps that mandatory/discretionary split so a decision — or its review — can be audited against it.</p>
+      <a href="https://glasscase.org" class="card-link">Open on glasscase.org →</a>
+    </article>
+
+    <article class="card">
+      <div class="card-eyebrow">GlassCase · Tool</div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Redaction Taxonomy</h3></div></div>
+      <p class="card-content">FOI refusals are hard to compare because agencies describe redactions inconsistently. The taxonomy gives redaction decisions a shared vocabulary, making FOI decision quality legible across agencies.</p>
+      <a href="https://glasscase.org" class="card-link">Open on glasscase.org →</a>
+    </article>
+
+    <article class="card">
+      <div class="card-eyebrow">GlassCase · Tool</div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Institutional Stress Mapper</h3></div></div>
+      <p class="card-content">A composite indicator that draws scattered signals of institutional health into a single, trackable measure of where an institution is under strain.</p>
+      <a href="https://glasscase.org" class="card-link">Open on glasscase.org →</a>
+    </article>
+
+    <article class="card">
+      <div class="card-eyebrow">Law &amp; Learning · Tool</div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Court Observation Tool</h3></div></div>
+      <p class="card-content">Structured templates that turn a courtroom visit into a repeatable learning exercise — what to watch for, how to record it, how to reflect on it afterwards.</p>
+      <a href="https://lawandlearning.com" class="card-link">Open on lawandlearning.com →</a>
+    </article>
+
+    <article class="card">
+      <div class="card-eyebrow">Law &amp; Learning · Tool</div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">GDPR Study Map</h3></div></div>
+      <p class="card-content">A doctrinal map of the GDPR aligned to the CIPP/E syllabus — the architecture of the regime laid out so its structure is visible at a glance.</p>
+      <a href="https://lawandlearning.com" class="card-link">Open on lawandlearning.com →</a>
+    </article>
+
+    <article class="card">
+      <div class="card-eyebrow">LightKey · Guides</div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Pathway guides</h3></div></div>
+      <p class="card-content">Plain-language, cognitively accessible walkthroughs of administrative processes — such as how to make an FOI request — designed so the path is navigable for everyone.</p>
+      <a href="https://lightkey.org" class="card-link" target="_blank" rel="noopener">Open on lightkey.org →</a>
+    </article>
+
+  </div>
+</section>
+
+<section class="work-section" aria-labelledby="casestudy-title">
+  <div class="work-section-head">
+    <h2 class="work-section-title" id="casestudy-title">Case study</h2>
+    <p class="work-section-intro">A worked example of the same instinct behind the tools: make the outcome legible, show the method, state the limits.</p>
+  </div>
+  <div class="work-feature">
+    <article class="card">
+      <div class="card-eyebrow">Education outcomes · 2022–2025</div>
+      <div class="card-header"><div class="card-title-group"><h3 class="card-title">Four cohorts, measured</h3></div></div>
+      <p class="card-content">Twelve years in Victorian public education governance, and four consecutive Grade 5/6 cohorts tracked with matched pre/post data. The education page sets out the effect sizes, the method behind them, and an honest account of what a single-school design can and cannot show.</p>
+      <div class="btn-row">
+        <a href="/education/" class="btn btn-secondary btn-compact">Read the education case study →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<p class="work-end-note">Looking for something specific? <a href="mailto:jay@jayspudvilas.com">Get in touch</a>.</p>
 
 <div id="js-footer"></div>
 
