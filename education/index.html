@@ -678,6 +678,24 @@
       height: auto;
     }
 
+    /* Quiet line icon atop each Overview stat card */
+    .stat-icon {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 0 auto var(--space-md);
+      color: var(--text-muted);
+    }
+    .stat-icon svg { width: 100%; height: 100%; display: block; }
+
+    /* Mini number-line inside the Effect size range card */
+    .range-line {
+      width: 100%;
+      max-width: 220px;
+      margin: var(--space-sm) auto var(--space-xs);
+    }
+    .range-line svg { width: 100%; height: auto; display: block; }
+
     .card {
       background: var(--bg-glass);
       backdrop-filter: blur(24px) saturate(180%);
@@ -1770,18 +1788,58 @@
     <section class="page-section">
       <div class="summary-grid">
         <div class="card stat-card observe-animate">
+          <span class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="14" y="12" width="36" height="8" rx="2.5"/>
+              <rect x="14" y="24" width="36" height="8" rx="2.5"/>
+              <rect x="14" y="36" width="36" height="8" rx="2.5"/>
+              <rect x="14" y="48" width="36" height="8" rx="2.5"/>
+            </svg>
+          </span>
           <span class="badge">Cohorts</span>
           <div class="stat-value">4</div>
           <p class="stat-label">Years documented</p>
           <p class="stat-desc">2022, 2023, 2024 and 2025 &mdash; consecutive Grade 5/6 cohorts.</p>
         </div>
         <div class="card stat-card observe-animate">
+          <span class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="10" y1="54" x2="54" y2="54"/>
+              <line x1="19" y1="54" x2="19" y2="43"/>
+              <line x1="32" y1="54" x2="32" y2="31"/>
+              <line x1="45" y1="54" x2="45" y2="17"/>
+            </svg>
+          </span>
           <span class="badge">Effect size range</span>
           <div class="stat-value">0.80&ndash;2.48</div>
           <p class="stat-label">Cohen&rsquo;s d &middot; all measures</p>
-          <p class="stat-desc">Every effect size exceeds Hattie&rsquo;s hinge point (d = 0.40).</p>
+          <div class="range-line" aria-hidden="true">
+            <svg viewBox="0 0 240 40">
+              <defs>
+                <linearGradient id="rangeGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#8b5cf6"/>
+                  <stop offset="1" stop-color="#3b82f6"/>
+                </linearGradient>
+              </defs>
+              <rect x="12" y="21" width="216" height="8" rx="4" fill="rgba(59,130,246,0.12)"/>
+              <rect x="78.5" y="21" width="139.5" height="8" rx="4" fill="url(#rangeGrad)"/>
+              <line x1="45.2" y1="15" x2="45.2" y2="35" stroke="rgba(216,210,236,0.45)" stroke-width="1.5" stroke-dasharray="3,3"/>
+              <text x="45.2" y="11" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="9" fill="rgba(216,210,236,0.6)">0.40</text>
+            </svg>
+          </div>
+          <p class="stat-desc">Every effect clears Hattie&rsquo;s hinge.</p>
         </div>
         <div class="card stat-card observe-animate">
+          <span class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="23" r="9"/>
+              <path d="M17 50 C17 39 24 35 32 35 C40 35 47 39 47 50"/>
+              <circle cx="13" cy="30" r="6"/>
+              <path d="M4 49 C4 41 8 38 13 38"/>
+              <circle cx="51" cy="30" r="6"/>
+              <path d="M60 49 C60 41 56 38 51 38"/>
+            </svg>
+          </span>
           <span class="badge">Students</span>
           <div class="stat-value">&asymp;100</div>
           <p class="stat-label">Whole-class samples</p>
