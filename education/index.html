@@ -1046,15 +1046,7 @@
       position: relative;
     }
 
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--purple-glow), transparent);
-    }
+    /* footer top-edge glow removed — calmer divider */
 
     .footer-links {
       display: flex;
@@ -1785,8 +1777,8 @@
         </div>
         <div class="card stat-card observe-animate">
           <span class="badge">Effect size range</span>
-          <div class="stat-value" style="font-size: clamp(1.4rem, 3.4vw, 1.85rem); letter-spacing: -0.02em;">d = 0.80 &ndash; 2.48</div>
-          <p class="stat-label">Across all measures</p>
+          <div class="stat-value">0.80&ndash;2.48</div>
+          <p class="stat-label">Cohen&rsquo;s d &middot; all measures</p>
           <p class="stat-desc">Every effect size exceeds Hattie&rsquo;s hinge point (d = 0.40).</p>
         </div>
         <div class="card stat-card observe-animate">
