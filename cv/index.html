@@ -700,9 +700,21 @@
   }
 
   .cv-identity {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
     padding-bottom: 1.35rem;
     border-bottom: 1px solid var(--line);
   }
+  .cv-identity-photo {
+    width: 84px;
+    height: 84px;
+    flex: none;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+  }
+  .cv-identity-text { flex: 1; min-width: 0; }
   .cv-identity-name {
     font-family: var(--font-display);
     font-size: clamp(1.35rem, 2.2vw, 1.55rem);
@@ -860,9 +872,12 @@
 <div class="cv">
 
   <div class="cv-identity">
-    <div class="cv-identity-name">Jayden &ldquo;Jay&rdquo; Spudvilas-Powell</div>
-    <div class="cv-identity-title">Administrative &amp; Information Law &middot; FOI and Governance Design</div>
-    <div class="cv-identity-meta">Canberra ACT &middot; <a href="https://linkedin.com/in/jayspudvilas" target="_blank" rel="noopener">linkedin.com/in/jayspudvilas</a> &middot; <a href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">ORCID 0009-0000-0945-0380</a> &middot; <a href="mailto:jay@jayspudvilas.com">jay@jayspudvilas.com</a></div>
+    <img class="cv-identity-photo" src="/portrait.png" alt="Jay Spudvilas" loading="lazy" decoding="async">
+    <div class="cv-identity-text">
+      <div class="cv-identity-name">Jayden &ldquo;Jay&rdquo; Spudvilas-Powell</div>
+      <div class="cv-identity-title">Administrative &amp; Information Law &middot; FOI and Governance Design</div>
+      <div class="cv-identity-meta">Canberra ACT &middot; <a href="https://linkedin.com/in/jayspudvilas" target="_blank" rel="noopener">linkedin.com/in/jayspudvilas</a> &middot; <a href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">ORCID 0009-0000-0945-0380</a> &middot; <a href="mailto:jay@jayspudvilas.com">jay@jayspudvilas.com</a></div>
+    </div>
   </div>
 
   <section class="cv-section">
