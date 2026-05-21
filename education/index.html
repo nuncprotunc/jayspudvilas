@@ -1254,43 +1254,21 @@
       justify-content: center;
       padding: 0.45rem 1.25rem;
       border-radius: 10px;
-      background: linear-gradient(135deg, #6b21a8 0%, #3b82f6 100%);
-      color: #ffffff;
+      background: transparent;
+      border: 1px solid rgba(126, 168, 255, 0.4);
+      color: #7EA8FF;
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(107, 33, 168, 0.28), 0 1px 4px rgba(59, 130, 246, 0.16);
-      transition: all var(--transition-smooth);
-      position: relative;
-      overflow: hidden;
+      transition: border-color var(--transition-smooth), background var(--transition-smooth);
       width: fit-content;
     }
 
-    .footer-cta-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
-      opacity: 0;
-      transition: opacity var(--transition-smooth);
-    }
-
     .footer-cta-button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 7px 20px rgba(107, 33, 168, 0.35), 0 2px 7px rgba(59, 130, 246, 0.22);
-    }
-
-    .footer-cta-button:hover::before {
-      opacity: 1;
-    }
-
-    .footer-cta-button:active {
-      transform: translateY(-1px);
+      border-color: #7EA8FF;
+      background: rgba(126, 168, 255, 0.08);
     }
 
     .footer-legal-note {
@@ -1812,6 +1790,65 @@
     </section>
 
     <section class="page-section">
+
+      <div class="card summary-card observe-animate">
+        <h2 class="card-title" style="margin-bottom:var(--space-lg); font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #8b9dc3;">Four cohorts, sustained high growth</h2>
+        <p class="summary-intro">
+          These notes summarise classroom research and cohort outcomes. They document my past practice, not a program or service.
+          From 2022–2025 my Grade 5/6 classes recorded large within-cohort gains on national assessments.
+          These outcomes were associated with explicit instruction, daily practice and weekly progress monitoring in standard class sizes.
+          <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">Methods</a>, code and de-identified extracts are available on request.
+        </p>
+
+        <div class="data-table-container">
+          <table class="data-table" role="table" aria-label="Cohort summary">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Measure</th>
+                <th data-centre>n</th>
+                <th data-right>Mean gain</th>
+                <th data-right>SD(gain)</th>
+                <th data-right>d</th>
+                <th>Headline</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025</td><td>PAT-M</td><td data-centre>22</td>
+                <td data-right>11.40</td><td data-right>7.21</td><td data-right data-d>1.58</td>
+                <td>50th → 94–95th pct</td>
+              </tr>
+              <tr>
+                <td>2025</td><td>PAT-R</td><td data-centre>21</td>
+                <td data-right>8.22</td><td data-right>6.95</td><td data-right data-d>1.18</td>
+                <td>50th → 88th pct</td>
+              </tr>
+              <tr>
+                <td>2024</td><td>PAT-M</td><td data-centre>28</td>
+                <td data-right>6.31</td><td data-right>6.01</td><td data-right data-d>1.05</td>
+                <td>High growth</td>
+              </tr>
+              <tr>
+                <td>2024</td><td>PAT-R</td><td data-centre>27</td>
+                <td data-right>5.83</td><td data-right>7.31</td><td data-right data-d>0.80</td>
+                <td>Strong growth</td>
+              </tr>
+              <tr>
+                <td>2024</td><td>DIBELS ORF</td><td data-centre>28</td>
+                <td data-right>145.64</td><td data-right>58.69</td><td data-right data-d>2.48</td>
+                <td>Corroboration</td>
+              </tr>
+              <tr>
+                <td>2023</td><td>DIBELS MAZE</td><td data-centre>26</td>
+                <td data-right>6.81</td><td data-right>5.85</td><td data-right data-d>1.16</td>
+                <td>4-month window</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div class="summary-grid">
         <div class="card stat-card observe-animate">
           <span class="stat-icon" aria-hidden="true">
@@ -1961,64 +1998,6 @@
       <button id="tab-2022" class="year-tab" role="tab" aria-selected="false" aria-controls="year-2022" tabindex="-1" data-year="2022"><span>2022</span></button>
       <button id="tab-references" class="year-tab" role="tab" aria-selected="false" aria-controls="year-references" tabindex="-1" data-year="references"><span>References</span></button>
     </nav>
-      
-      <div class="card summary-card observe-animate">
-        <h2 class="card-title" style="margin-bottom:var(--space-lg); font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #8b9dc3;">Four cohorts, sustained high growth</h2>
-        <p class="summary-intro">
-          These notes summarise classroom research and cohort outcomes. They document my past practice, not a program or service.
-          From 2022–2025 my Grade 5/6 classes recorded large within-cohort gains on national assessments.
-          These outcomes were associated with explicit instruction, daily practice and weekly progress monitoring in standard class sizes.
-          <a href="#methods">Methods</a>, code and de-identified extracts are available on request.
-        </p>
-
-        <div class="data-table-container">
-          <table class="data-table" role="table" aria-label="Cohort summary">
-            <thead>
-              <tr>
-                <th>Year</th>
-                <th>Measure</th>
-                <th data-centre>n</th>
-                <th data-right>Mean gain</th>
-                <th data-right>SD(gain)</th>
-                <th data-right>d</th>
-                <th>Headline</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>2025</td><td>PAT-M</td><td data-centre>22</td>
-                <td data-right>11.40</td><td data-right>7.21</td><td data-right data-d>1.58</td>
-                <td>50th → 94–95th pct</td>
-              </tr>
-              <tr>
-                <td>2025</td><td>PAT-R</td><td data-centre>21</td>
-                <td data-right>8.22</td><td data-right>6.95</td><td data-right data-d>1.18</td>
-                <td>50th → 88th pct</td>
-              </tr>
-              <tr>
-                <td>2024</td><td>PAT-M</td><td data-centre>28</td>
-                <td data-right>6.31</td><td data-right>6.01</td><td data-right data-d>1.05</td>
-                <td>High growth</td>
-              </tr>
-              <tr>
-                <td>2024</td><td>PAT-R</td><td data-centre>27</td>
-                <td data-right>5.83</td><td data-right>7.31</td><td data-right data-d>0.80</td>
-                <td>Strong growth</td>
-              </tr>
-              <tr>
-                <td>2024</td><td>DIBELS ORF</td><td data-centre>28</td>
-                <td data-right>145.64</td><td data-right>58.69</td><td data-right data-d>2.48</td>
-                <td>Corroboration</td>
-              </tr>
-              <tr>
-                <td>2023</td><td>DIBELS MAZE</td><td data-centre>26</td>
-                <td data-right>6.81</td><td data-right>5.85</td><td data-right data-d>1.16</td>
-                <td>4-month window</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
       
       <section class="cohort-note">
         <div class="pivot-inner">
@@ -3010,7 +2989,7 @@
         });
       }, 300);
 
-      // Load computed stats from data/results.json and inject into 2025 section
+      // Load computed stats from data/results.json and inject into Overview + 2025 sections
       fetch('/data/results.json')
         .then(r => r.json())
         .then(results => {
@@ -3019,8 +2998,8 @@
           const rdg = byDomain['Reading'];
           if (!m || !rdg) return;
 
-          // Update summary table (2025 rows)
-          const tblRows = document.querySelectorAll('#year-2025 .summary-card table tbody tr');
+          // Update cohort summary table on Overview (2025 rows)
+          const tblRows = document.querySelectorAll('#year-overview .summary-card table tbody tr');
           tblRows.forEach(tr => {
             const cells = tr.querySelectorAll('td');
             if (cells.length < 6) return;
