@@ -1791,64 +1791,6 @@
 
     <section class="page-section">
 
-      <div class="card summary-card observe-animate">
-        <h2 class="card-title" style="margin-bottom:var(--space-lg); font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #8b9dc3;">Four cohorts, sustained high growth</h2>
-        <p class="summary-intro">
-          These notes summarise classroom research and cohort outcomes. They document my past practice, not a program or service.
-          From 2022–2025 my Grade 5/6 classes recorded large within-cohort gains on national assessments.
-          These outcomes were associated with explicit instruction, daily practice and weekly progress monitoring in standard class sizes.
-          <a href="#year-references" onclick="document.querySelector('[data-year=references]').click(); return false;">Methods</a>, code and de-identified extracts are available on request.
-        </p>
-
-        <div class="data-table-container">
-          <table class="data-table" role="table" aria-label="Cohort summary">
-            <thead>
-              <tr>
-                <th>Year</th>
-                <th>Measure</th>
-                <th data-centre>n</th>
-                <th data-right>Mean gain</th>
-                <th data-right>SD(gain)</th>
-                <th data-right>d</th>
-                <th>Headline</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>2025</td><td>PAT-M</td><td data-centre>22</td>
-                <td data-right>11.40</td><td data-right>7.21</td><td data-right data-d>1.58</td>
-                <td>50th → 94–95th pct</td>
-              </tr>
-              <tr>
-                <td>2025</td><td>PAT-R</td><td data-centre>21</td>
-                <td data-right>8.22</td><td data-right>6.95</td><td data-right data-d>1.18</td>
-                <td>50th → 88th pct</td>
-              </tr>
-              <tr>
-                <td>2024</td><td>PAT-M</td><td data-centre>28</td>
-                <td data-right>6.31</td><td data-right>6.01</td><td data-right data-d>1.05</td>
-                <td>High growth</td>
-              </tr>
-              <tr>
-                <td>2024</td><td>PAT-R</td><td data-centre>27</td>
-                <td data-right>5.83</td><td data-right>7.31</td><td data-right data-d>0.80</td>
-                <td>Strong growth</td>
-              </tr>
-              <tr>
-                <td>2024</td><td>DIBELS ORF</td><td data-centre>28</td>
-                <td data-right>145.64</td><td data-right>58.69</td><td data-right data-d>2.48</td>
-                <td>Corroboration</td>
-              </tr>
-              <tr>
-                <td>2023</td><td>DIBELS MAZE</td><td data-centre>26</td>
-                <td data-right>6.81</td><td data-right>5.85</td><td data-right data-d>1.16</td>
-                <td>4-month window</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
       <div class="summary-grid">
         <div class="card stat-card observe-animate">
           <span class="stat-icon" aria-hidden="true">
@@ -2997,27 +2939,6 @@
           const m = byDomain['Mathematics'];
           const rdg = byDomain['Reading'];
           if (!m || !rdg) return;
-
-          // Update cohort summary table on Overview (2025 rows)
-          const tblRows = document.querySelectorAll('#year-overview .summary-card table tbody tr');
-          tblRows.forEach(tr => {
-            const cells = tr.querySelectorAll('td');
-            if (cells.length < 6) return;
-            const year = cells[0].textContent.trim();
-            const measure = cells[1].textContent.trim();
-            if (year === '2025' && measure === 'PAT-M') {
-              cells[2].textContent = m.n;
-              cells[3].textContent = m.mean_gain.toFixed(2);
-              cells[4].textContent = m.sd_gain.toFixed(2);
-              cells[5].textContent = m.d.toFixed(2);
-            }
-            if (year === '2025' && measure === 'PAT-R') {
-              cells[2].textContent = rdg.n;
-              cells[3].textContent = rdg.mean_gain.toFixed(2);
-              cells[4].textContent = rdg.sd_gain.toFixed(2);
-              cells[5].textContent = rdg.d.toFixed(2);
-            }
-          });
 
           // Update stat cards for 2025
           const statCards = document.querySelectorAll('#year-2025 .summary-grid .stat-card');
