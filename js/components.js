@@ -91,6 +91,7 @@ const JS_SITE = {
             <a href="/">Home</a>
             <a href="/work/">Work</a>
             <a href="/education/">Education</a>
+            <a href="/cv/">CV</a>
             <a href="/legal/">Use &amp; Privacy</a>
           </div>
           <div class="footer-column">
