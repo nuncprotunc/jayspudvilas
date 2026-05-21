@@ -642,14 +642,6 @@
     letter-spacing: -0.01em;
     margin-bottom: 1rem;
   }
-  .hero-person {
-    font-family: var(--font-display);
-    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-    font-weight: 500;
-    color: var(--text-secondary);
-    letter-spacing: 0.01em;
-    margin: 0 0 0.65rem;
-  }
   .hero-description {
     color: var(--text-muted);
     font-size: 1rem;
@@ -702,6 +694,28 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .cv-identity {
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .cv-identity-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.45rem, 2.5vw, 1.7rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.15;
+  }
+  .cv-identity-title {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    color: var(--text-tertiary);
+  }
+  .cv-identity-meta {
+    margin-top: 0.45rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
   }
 
   .cv-section { padding: 2.4rem 0; border-bottom: 1px solid var(--line); }
@@ -837,7 +851,6 @@
   </svg>
   <h1 class="hero-name">Curriculum Vitae</h1>
   <div class="hero-tagline">ADMINISTRATIVE LAW &middot; FOI &middot; GOVERNANCE DESIGN</div>
-  <p class="hero-person">Jayden &ldquo;Jay&rdquo; Spudvilas-Powell</p>
   <p class="hero-description">
     Administrative and information law, FOI and governance design, with twelve years in public-sector leadership. Read online or download the PDF.
   </p>
@@ -852,6 +865,12 @@
 </main>
 
 <div class="cv">
+
+  <div class="cv-identity">
+    <div class="cv-identity-name">Jayden &ldquo;Jay&rdquo; Spudvilas-Powell</div>
+    <div class="cv-identity-title">Administrative &amp; Information Law &middot; FOI and Governance Design</div>
+    <div class="cv-identity-meta">Canberra ACT &middot; <a href="https://linkedin.com/in/jayspudvilas" target="_blank" rel="noopener">linkedin.com/in/jayspudvilas</a> &middot; <a href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">ORCID 0009-0000-0945-0380</a> &middot; <a href="mailto:jay@jayspudvilas.com">jay@jayspudvilas.com</a></div>
+  </div>
 
   <section class="cv-section">
     <h2>Profile</h2>
