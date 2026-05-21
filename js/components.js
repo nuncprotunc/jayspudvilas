@@ -17,7 +17,7 @@ const JS_SITE = {
       <div class="header-inner">
         <div class="logo-area">
           <a href="https://jayspudvilas.com" class="logo-link" aria-label="Jay Spudvilas home">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
+            <svg viewBox="14 20 56 56" aria-hidden="true">
               <path d="M 20 55 Q 40 35, 60 55" stroke="#1e40af" stroke-width="3.5" fill="none" opacity="0.7" />
               <circle cx="40" cy="43" r="8" fill="#6b21a8" />
               <circle cx="60" cy="55" r="6" fill="#3E5BE8" />
@@ -70,7 +70,7 @@ const JS_SITE = {
       <div class="footer-layout">
         <section class="footer-brand">
           <a href="https://jayspudvilas.com" class="footer-logo" aria-label="Jay Spudvilas home">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
+            <svg viewBox="14 20 56 56" aria-hidden="true">
               <path d="M 20 55 Q 40 35, 60 55" stroke="#1e40af" stroke-width="3.5" fill="none" opacity="0.7" />
               <circle cx="40" cy="43" r="8" fill="#6b21a8" />
               <circle cx="60" cy="55" r="6" fill="#3E5BE8" />
