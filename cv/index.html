@@ -42,62 +42,132 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jay Spudvilas",
-  "alternateName": ["Jayden Spudvilas-Powell", "Jayden Leigh Spudvilas-Powell"],
-  "url": "https://jayspudvilas.com/cv/",
-  "email": "jay@jayspudvilas.com",
-  "jobTitle": "Public-sector governance and legal-design practitioner",
-  "knowsAbout": [
-    "Administrative law",
-    "Information law",
-    "Freedom of information",
-    "Governance design"
-  ],
-  "alumniOf": [
+  "@graph": [
     {
-      "@type": "CollegeOrUniversity",
-      "name": "Australian National University",
-      "alternateName": "ANU"
+      "@type": "Person",
+      "@id": "https://jayspudvilas.com/#person",
+      "name": "Jay Spudvilas",
+      "alternateName": ["Jayden Spudvilas-Powell", "Jayden Leigh Spudvilas-Powell"],
+      "givenName": "Jayden",
+      "familyName": "Spudvilas-Powell",
+      "url": "https://jayspudvilas.com/",
+      "email": "jay@jayspudvilas.com",
+      "jobTitle": "Public-sector governance and legal-design practitioner",
+      "description": "Administrative law and governance practitioner. Founder of GlassCase.org and Law & Learning. ANU JD (2026–2028). Twelve years in public education governance.",
+      "knowsAbout": [
+        "Administrative law",
+        "Information law",
+        "Freedom of information",
+        "Governance design",
+        "Public-sector integrity",
+        "Regulatory compliance",
+        "Legal design",
+        "Accountability frameworks",
+        "Instructional leadership"
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Australian National University", "alternateName": "ANU" },
+        { "@type": "CollegeOrUniversity", "name": "University of Melbourne" },
+        { "@type": "CollegeOrUniversity", "name": "Monash University" }
+      ],
+      "affiliation": { "@id": "https://jayspudvilas.com/#doe-vic" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Classroom Teacher & Digital Technologies Leader",
+          "startDate": "2025-01",
+          "endDate": "2026-01",
+          "worksFor": { "@id": "https://jayspudvilas.com/#meltonwest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Classroom Teacher",
+          "startDate": "2023-10",
+          "endDate": "2025-01",
+          "worksFor": { "@id": "https://jayspudvilas.com/#keelonith" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Learning Specialist",
+          "startDate": "2023-01",
+          "endDate": "2023-10",
+          "worksFor": { "@id": "https://jayspudvilas.com/#springside" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Learning Specialist",
+          "startDate": "2018-01",
+          "endDate": "2023-01",
+          "worksFor": { "@id": "https://jayspudvilas.com/#meltonwest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Leading Teacher",
+          "startDate": "2017-01",
+          "endDate": "2018-01",
+          "worksFor": { "@id": "https://jayspudvilas.com/#meltonwest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Classroom Teacher & STEM Coach",
+          "startDate": "2016-01",
+          "endDate": "2017-01",
+          "worksFor": { "@id": "https://jayspudvilas.com/#meltonwest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Classroom Teacher",
+          "startDate": "2014-01",
+          "endDate": "2016-01",
+          "worksFor": { "@id": "https://jayspudvilas.com/#tarneit" }
+        }
+      ],
+      "sameAs": [
+        "https://linkedin.com/in/jayspudvilas",
+        "https://orcid.org/0009-0000-0945-0380",
+        "https://github.com/nuncprotunc",
+        "https://glasscase.org/",
+        "https://lawandlearning.com/",
+        "https://lightkey.org/",
+        "https://bsky.app/profile/glasscase.org",
+        "https://substack.com/@glasscase",
+        "https://glasscase.substack.com/"
+      ]
     },
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "University of Melbourne"
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Monash University"
-    }
-  ],
-  "affiliation": [
     {
       "@type": "GovernmentOrganization",
+      "@id": "https://jayspudvilas.com/#doe-vic",
       "name": "Department of Education (Victoria)",
       "alternateName": "DET Victoria"
     },
     {
       "@type": "EducationalOrganization",
-      "name": "Melton West Primary School"
+      "@id": "https://jayspudvilas.com/#meltonwest",
+      "name": "Melton West Primary School",
+      "parentOrganization": { "@id": "https://jayspudvilas.com/#doe-vic" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Melton West", "addressRegion": "VIC", "addressCountry": "AU" }
     },
     {
       "@type": "EducationalOrganization",
-      "name": "Keelonith Primary School"
+      "@id": "https://jayspudvilas.com/#keelonith",
+      "name": "Keelonith Primary School",
+      "parentOrganization": { "@id": "https://jayspudvilas.com/#doe-vic" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Greenvale", "addressRegion": "VIC", "addressCountry": "AU" }
     },
     {
       "@type": "EducationalOrganization",
-      "name": "Springside Primary School"
+      "@id": "https://jayspudvilas.com/#springside",
+      "name": "Springside Primary School",
+      "parentOrganization": { "@id": "https://jayspudvilas.com/#doe-vic" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Caroline Springs", "addressRegion": "VIC", "addressCountry": "AU" }
     },
     {
       "@type": "EducationalOrganization",
-      "name": "Tarneit P-9 College"
+      "@id": "https://jayspudvilas.com/#tarneit",
+      "name": "Tarneit P-9 College",
+      "parentOrganization": { "@id": "https://jayspudvilas.com/#doe-vic" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Tarneit", "addressRegion": "VIC", "addressCountry": "AU" }
     }
-  ],
-  "sameAs": [
-    "https://linkedin.com/in/jayspudvilas",
-    "https://orcid.org/0009-0000-0945-0380",
-    "https://glasscase.org/",
-    "https://lawandlearning.com/",
-    "https://lightkey.org/"
   ]
 }
 </script>
